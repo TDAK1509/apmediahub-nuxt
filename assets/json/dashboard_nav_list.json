@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "mdi-magnify",
+    "locale_key": "common.search",
+    "keyword": "search",
+    "children": [
+      { "locale_key": "user.role.agency", "path": "search-for-agency" },
+
+      {
+        "locale_key": "user.role.journalist",
+        "path": "search-for-journalist"
+      },
+
+      {
+        "locale_key": "user.role.freelancer",
+        "path": "search-for-freelancer"
+      },
+
+      {
+        "locale_key": "common.media",
+        "path": "search-for-media"
+      }
+    ]
+  },
+
+  {
+    "icon": "mdi-pencil",
+    "locale_key": "common.post",
+    "keyword": "post",
+    "children": [
+      { "locale_key": "common.project", "path": "post-project" },
+      { "locale_key": "common.job", "path": "post-job" },
+      { "locale_key": "common.media_alert", "path": "post-media-alert" }
+    ]
+  },
+
+  {
+    "icon": "mdi-account",
+    "locale_key": "dashboard.personal",
+    "keyword": "my-",
+    "children": [
+      { "locale_key": "dashboard.my_contacts", "path": "my-contacts" },
+      { "locale_key": "dashboard.my_projects", "path": "my-projects" },
+      { "locale_key": "dashboard.my_jobs", "path": "my-jobs" },
+      { "locale_key": "dashboard.my_media_alerts", "path": "my-media-alerts" },
+      { "locale_key": "dashboard.my_information", "path": "my-information" },
+      { "locale_key": "dashboard.my_membership", "path": "my-membership" }
+    ]
+  }
+]

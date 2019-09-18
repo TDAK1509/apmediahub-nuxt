@@ -62,8 +62,6 @@ import LoginHeader from "~/components/LoginHeader";
 export default {
     name: "Login",
 
-    transition: "bounce",
-
     components: {
         LoginHeader
     },

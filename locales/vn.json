@@ -1,42 +1,62 @@
 {
-    "login": {
-        "login": "Đăng nhập",
-        "remember_me": "Lưu đăng nhập",
-        "create_new_account": "Tạo tài khoản mới"
+  "login": {
+    "login": "Đăng nhập",
+    "remember_me": "Lưu đăng nhập",
+    "create_new_account": "Tạo tài khoản mới"
+  },
+
+  "register": {
+    "register": "Đăng ký",
+    "register_as": "Chức năng"
+  },
+
+  "form": {
+    "field": {
+      "password": "Mật khẩu",
+      "password_confirm": "Nhập lại mật khẩu",
+      "company": "Công ty",
+      "full_name": "Họ tên"
     },
 
-    "register": {
-        "register": "Đăng ký",
-        "register_as": "Chức năng"
-    },
-
-    "form": {
-        "field": {
-            "password": "Mật khẩu",
-            "password_confirm": "Nhập lại mật khẩu",
-            "company": "Công ty",
-            "full_name": "Họ tên"
-        },
-
-        "error": {
-            "email_required": "Vui lòng nhập email",
-            "email_invalid": "Email không đúng",
-            "email_duplicated": "Email này đã được sử dụng",
-            "password_blank": "Vui lòng nhập mật khẩu",
-            "wrong_email_password": "Email hoặc mật khẩu không đúng",
-            "password_not_match": "Mật khẩu không giống nhau",
-            "password_short": "Password phải chứa ít nhất 6 ký tự",
-            "empty": "Không được bỏ trống",
-            "server": "Lỗi hệ thống, vui lòng thử lại sau!"
-        }
-    },
-
-    "user": {
-        "role": {
-            "client": "Nhà Tuyển Dụng",
-            "agency": "Nhà Môi Giới",
-            "journalist": "Nhà Báo",
-            "freelancer": "Nhà Tự Do"
-        }
+    "error": {
+      "email_required": "Vui lòng nhập email",
+      "email_invalid": "Email không đúng",
+      "email_duplicated": "Email này đã được sử dụng",
+      "password_blank": "Vui lòng nhập mật khẩu",
+      "wrong_email_password": "Email hoặc mật khẩu không đúng",
+      "password_not_match": "Mật khẩu không giống nhau",
+      "password_short": "Password phải chứa ít nhất 6 ký tự",
+      "empty": "Không được bỏ trống",
+      "server": "Lỗi hệ thống, vui lòng thử lại sau!"
     }
+  },
+
+  "user": {
+    "role": {
+      "client": "Nhà Tuyển Dụng",
+      "agency": "Nhà Môi Giới",
+      "journalist": "Nhà Báo",
+      "freelancer": "Nhà Tự Do"
+    }
+  },
+
+  "dashboard": {
+    "dashboard": "Bảng điều khiển",
+    "personal": "Cá nhân",
+    "my_contacts": "Danh bạ",
+    "my_projects": "Dự án",
+    "my_jobs": "Công việc",
+    "my_media_alerts": "Thông báo",
+    "my_information": "Thông tin cá nhân",
+    "my_membership": "Thông tin thành viên"
+  },
+
+  "common": {
+    "search": "Tìm kiếm",
+    "post": "Đăng bài",
+    "media": "Phương tiện truyền thông",
+    "job": "Công việc",
+    "project": "Dự án",
+    "media_alert": "Thông báo"
+  }
 }

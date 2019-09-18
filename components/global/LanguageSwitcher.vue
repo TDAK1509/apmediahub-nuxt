@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import flagEn from "~/assets/flag-en.png";
-import flagVn from "~/assets/flag-vn.png";
+import flagEn from "~/assets/images/flag-en.png";
+import flagVn from "~/assets/images/flag-vn.png";
 import { mapState } from "vuex";
 
 export default {

@@ -1,42 +1,62 @@
 {
-    "login": {
-        "login": "Login",
-        "remember_me": "Remember me",
-        "create_new_account": "Create new account"
+  "login": {
+    "login": "Login",
+    "remember_me": "Remember me",
+    "create_new_account": "Create new account"
+  },
+
+  "register": {
+    "register": "Register",
+    "register_as": "Register as"
+  },
+
+  "form": {
+    "field": {
+      "password": "Password",
+      "password_confirm": "Confirm password",
+      "company": "Company / Media / Organization",
+      "full_name": "Full name"
     },
 
-    "register": {
-        "register": "Register",
-        "register_as": "Register as"
-    },
-
-    "form": {
-        "field": {
-            "password": "Password",
-            "password_confirm": "Confirm password",
-            "company": "Company / Media / Organization",
-            "full_name": "Full name"
-        },
-
-        "error": {
-            "email_required": "Please enter email",
-            "email_invalid": "Not valid email",
-            "email_duplicated": "This email is used by another account",
-            "password_blank": "Please enter password",
-            "wrong_email_password": "Email or password is wrong",
-            "password_not_match": "Passwords do not match",
-            "password_short": "Password must be at least 6 characters long",
-            "empty": "This field is required",
-            "server": "Something is wrong with our server, please try again later!"
-        }
-    },
-
-    "user": {
-        "role": {
-            "client": "Client",
-            "agency": "Agency",
-            "journalist": "Journalist",
-            "freelancer": "Freelancer"
-        }
+    "error": {
+      "email_required": "Please enter email",
+      "email_invalid": "Not valid email",
+      "email_duplicated": "This email is used by another account",
+      "password_blank": "Please enter password",
+      "wrong_email_password": "Email or password is wrong",
+      "password_not_match": "Passwords do not match",
+      "password_short": "Password must be at least 6 characters long",
+      "empty": "This field is required",
+      "server": "Something is wrong with our server, please try again later!"
     }
+  },
+
+  "user": {
+    "role": {
+      "client": "Client",
+      "agency": "Agency",
+      "journalist": "Journalist",
+      "freelancer": "Freelancer"
+    }
+  },
+
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "personal": "Personal",
+    "my_contacts": "My contacts",
+    "my_projects": "My projects",
+    "my_jobs": "My jobs",
+    "my_media_alerts": "My media alerts",
+    "my_information": "My information",
+    "my_membership": "My membership"
+  },
+
+  "common": {
+    "search": "Search",
+    "post": "Post",
+    "media": "Media",
+    "job": "Job",
+    "project": "Project",
+    "media_alert": "Media alert"
+  }
 }
