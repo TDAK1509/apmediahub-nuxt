@@ -49,16 +49,35 @@
                                 ></v-date-picker>
                             </v-menu>
 
-                            <v-text-field
-                                v-for="f in formTextField"
-                                :key="f.value_key"
-                                :label="$t(f.label_key)"
-                                type="text"
-                                outlined
-                                color="blue darken-3"
-                                :rules="f.rules"
-                                v-model="formModel[f.value_key]"
-                            ></v-text-field>
+                            <template v-for="f in formTextField">
+                                <SelectCountry
+                                    v-if="f.value_key === 'country'"
+                                    @change="onCountryChange"
+                                ></SelectCountry>
+
+                                <SelectCity
+                                    v-else-if="f.value_key === 'city'"
+                                    @change="onCityChange"
+                                    :country="formModel.country"
+                                ></SelectCity>
+
+                                <TheJobType
+                                    v-else-if="f.value_key === 'job_type'"
+                                    @change="onJobTypeChange"
+                                />
+
+                                <v-text-field
+                                    v-else
+                                    :key="f.value_key"
+                                    :label="$t(f.label_key)"
+                                    type="text"
+                                    outlined
+                                    color="blue darken-3"
+                                    :rules="f.rules"
+                                    v-model="formModel[f.value_key]"
+                                    clearable
+                                ></v-text-field>
+                            </template>
 
                             <v-subheader class="px-0 text-uppercase">{{$t('post_job.details')}}</v-subheader>
 
@@ -69,6 +88,7 @@
                                 :key="f.value_key"
                                 :label="$t(f.label_key)"
                                 v-model="formModel[f.value_key]"
+                                clearable
                             ></v-textarea>
 
                             <v-subheader class="px-0 text-uppercase">{{$t('post_job.attachment')}}</v-subheader>
@@ -88,6 +108,30 @@
                                 append-icon="mdi-paperclip"
                                 prepend-icon
                             ></v-file-input>
+
+                            <v-subheader class="px-0 text-uppercase">{{$t('post_job.who_can_see')}}</v-subheader>
+
+                            <div class="d-flex">
+                                <v-radio-group column class="flex-grow-1 mt-0 pt-0">
+                                    <v-radio
+                                        v-for="(user, i) in whoCanSeeJournalist"
+                                        :key="`journalist${i}`"
+                                        :label="user.text"
+                                        :value="user.value"
+                                        color="warning"
+                                    ></v-radio>
+                                </v-radio-group>
+
+                                <v-radio-group column class="flex-grow-1 mt-0 pt-0">
+                                    <v-radio
+                                        v-for="(user, i) in whoCanSeeFreelancer"
+                                        :key="`freelancer${i}`"
+                                        :label="user.text"
+                                        :value="user.value"
+                                        color="success"
+                                    ></v-radio>
+                                </v-radio-group>
+                            </div>
                         </div>
 
                         <div class="d-flex justify-end">
@@ -109,9 +153,14 @@
 
 <script>
 import defaultAvatar from "@/assets/images/avatar_default.jpg";
+import TheJobType from "@/components/TheJobType";
 
 export default {
     name: "PostJob",
+
+    components: {
+        TheJobType
+    },
 
     data() {
         return {
@@ -137,8 +186,7 @@ export default {
                 attachment: {
                     job_description: "",
                     application_form: ""
-                },
-                who_can_see: []
+                }
             },
 
             rules: {
@@ -229,6 +277,48 @@ export default {
                     rules: []
                 }
             ];
+        },
+
+        whoCanSeeJournalist() {
+            return [
+                {
+                    text: "All Journalist",
+                    value: ""
+                },
+                {
+                    text: "Journalist who I will search now",
+                    value: ""
+                },
+                {
+                    text: "Journalist in My Contact",
+                    value: ""
+                },
+                {
+                    text: "Journalist in the selected list",
+                    value: ""
+                }
+            ];
+        },
+
+        whoCanSeeFreelancer() {
+            return [
+                {
+                    text: "All Freelancer",
+                    value: ""
+                },
+                {
+                    text: "Freelancer who I will search now",
+                    value: ""
+                },
+                {
+                    text: "Freelancer in My Contact",
+                    value: ""
+                },
+                {
+                    text: "Freelancer in the selected list",
+                    value: ""
+                }
+            ];
         }
     },
 
@@ -240,7 +330,19 @@ export default {
 
     methods: {
         postJob() {
-            console.log("posted");
+            console.table("job posted");
+        },
+
+        onCountryChange(value) {
+            this.$set(this.formModel, "country", value);
+        },
+
+        onCityChange(value) {
+            this.$set(this.formModel, "city", value);
+        },
+
+        onJobTypeChange(value) {
+            this.$set(this.formModel, "job_type", value);
         }
     },
 

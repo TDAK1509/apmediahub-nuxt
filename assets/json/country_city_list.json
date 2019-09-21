@@ -1,0 +1,260 @@
+{
+    "Australia": {
+        "country_code": "+61",
+        "city": [
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Perth",
+            "Adelaide",
+            "Gold Coast",
+            "Newcastle–Maitland",
+            "Canberra",
+            "Sunshine Coast",
+            "Wollongong",
+            "Others"
+        ]
+    },
+
+    "Brunei": {
+        "country_code": "+673",
+        "city": [
+            "Bandar Seri Begawan",
+            "Kuala Belait",
+            "Seria",
+            "Tutong",
+            "Bangar",
+            "Others"
+        ]
+    },
+
+    "Cambodia": {
+        "country_code": "+855",
+        "city": [
+            "Phnom Penh",
+            "Ta Khmau",
+            "Battambang",
+            "Serei Saophoan",
+            "Siem Reap",
+            "Kampong Cham",
+            "Poipet",
+            "Preah Sihanouk",
+            "Chbar Mon",
+            "Kampot",
+            "Others"
+        ]
+    },
+
+    "China": {
+        "country_code": "+86",
+        "city": [
+            "Guangzhou",
+            "Shanghai",
+            "Chongqing",
+            "Beijing",
+            "Hangzhou",
+            "Wuhan",
+            "Chengdu",
+            "Tianjin",
+            "Xi'an",
+            "Jinan",
+            "Shenzhen",
+            "Nanjing",
+            "Shenyang",
+            "Harbin",
+            "Shantou",
+            "Suzhou",
+            "Wenzhou",
+            "Qingdao",
+            "Dongguan",
+            "Quanzhou",
+            "Others"
+        ]
+    },
+
+    "Hong Kong": {
+        "country_code": "+852",
+        "city": [
+            "Hong Kong",
+            "Kowloon",
+            "Tsuen Wan",
+            "Yuen Long Kau Hui",
+            "Others"
+        ]
+    },
+
+    "Indonesia": {
+        "country_code": "+62",
+        "city": [
+            "Jakarta",
+            "Surabaya",
+            "Bandung",
+            "Medan",
+            "Semarang",
+            "Palembang",
+            "Makassar",
+            "Batam",
+            "Padang",
+            "Bandar Lampung",
+            "Others"
+        ]
+    },
+
+    "Laos": {
+        "country_code": "+856",
+        "city": [
+            "Vientiane",
+            "Savannakhet",
+            "Pakxe",
+            "Thakhek",
+            "Muang Xai",
+            "Luang Prabang",
+            "Xam Neua",
+            "Phonsavan",
+            "Vang Vieng",
+            "Muang Pakxan"
+        ]
+    },
+
+    "Malaysia": {
+        "country_code": "+60",
+        "city": [
+            "Kuala Lumpur",
+            "George Town of Penang",
+            "Ipoh",
+            "Johor Bahru",
+            "Malacca City",
+            "Kota Kinabalu",
+            "Kuantan",
+            "Alor Setar",
+            "Tawau",
+            "Sandakan",
+            "Others"
+        ]
+    },
+
+    "Myanmar": {
+        "country_code": "+95",
+        "city": [
+            "Yangon (Rangoon)",
+            "Mandalay",
+            "Naypyidaw (Nay Pyi Taw)",
+            "Mawlamyine",
+            "Taunggyi",
+            "Monywa",
+            "Meiktila",
+            "Bago",
+            "Pathein",
+            "Mergui",
+            "Others"
+        ]
+    },
+
+    "Philippines": {
+        "country_code": "+63",
+        "city": [
+            "Quezon City",
+            "Manila",
+            "Caloocan",
+            "Davao City",
+            "Cebu",
+            "Zamboanga City",
+            "Taguig",
+            "Pasig",
+            "Cagayan De Oro City",
+            "Paranaque",
+            "Others"
+        ]
+    },
+    "Singapore": {
+        "country_code": "+65",
+        "city": ["Singapore", "Others"]
+    },
+
+    "Thailand": {
+        "country_code": "+66",
+        "city": [
+            "Bangkok",
+            "Nonthaburi",
+            "Nakhon Ratchasima",
+            "Chiang Mai",
+            "Hat Yai",
+            "Udon Thani",
+            "Pak Kret",
+            "Khon Kaen",
+            "Chaophraya Surasak",
+            "Ubon Ratchathani",
+            "Others"
+        ]
+    },
+
+    "Vietnam": {
+        "country_code": "+84",
+        "city": [
+            "Ha Noi",
+            "Ho Chi Minh City",
+            "Cần Thơ",
+            "Đà Nẵng",
+            "Hải Phòng",
+            "An Giang",
+            "Bà Rịa - Vũng Tàu",
+            "Bắc Giang",
+            "Bắc Kạn",
+            "Bạc Liêu",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Định",
+            "Bình Dương",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hậu Giang",
+            "Hòa Bình",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lâm Đồng",
+            "Lạng Sơn",
+            "Lào Cai",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái",
+            "Others"
+        ]
+    }
+}
