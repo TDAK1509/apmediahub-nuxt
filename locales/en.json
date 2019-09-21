@@ -48,15 +48,41 @@
     "my_jobs": "My jobs",
     "my_media_alerts": "My media alerts",
     "my_information": "My information",
-    "my_membership": "My membership"
+    "my_membership": "My membership",
+    "post_job": "Post job"
   },
 
   "common": {
-    "search": "Search",
+    "search": "Search for",
     "post": "Post",
     "media": "Media",
     "job": "Job",
     "project": "Project",
-    "media_alert": "Media alert"
+    "media_alert": "Media alert",
+    "country": "Country",
+    "city": "City"
+  },
+
+  "post_job": {
+    "job_description": "Job description",
+    "job_id": "Job ID",
+    "general_information": "General information",
+    "details": "Details",
+    "attachment": "Attachment",
+    "closing_date": "Closing date",
+    "job_type": "Job type",
+    "department": "Division/Dept",
+    "reports_to": "Reports to",
+    "job_purpose": "Job purpose",
+    "company_overview": "Company overview",
+    "key_responsibilities": "Key responsibilites",
+    "competencies": "competencies",
+    "qualifications_experiences": "Qualifications & experiences",
+    "challenges_opportunities": "Challenges & opportunities",
+    "application_form": "Application form"
+  },
+
+  "my_information": {
+    "job_title": "Job title"
   }
 }

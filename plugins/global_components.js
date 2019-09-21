@@ -1,8 +1,17 @@
 import Vue from "vue";
-import LanguageSwitcher from "~/components/global/LanguageSwitcher";
 
-const components = { LanguageSwitcher };
+const requireComponent = require.context(
+  "@/components/global",
+  false,
+  /[A-Z]\w+\.(vue|js)$/
+);
 
-Object.entries(components).forEach(([name, component]) => {
-  Vue.component(name, component);
+requireComponent.keys().forEach(fileName => {
+  const componentConfig = requireComponent(fileName);
+  const componentName = fileName
+    .split("/")
+    .pop()
+    .replace(/\.\w+$/, "");
+
+  Vue.component(componentName, componentConfig.default || componentConfig);
 });

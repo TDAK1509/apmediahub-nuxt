@@ -48,7 +48,8 @@
     "my_jobs": "Công việc",
     "my_media_alerts": "Thông báo",
     "my_information": "Thông tin cá nhân",
-    "my_membership": "Thông tin thành viên"
+    "my_membership": "Thông tin thành viên",
+    "post_job": "Đăng việc làm"
   },
 
   "common": {
@@ -57,6 +58,31 @@
     "media": "Phương tiện truyền thông",
     "job": "Công việc",
     "project": "Dự án",
-    "media_alert": "Thông báo"
+    "media_alert": "Thông báo",
+    "country": "Quốc gia",
+    "city": "Thành phố"
+  },
+
+  "post_job": {
+    "job_description": "Mô tả công việc",
+    "job_id": "Mã số công việc",
+    "general_information": "Thông tin chung",
+    "details": "Thông tin chi tiết",
+    "attachment": "Đính kèm",
+    "closing_date": "Ngày kết thúc",
+    "job_type": "Loại công việc",
+    "department": "Phòng/ban",
+    "reports_to": "Báo cáo tới",
+    "job_purpose": "Mục đích công việc",
+    "company_overview": "Quan điểm công ty",
+    "key_responsibilities": "Trách nhiệm của ứng viên",
+    "competencies": "Năng lực của ứng viên",
+    "qualifications_experiences": "Bằng cấp & kinh nghiệm",
+    "challenges_opportunities": "Khó khăn & cơ hội",
+    "application_form": "Đơn ứng cử"
+  },
+
+  "my_information": {
+    "job_title": "Chức danh"
   }
 }

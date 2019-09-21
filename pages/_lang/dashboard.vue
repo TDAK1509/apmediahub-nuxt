@@ -1,11 +1,13 @@
 <template>
     <v-app>
-        <DashboardNavigationDrawer />
+        <TheNavigationDrawer />
 
-        <DashboardAppBar />
+        <TheAppBarDashboard />
 
         <v-content>
             <v-container fluid>
+                <DashboardContentTitle>{{title}}</DashboardContentTitle>
+
                 <nuxt-child />
             </v-container>
         </v-content>
@@ -13,18 +15,26 @@
 </template>
 
 <script>
-import DashboardAppBar from "@/components/DashboardAppBar";
-import DashboardNavigationDrawer from "@/components/DashboardNavigationDrawer";
+import TheAppBarDashboard from "@/components/TheAppBarDashboard";
+import TheNavigationDrawer from "@/components/TheNavigationDrawer";
+import DashboardContentTitle from "@/components/DashboardContentTitle";
+import { mapState } from "vuex";
 
 export default {
     name: "Dashboard",
 
     components: {
-        DashboardAppBar,
-        DashboardNavigationDrawer
+        TheAppBarDashboard,
+        TheNavigationDrawer,
+        DashboardContentTitle
+    },
+
+    computed: {
+        ...mapState(["dashboardPageTitle"]),
+
+        title() {
+            return this.dashboardPageTitle;
+        }
     }
 };
 </script>
-
-<style>
-</style>

@@ -3,7 +3,7 @@
         <v-app-bar-nav-icon @click.stop="toggleDrawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title class="text-uppercase d-flex align-center">
-            <v-btn flat text height="50" nuxt to="/" exact>
+            <v-btn text height="50" nuxt to="/" exact>
                 <v-img :src="require('~/assets/images/logo.jpg')" width="50" height="50"></v-img>
                 <span class="ml-3">APMediahub</span>
             </v-btn>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: "DashboardAppBar",
+    name: "TheAppBarDashboard",
 
     methods: {
         toggleDrawer() {

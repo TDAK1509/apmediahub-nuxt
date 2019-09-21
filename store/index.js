@@ -1,6 +1,7 @@
 export const state = () => ({
   locales: ["vn", "en"],
-  locale: "vn"
+  locale: "vn",
+  dashboardPageTitle: ""
 });
 
 export const mutations = {
@@ -8,5 +9,9 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale;
     }
+  },
+
+  setPageTitle(state, title) {
+    state.dashboardPageTitle = title;
   }
 };

@@ -48,7 +48,7 @@
 
         <v-divider></v-divider>
 
-        <v-list nav dense>
+        <v-list nav dense class="text-capitalize">
             <v-list-item color="primary" nuxt :to="fullPath('')" exact>
                 <v-list-item-icon>
                     <v-icon>mdi-view-dashboard</v-icon>
@@ -60,7 +60,7 @@
             </v-list-item>
         </v-list>
 
-        <v-list nav dense>
+        <v-list nav dense class="text-capitalize">
             <v-list-group
                 v-for="(list, i) in navList"
                 :key="list.locale_key"
@@ -95,14 +95,8 @@
 import { mapState } from "vuex";
 import navList from "@/assets/json/dashboard_nav_list.json";
 
-import DashboardNavigationDrawerSearchForAgency from "@/components/DashboardNavigationDrawerSearchForAgency";
-
 export default {
-    name: "DashboardHeaderDrawer",
-
-    components: {
-        DashboardNavigationDrawerSearchForAgency
-    },
+    name: "TheNavigationDrawer",
 
     data() {
         return {
