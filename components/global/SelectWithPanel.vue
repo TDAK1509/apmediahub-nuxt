@@ -7,7 +7,7 @@
             :label="label"
             multiple
             outlined
-            color="blue darken-3"
+            :color="inputBorderColor"
             @change="$emit('change', value)"
             :rules="rules"
             :menu-props="{offsetY: true, transition: 'slide-y-reverse-transition'}"
@@ -32,6 +32,12 @@ export default {
         return {
             value: ""
         };
+    },
+
+    computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        }
     }
 };
 </script>

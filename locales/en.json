@@ -73,7 +73,6 @@
     "details": "Details",
     "attachment": "Attachment",
     "closing_date": "Closing date",
-    "job_type": "Job type",
     "department": "Division/Dept",
     "reports_to": "Reports to",
     "job_purpose": "Job purpose",
@@ -95,6 +94,16 @@
 
   "my_information": {
     "job_title": "Job title"
+  },
+
+  "job_type": {
+    "job_type": "Job type",
+    "all": "All",
+    "full-time": "Full-time",
+    "part-time": "Part-time",
+    "freelance": "Freelance",
+    "internship": "Internship",
+    "short-term": "Short term"
   },
 
   "service_level": {

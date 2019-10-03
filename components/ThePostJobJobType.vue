@@ -2,6 +2,7 @@
     <v-select
         :items="jobType"
         :label="label"
+        :color="inputBorderColor"
         @change="onChange"
         outlined
         :menu-props="{offsetY: true}"
@@ -9,22 +10,50 @@
 </template>
 
 <script>
-import jobTypeVN from "@/assets/json/job_type_vn.json";
-import jobTypeEN from "@/assets/json/job_type_en.json";
-
 export default {
     name: "SelectCountry",
 
     computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        },
+
         label() {
-            return this.$t("post_job.job_type");
+            return this.$t("job_type.job_type");
         },
 
         jobType() {
-            const lang = this.$store.state.locale;
+            return [
+                {
+                    text: this.$t("job_type.all"),
+                    value: "all"
+                },
 
-            if (lang === "vn") return jobTypeVN;
-            else return jobTypeEN;
+                {
+                    text: this.$t("job_type.full-time"),
+                    value: "full-time"
+                },
+
+                {
+                    text: this.$t("job_type.part-time"),
+                    value: "part-time"
+                },
+
+                {
+                    text: this.$t("job_type.freelance"),
+                    value: "freelance"
+                },
+
+                {
+                    text: this.$t("job_type.internship"),
+                    value: "internship"
+                },
+
+                {
+                    text: this.$t("job_type.short-term"),
+                    value: "short-term"
+                }
+            ];
         }
     },
 
