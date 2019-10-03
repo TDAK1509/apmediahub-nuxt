@@ -2,6 +2,7 @@
     <v-select
         :items="countryList"
         :label="countryLabel"
+        :color="inputBorderColor"
         @change="onChange"
         outlined
         :menu-props="{offsetY: true, transition: 'slide-y-transition'}"
@@ -26,6 +27,10 @@ export default {
 
         countryLabel() {
             return this.$t("common.country");
+        },
+
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
         }
     },
 

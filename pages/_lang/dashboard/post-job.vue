@@ -22,23 +22,23 @@
                                 class="px-0 text-uppercase"
                             >{{$t('post_job.general_information')}}</v-subheader>
 
-                            <DatePicker @change="setClosingDate"></DatePicker>
+                            <DatePicker :value.sync="formModel.closing_date"></DatePicker>
 
                             <template v-for="f in formTextField">
                                 <SelectCountry
                                     v-if="f.value_key === 'country'"
-                                    @change="onCountryChange"
+                                    :value.sync="formModel.country"
                                 ></SelectCountry>
 
                                 <SelectCity
                                     v-else-if="f.value_key === 'city'"
-                                    @change="onCityChange"
+                                    :value.sync="formModel.city"
                                     :country="formModel.country"
                                 ></SelectCity>
 
                                 <ThePostJobJobType
                                     v-else-if="f.value_key === 'job_type'"
-                                    @change="onJobTypeChange"
+                                    :value.sync="formModel.job_type"
                                 />
 
                                 <v-text-field
@@ -306,27 +306,7 @@ export default {
     methods: {
         postJob() {
             console.table("job posted");
-        },
-
-        onCountryChange(value) {
-            this.$set(this.formModel, "country", value);
-        },
-
-        onCityChange(value) {
-            this.$set(this.formModel, "city", value);
-        },
-
-        onJobTypeChange(value) {
-            this.$set(this.formModel, "job_type", value);
-        },
-
-        setClosingDate(newDate) {
-            this.$set(this.formModel, "closing_date", newDate);
         }
-    },
-
-    mounted() {
-        // this.$store.commit("setPageTitle", this.title);
     }
 };
 </script>

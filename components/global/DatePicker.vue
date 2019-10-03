@@ -14,7 +14,7 @@
                 append-icon="mdi-calendar"
                 readonly
                 outlined
-                color="blue darken-3"
+                :color="inputBorderColor"
                 v-on="on"
             ></v-text-field>
         </template>
@@ -34,6 +34,12 @@ export default {
             showPicker: false,
             dateValue: new Date().toISOString().substr(0, 10)
         };
+    },
+
+    computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        }
     },
 
     methods: {

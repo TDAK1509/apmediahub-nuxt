@@ -2,6 +2,7 @@
     <v-select
         :items="cityList"
         :label="cityLabel"
+        :color="inputBorderColor"
         @change="onChange"
         outlined
         :rules="rules"
@@ -27,6 +28,10 @@ export default {
 
         cityLabel() {
             return this.$t("common.city");
+        },
+
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
         }
     },
 

@@ -30,7 +30,7 @@ export default {
 
     methods: {
         onChange(value) {
-            this.$emit("change", value);
+            this.$emit("update:value", value);
         }
     }
 };
