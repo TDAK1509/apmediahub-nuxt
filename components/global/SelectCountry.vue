@@ -4,7 +4,8 @@
         :label="countryLabel"
         @change="onChange"
         outlined
-        :menu-props="{offsetY: true}"
+        :menu-props="{offsetY: true, transition: 'slide-y-transition'}"
+        :rules="rules"
     ></v-select>
 </template>
 
@@ -13,6 +14,10 @@ import countryCityList from "@/assets/json/country_city_list.json";
 
 export default {
     name: "SelectCountry",
+
+    props: {
+        rules: Array
+    },
 
     computed: {
         countryList() {
@@ -26,7 +31,7 @@ export default {
 
     methods: {
         onChange(value) {
-            this.$emit("change", value);
+            this.$emit("update:value", value);
         }
     }
 };

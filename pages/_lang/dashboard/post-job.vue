@@ -22,32 +22,7 @@
                                 class="px-0 text-uppercase"
                             >{{$t('post_job.general_information')}}</v-subheader>
 
-                            <v-menu
-                                v-model="showClosingDatePicker"
-                                :close-on-content-click="false"
-                                :nudge-right="40"
-                                transition="scale-transition"
-                                offset-y
-                                min-width="290px"
-                            >
-                                <template v-slot:activator="{ on }">
-                                    <v-text-field
-                                        v-model="formModel.closing_date"
-                                        :label="$t('post_job.closing_date')"
-                                        append-icon="mdi-calendar"
-                                        readonly
-                                        outlined
-                                        color="blue darken-3"
-                                        v-on="on"
-                                    ></v-text-field>
-                                </template>
-                                <v-date-picker
-                                    header-color="blue darken-3"
-                                    color="blue darken-3"
-                                    v-model="formModel.closing_date"
-                                    @input="showClosingDatePicker = false"
-                                ></v-date-picker>
-                            </v-menu>
+                            <DatePicker @change="setClosingDate"></DatePicker>
 
                             <template v-for="f in formTextField">
                                 <SelectCountry
@@ -61,7 +36,7 @@
                                     :country="formModel.country"
                                 ></SelectCity>
 
-                                <TheJobType
+                                <ThePostJobJobType
                                     v-else-if="f.value_key === 'job_type'"
                                     @change="onJobTypeChange"
                                 />
@@ -72,7 +47,7 @@
                                     :label="$t(f.label_key)"
                                     type="text"
                                     outlined
-                                    color="blue darken-3"
+                                    :color="inputBorderColor"
                                     :rules="f.rules"
                                     v-model="formModel[f.value_key]"
                                     clearable
@@ -84,7 +59,7 @@
                             <v-textarea
                                 v-for="f in formTextArea"
                                 outlined
-                                color="blue darken-3"
+                                :color="inputBorderColor"
                                 :key="f.value_key"
                                 :label="$t(f.label_key)"
                                 v-model="formModel[f.value_key]"
@@ -142,7 +117,7 @@
                                 :loading="posting"
                                 :disabled="posting"
                                 @click="postJob"
-                            >{{$t("common.post")}}</v-btn>
+                            >{{$t("dashboard.post_job")}}</v-btn>
                         </div>
                     </v-form>
                 </v-card-text>
@@ -153,14 +128,17 @@
 
 <script>
 import defaultAvatar from "@/assets/images/avatar_default.jpg";
-import TheJobType from "@/components/TheJobType";
+import dashboardTitleMixin from "~/mixins/dashboard-title";
+import ThePostJobJobType from "@/components/ThePostJobJobType";
 
 export default {
     name: "PostJob",
 
     components: {
-        TheJobType
+        ThePostJobJobType
     },
+
+    mixins: [dashboardTitleMixin],
 
     data() {
         return {
@@ -196,12 +174,16 @@ export default {
     },
 
     computed: {
-        avatar() {
-            return defaultAvatar;
-        },
-
         title() {
             return this.$t("dashboard.post_job");
+        },
+
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        },
+
+        avatar() {
+            return defaultAvatar;
         },
 
         formTextField() {
@@ -321,13 +303,6 @@ export default {
             ];
         }
     },
-
-    head() {
-        return {
-            title: this.title
-        };
-    },
-
     methods: {
         postJob() {
             console.table("job posted");
@@ -343,11 +318,15 @@ export default {
 
         onJobTypeChange(value) {
             this.$set(this.formModel, "job_type", value);
+        },
+
+        setClosingDate(newDate) {
+            this.$set(this.formModel, "closing_date", newDate);
         }
     },
 
     mounted() {
-        this.$store.commit("setPageTitle", this.title);
+        // this.$store.commit("setPageTitle", this.title);
     }
 };
 </script>

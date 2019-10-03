@@ -1,7 +1,8 @@
 export const state = () => ({
   locales: ["vn", "en"],
   locale: "vn",
-  dashboardPageTitle: ""
+  dashboardPageTitle: "",
+  inputBorderColor: "blue darken-3"
 });
 
 export const mutations = {
