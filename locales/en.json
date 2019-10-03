@@ -106,6 +106,21 @@
     "short-term": "Short term"
   },
 
+  "services": {
+    "animation": "Animation",
+    "audio_video_production": "Audio/Video Production",
+    "photography": "Photography",
+    "logo_design_branding": "Logo Design & Branding",
+    "graphic_design": "Graphic Design",
+    "collateral_design": "Collateral Design",
+    "art_illustration": "Art & Illustration",
+    "voice_talent": "Voice Talent",
+    "brand_identity_strategy": "Brand Identity & Strategy",
+    "motion_graphics": "Motion Graphics",
+    "web_design": "Web Design",
+    "other": "Other Design/Creative"
+  },
+
   "service_level": {
     "service_level": "Service level",
     "basic": "Basic (start to build experience)",

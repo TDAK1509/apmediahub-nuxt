@@ -106,6 +106,21 @@
     "short-term": "Ngắn hạn"
   },
 
+  "services": {
+    "animation": "Hoạt hình",
+    "audio_video_production": "Sản xuất âm thanh/video",
+    "photography": "Chụp hình",
+    "logo_design_branding": "Thiết kế logo & thương hiệu",
+    "graphic_design": "Đồ họa",
+    "collateral_design": "Thiết kế khác",
+    "art_illustration": "Nghệ thuật và minh họa",
+    "voice_talent": "Kĩ năng nói chuyện",
+    "brand_identity_strategy": "Định hình và chiến thuật thương hiệu",
+    "motion_graphics": "Đồ họa ảnh động",
+    "web_design": "Thiết kế web",
+    "other": "Thiết kế / sáng tạo khác"
+  },
+
   "service_level": {
     "service_level": "Cấp độ dịch vụ",
     "basic": "Cơ bản (bắt đầu xây dựng kinh nghiệm)",

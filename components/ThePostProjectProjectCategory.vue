@@ -1,10 +1,9 @@
 <template>
-    <SelectWithPanel :items="services" :label="label" @change="onChange" :rules="rules"></SelectWithPanel>
+    <SelectWithPanel :items="serviceList" :label="label" @change="onChange" :rules="rules"></SelectWithPanel>
 </template>
 
 <script>
-import serviceListVN from "@/assets/json/services_vn.json";
-import serviceListEN from "@/assets/json/services_en.json";
+import clone from "lodash/clone";
 
 export default {
     name: "ProjectCategory",
@@ -13,22 +12,55 @@ export default {
         rules: Array
     },
 
+    data() {
+        return {
+            services: {
+                animation: false,
+                audio_video_production: false,
+                photography: false,
+                logo_design_branding: false,
+                graphic_design: false,
+                collateral_design: false,
+                art_illustration: false,
+                voice_talent: false,
+                brand_identity_strategy: false,
+                motion_graphics: false,
+                web_design: false,
+                other: false
+            }
+        };
+    },
+
     computed: {
         label() {
             return this.$t("post_project.project_category");
         },
 
-        services() {
-            const lang = this.$store.state.locale;
+        serviceKeyList() {
+            return Object.keys(this.services);
+        },
 
-            if (lang === "vn") return serviceListVN;
-            else return serviceListEN;
+        serviceList() {
+            return this.serviceKeyList.map(service => {
+                const localeKey = `services.${service}`;
+
+                return {
+                    text: this.$t(localeKey),
+                    value: service
+                };
+            });
         }
     },
 
     methods: {
         onChange(value) {
-            this.$emit("update:value", value);
+            const selectedServices = clone(this.services);
+
+            value.forEach(key => {
+                selectedServices[key] = true;
+            });
+
+            this.$emit("update:value", selectedServices);
         }
     }
 };
