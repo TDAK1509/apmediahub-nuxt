@@ -55,6 +55,8 @@
 
                         <ThePostProjectProjectType :value.sync="formModel.project_type"></ThePostProjectProjectType>
 
+                        <ThePostProjectPayment></ThePostProjectPayment>
+
                         <div class="d-flex justify-end">
                             <v-btn
                                 color="primary"
@@ -78,6 +80,7 @@ import inputRules from "~/mixins/input-rules";
 import ThePostProjectProjectCategory from "@/components/ThePostProjectProjectCategory";
 import DashboardServiceLevel from "@/components/DashboardServiceLevel";
 import ThePostProjectProjectType from "@/components/ThePostProjectProjectType";
+import ThePostProjectPayment from "@/components/ThePostProjectPayment";
 
 export default {
     name: "PostProject",
@@ -85,7 +88,8 @@ export default {
     components: {
         ThePostProjectProjectCategory,
         DashboardServiceLevel,
-        ThePostProjectProjectType
+        ThePostProjectProjectType,
+        ThePostProjectPayment
     },
 
     mixins: [dashboardTitleMixin, inputRules],
@@ -103,7 +107,13 @@ export default {
                 project_category: null,
                 skills: "",
                 service_level: "",
-                project_type: ""
+                project_type: "",
+                payment_method: "",
+                payment_amount: "",
+                project_duration: "",
+                time_requirement: "",
+                attachment: "",
+                who_can_see: null
             }
         };
     },
