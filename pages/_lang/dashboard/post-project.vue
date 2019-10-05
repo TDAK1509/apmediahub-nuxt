@@ -12,15 +12,18 @@
                     <v-form ref="form" class="text-left">
                         <DatePicker
                             :value.sync="formModel.closing_date"
-                            :rules="inputRules.required"
+                            :rules="[inputRules.required]"
                         ></DatePicker>
 
-                        <SelectCountry :value.sync="formModel.country" :rules="inputRules.required"></SelectCountry>
+                        <SelectCountry
+                            :value.sync="formModel.country"
+                            :rules="[inputRules.required]"
+                        ></SelectCountry>
 
                         <SelectCity
                             :value.sync="formModel.city"
                             :country="formModel.country"
-                            :rules="inputRules.required"
+                            :rules="[inputRules.required]"
                         ></SelectCity>
 
                         <v-textarea
@@ -28,7 +31,7 @@
                             :color="inputBorderColor"
                             :label="$t('post_project.project_name')"
                             v-model="formModel.project_name"
-                            :rules="inputRules.required"
+                            :rules="[inputRules.required]"
                             clearable
                         ></v-textarea>
 
@@ -42,7 +45,7 @@
 
                         <ThePostProjectProjectCategory
                             :value.sync="formModel.project_category"
-                            :rules="inputRules.required"
+                            :rules="[inputRules.required]"
                         ></ThePostProjectProjectCategory>
 
                         <v-text-field

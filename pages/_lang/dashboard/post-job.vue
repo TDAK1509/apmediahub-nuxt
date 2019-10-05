@@ -191,7 +191,7 @@ export default {
                 {
                     label_key: "my_information.job_title",
                     value_key: "job_title",
-                    rules: this.inputRules.required
+                    rules: [this.inputRules.required]
                 },
                 {
                     label_key: "post_job.job_id",
@@ -201,17 +201,17 @@ export default {
                 {
                     label_key: "common.country",
                     value_key: "country",
-                    rules: this.inputRules.required
+                    rules: [this.inputRules.required]
                 },
                 {
                     label_key: "common.city",
                     value_key: "city",
-                    rules: this.inputRules.required
+                    rules: [this.inputRules.required]
                 },
                 {
                     label_key: "post_job.job_type",
                     value_key: "job_type",
-                    rules: this.inputRules.required
+                    rules: [this.inputRules.required]
                 },
                 {
                     label_key: "post_job.department",

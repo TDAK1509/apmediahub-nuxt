@@ -57,7 +57,7 @@ export default {
         },
 
         paymentAmountRules() {
-            return !this.paymentMethod ? [] : this.inputRules.required;
+            return !this.paymentMethod ? [] : [this.inputRules.required];
         },
 
         payment() {
