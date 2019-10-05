@@ -1,7 +1,7 @@
 export default {
   data() {
     return {
-      rules: {
+      inputRules: {
         required: [v => !!v || this.$t("form.error.empty")]
       }
     };

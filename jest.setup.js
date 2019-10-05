@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
 import Vuex from "vuex";
-import { mount } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 
 Vue.use(Vuetify);
 Vue.use(Vuex);
@@ -28,4 +28,21 @@ const factory = (Component, values = {}) => {
   });
 };
 
-global.factory = factory;
+const shallowFactory = (Component, values = {}) => {
+  return shallowMount(Component, {
+    mocks: {
+      $t: () => {}
+    },
+
+    store,
+
+    data() {
+      return {
+        ...values
+      };
+    }
+  });
+};
+
+global.mount = factory;
+global.shallowMount = shallowFactory;

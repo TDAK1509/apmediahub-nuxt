@@ -2,7 +2,7 @@
     <div>
         <h4 class="subhead">{{ $t("project_payment.project_payment") }}</h4>
 
-        <v-radio-group v-model="radio" column class="flex-grow-1 mt-2">
+        <v-radio-group v-model="paymentMethod" column class="flex-grow-1 mt-2">
             <v-radio
                 v-for="(user, i) in projectPayment"
                 :key="i"
@@ -15,21 +15,26 @@
         <v-slide-y-transition>
             <v-text-field
                 class="mt-0 pt-0"
-                v-show="radio"
+                v-show="paymentMethod"
                 :label="$t('project_payment.payment_amount')"
                 v-model="paymentAmount"
+                :rules="paymentAmountRules"
             ></v-text-field>
         </v-slide-y-transition>
     </div>
 </template>
 
 <script>
+import inputRules from "~/mixins/input-rules";
+
 export default {
     name: "TheProjectPayment",
 
+    mixins: [inputRules],
+
     data() {
         return {
-            radio: "",
+            paymentMethod: "",
             paymentAmount: ""
         };
     },
@@ -42,16 +47,20 @@ export default {
         projectPayment() {
             return [
                 {
-                    text: this.$t("project_payment.one_time"),
+                    text: this.$t("project_payment.fixed"),
                     value: "one-time"
                 },
                 { text: this.$t("project_payment.hour"), value: "hour" }
             ];
         },
 
+        paymentAmountRules() {
+            return !this.paymentMethod ? [] : this.inputRules.required;
+        },
+
         payment() {
             return {
-                payment_method: this.radio,
+                payment_method: this.paymentMethod,
                 payment_amount: this.paymentAmount
             };
         }

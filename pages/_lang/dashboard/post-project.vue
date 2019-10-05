@@ -10,14 +10,17 @@
 
                 <v-card-text class="black--text">
                     <v-form ref="form" class="text-left">
-                        <DatePicker :value.sync="formModel.closing_date" :rules="rules.required"></DatePicker>
+                        <DatePicker
+                            :value.sync="formModel.closing_date"
+                            :rules="inputRules.required"
+                        ></DatePicker>
 
-                        <SelectCountry :value.sync="formModel.country" :rules="rules.required"></SelectCountry>
+                        <SelectCountry :value.sync="formModel.country" :rules="inputRules.required"></SelectCountry>
 
                         <SelectCity
                             :value.sync="formModel.city"
                             :country="formModel.country"
-                            :rules="rules.required"
+                            :rules="inputRules.required"
                         ></SelectCity>
 
                         <v-textarea
@@ -25,7 +28,7 @@
                             :color="inputBorderColor"
                             :label="$t('post_project.project_name')"
                             v-model="formModel.project_name"
-                            :rules="rules.required"
+                            :rules="inputRules.required"
                             clearable
                         ></v-textarea>
 
@@ -39,7 +42,7 @@
 
                         <ThePostProjectProjectCategory
                             :value.sync="formModel.project_category"
-                            :rules="rules.required"
+                            :rules="inputRules.required"
                         ></ThePostProjectProjectCategory>
 
                         <v-text-field
@@ -55,7 +58,7 @@
 
                         <ThePostProjectProjectType :value.sync="formModel.project_type"></ThePostProjectProjectType>
 
-                        <ThePostProjectPayment></ThePostProjectPayment>
+                        <ThePostProjectPayment :value.sync="formModel.payment"></ThePostProjectPayment>
 
                         <div class="d-flex justify-end">
                             <v-btn
@@ -108,8 +111,7 @@ export default {
                 skills: "",
                 service_level: "",
                 project_type: "",
-                payment_method: "",
-                payment_amount: "",
+                payment: null,
                 project_duration: "",
                 time_requirement: "",
                 attachment: "",

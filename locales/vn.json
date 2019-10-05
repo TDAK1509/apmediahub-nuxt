@@ -132,5 +132,12 @@
     "project_type": "Phân loại dự án",
     "one_time": "Dự án một lần",
     "ongoing": "Dự án kéo dài"
+  },
+
+  "project_payment": {
+    "project_payment": "Hình thức thanh toán",
+    "fixed": "Giá cố định (phù hợp cho các dự án một lần)",
+    "hour": "Thanh toán theo giờ (phù hợp cho các dự án kéo dài)",
+    "payment_amount": "Mức giá"
   }
 }
