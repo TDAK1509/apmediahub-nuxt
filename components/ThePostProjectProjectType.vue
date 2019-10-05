@@ -14,9 +14,12 @@
 
         <v-slide-y-transition>
             <v-text-field
+                ref="otherField"
                 class="mt-0 pt-0"
                 v-show="isOther"
+                :color="inputBorderColor"
                 :label="$t('common.other_text')"
+                :rules="otherFieldRules"
                 @input="onInputOtherField"
             ></v-text-field>
         </v-slide-y-transition>
@@ -24,12 +27,17 @@
 </template>
 
 <script>
+import inputRules from "~/mixins/input-rules";
+
 export default {
     name: "TheProjectType",
 
+    mixins: [inputRules],
+
     data() {
         return {
-            radio: ""
+            radio: "",
+            selectedProjectType: ""
         };
     },
 
@@ -51,7 +59,7 @@ export default {
         },
 
         isOther() {
-            return !["one-time", "ongoing"].includes(this.radio);
+            return this.radio === "other";
         },
 
         projectType() {
@@ -60,20 +68,33 @@ export default {
                 { text: this.ongoing, value: "ongoing" },
                 { text: this.other, value: "other" }
             ];
+        },
+
+        otherFieldRules() {
+            return !this.isOther ? [] : this.inputRules.required;
         }
     },
 
     watch: {
         radio(newValue, oldValue) {
-            if (newValue != oldValue) {
-                this.$emit("update:value", newValue);
-            }
+            this.selectedProjectType = newValue;
+            this.focusOtherFieldOnShow();
+        },
+
+        selectedProjectType(newValue, oldValue) {
+            this.$emit("update:value", newValue);
         }
     },
 
     methods: {
         onInputOtherField(value) {
-            this.radio = value;
+            this.selectedProjectType = value;
+        },
+
+        focusOtherFieldOnShow() {
+            if (this.isOther) {
+                this.$nextTick(this.$refs.otherField.focus);
+            }
         }
     }
 };
