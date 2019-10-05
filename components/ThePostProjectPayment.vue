@@ -15,7 +15,9 @@
         <v-slide-y-transition>
             <v-text-field
                 class="mt-0 pt-0"
+                ref="paymentAmount"
                 v-show="paymentMethod"
+                :color="inputBorderColor"
                 :label="$t('project_payment.payment_amount')"
                 v-model="paymentAmount"
                 :rules="paymentAmountRules"
@@ -71,6 +73,16 @@ export default {
             if (newValue != oldValue) {
                 this.$emit("update:value", newValue);
             }
+        },
+
+        paymentMethod(newValue, oldValue) {
+            this.focusPaymentAmount();
+        }
+    },
+
+    methods: {
+        focusPaymentAmount() {
+            this.$nextTick(this.$refs.paymentAmount.focus);
         }
     }
 };
