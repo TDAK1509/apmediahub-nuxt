@@ -17,6 +17,7 @@
                 class="mt-0 pt-0"
                 ref="paymentAmount"
                 v-show="paymentMethod"
+                prefix="đ"
                 :color="inputBorderColor"
                 :label="$t('project_payment.payment_amount')"
                 v-model="paymentAmount"
@@ -57,7 +58,9 @@ export default {
         },
 
         paymentAmountRules() {
-            return !this.paymentMethod ? [] : [this.inputRules.required];
+            return !this.paymentMethod
+                ? []
+                : [this.inputRules.required, this.inputRules.numberOnly];
         },
 
         payment() {

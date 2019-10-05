@@ -71,7 +71,7 @@ export default {
         },
 
         otherFieldRules() {
-            return !this.isOther ? [] : this.inputRules.required;
+            return !this.isOther ? [] : [this.inputRules.required];
         }
     },
 

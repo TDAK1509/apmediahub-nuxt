@@ -27,7 +27,8 @@
       "password_not_match": "Mật khẩu không giống nhau",
       "password_short": "Password phải chứa ít nhất 6 ký tự",
       "empty": "Không được bỏ trống",
-      "server": "Lỗi hệ thống, vui lòng thử lại sau!"
+      "server": "Lỗi hệ thống, vui lòng thử lại sau!",
+      "not_number": "Vui lòng điền một con số"
     }
   },
 

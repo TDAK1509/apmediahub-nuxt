@@ -27,7 +27,8 @@
       "password_not_match": "Passwords do not match",
       "password_short": "Password must be at least 6 characters long",
       "empty": "This field is required",
-      "server": "Something is wrong with our server, please try again later!"
+      "server": "Something is wrong with our server, please try again later!",
+      "not_number": "Please enter a number"
     }
   },
 
