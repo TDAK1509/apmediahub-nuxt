@@ -63,6 +63,14 @@
 
                         <ThePostProjectPayment :value.sync="formModel.payment"></ThePostProjectPayment>
 
+                        <div>
+                            <h4 class="subhead">{{ $t("project_duration.project_duration") }}</h4>
+                            <RadioList
+                                :list="projectDurationList"
+                                :value.sync="formModel.project_duration"
+                            ></RadioList>
+                        </div>
+
                         <div class="d-flex justify-end">
                             <v-btn
                                 color="primary"
@@ -83,6 +91,7 @@
 <script>
 import dashboardTitleMixin from "~/mixins/dashboard-title";
 import inputRules from "~/mixins/input-rules";
+import projectDurationList from "~/mixins/project-duration-list";
 import ThePostProjectProjectCategory from "@/components/ThePostProjectProjectCategory";
 import DashboardServiceLevel from "@/components/DashboardServiceLevel";
 import ThePostProjectProjectType from "@/components/ThePostProjectProjectType";
@@ -98,7 +107,7 @@ export default {
         ThePostProjectPayment
     },
 
-    mixins: [dashboardTitleMixin, inputRules],
+    mixins: [dashboardTitleMixin, inputRules, projectDurationList],
 
     data() {
         return {

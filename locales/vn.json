@@ -140,5 +140,15 @@
     "fixed": "Giá cố định (phù hợp cho các dự án một lần)",
     "hour": "Thanh toán theo giờ (phù hợp cho các dự án kéo dài)",
     "payment_amount": "Mức giá"
+  },
+
+  "project_duration": {
+    "project_duration": "Thời gian của dự án",
+    "less_than_a_week": "Dưới một tuần",
+    "less_than_a_month": "Dưới một tháng",
+    "one_to_three_months": "1 đến 3 tháng",
+    "three_to_six_months": "3 đến 6 tháng",
+    "six_to_twelve_months": "6 đến 12 tháng",
+    "more_than_a_year": "Trên một năm"
   }
 }

@@ -140,5 +140,15 @@
     "fixed": "Pay a fixed price (popular for one-time projects)",
     "hour": "Pay by the hour (popular for ongoing projects)",
     "payment_amount": "Payment amount"
+  },
+
+  "project_duration": {
+    "project_duration": "Project duration",
+    "less_than_a_week": "Less than a week",
+    "less_than_a_month": "Less than a month",
+    "one_to_three_months": "1 to 3 months",
+    "three_to_six_months": "3 to 6 months",
+    "six_to_twelve_months": "6 to 12 months",
+    "more_than_a_year": "More than a year"
   }
 }
