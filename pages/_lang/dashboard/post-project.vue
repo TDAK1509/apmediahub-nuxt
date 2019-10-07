@@ -57,7 +57,13 @@
                             clearable
                         ></v-text-field>
 
-                        <DashboardServiceLevel :value.sync="formModel.service_level"></DashboardServiceLevel>
+                        <div>
+                            <h4 class="subhead">{{ $t("service_level.service_level") }}</h4>
+                            <RadioList
+                                :list="serviceLevelList"
+                                :value.sync="formModel.service_level"
+                            ></RadioList>
+                        </div>
 
                         <ThePostProjectProjectType :value.sync="formModel.type"></ThePostProjectProjectType>
 
@@ -110,6 +116,7 @@ import dashboardTitleMixin from "~/mixins/dashboard-title";
 import inputRules from "~/mixins/input-rules";
 import projectDurationList from "~/mixins/project-duration-list";
 import projectTimeRequirementList from "~/mixins/project-time-requirement-list";
+import serviceLevelList from "~/mixins/service-level-list";
 import ThePostProjectProjectCategory from "@/components/ThePostProjectProjectCategory";
 import DashboardServiceLevel from "@/components/DashboardServiceLevel";
 import ThePostProjectProjectType from "@/components/ThePostProjectProjectType";
@@ -131,7 +138,8 @@ export default {
         dashboardTitleMixin,
         inputRules,
         projectDurationList,
-        projectTimeRequirementList
+        projectTimeRequirementList,
+        serviceLevelList
     ],
 
     data() {
