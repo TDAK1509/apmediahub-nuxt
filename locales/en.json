@@ -83,14 +83,15 @@
     "qualifications_experiences": "Qualifications & experiences",
     "challenges_opportunities": "Challenges & opportunities",
     "application_form": "Application form",
-    "who_can_see": "Who can see"
+    "who_can_see": "Who can see this job?"
   },
 
   "post_project": {
     "project_description": "Project description",
     "project_name": "Project name",
     "project_category": "Project category",
-    "skills": "The most important skills to be required"
+    "skills": "The most important skills to be required",
+    "who_can_see": "Who can see this project?"
   },
 
   "my_information": {
@@ -150,5 +151,24 @@
     "three_to_six_months": "3 to 6 months",
     "six_to_twelve_months": "6 to 12 months",
     "more_than_a_year": "More than a year"
+  },
+
+  "project_time_requirement": {
+    "time_requirement": "Time requirement for the project",
+    "less_than_ten_hours_week": "Less than 10 hrs/week",
+    "ten_to_twenty_hours_week": "10 to 20 hrs/week",
+    "twenty_to_thirty_hours_week": "20 to 30 hrs/week",
+    "thirty_to_forty_hours_week": "30 to 40 hrs/week",
+    "more_than_forty_hours_week": "More than 40 hrs/week",
+    "flexible": "Flexible"
+  },
+
+  "who_can_see": {
+    "all_agencies": "All Agencies (who registered a business plan)",
+    "search_agencies": "Agencies who I will search now",
+    "my_contact_agencies": "Agencies in My Contact",
+    "all_freelancers": "All Freelancers",
+    "search_freelancers": "Freelancers who I will search now",
+    "my_contact_freelancers": "Freelancers in My Contact"
   }
 }

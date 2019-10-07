@@ -129,6 +129,7 @@
 <script>
 import defaultAvatar from "@/assets/images/avatar_default.jpg";
 import dashboardTitleMixin from "~/mixins/dashboard-title";
+import inputRules from "~/mixins/input-rules";
 import ThePostJobJobType from "@/components/ThePostJobJobType";
 
 export default {
@@ -138,7 +139,7 @@ export default {
         ThePostJobJobType
     },
 
-    mixins: [dashboardTitleMixin],
+    mixins: [dashboardTitleMixin, inputRules],
 
     data() {
         return {
@@ -165,10 +166,6 @@ export default {
                     job_description: "",
                     application_form: ""
                 }
-            },
-
-            rules: {
-                required: [v => !!v || this.$t("form.error.empty")]
             }
         };
     },

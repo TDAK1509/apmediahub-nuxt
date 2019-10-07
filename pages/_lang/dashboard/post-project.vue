@@ -30,7 +30,7 @@
                             outlined
                             :color="inputBorderColor"
                             :label="$t('post_project.project_name')"
-                            v-model="formModel.project_name"
+                            v-model="formModel.name"
                             :rules="[inputRules.required]"
                             clearable
                         ></v-textarea>
@@ -39,12 +39,12 @@
                             outlined
                             :color="inputBorderColor"
                             :label="$t('post_project.project_description')"
-                            v-model="formModel.project_description"
+                            v-model="formModel.description"
                             clearable
                         ></v-textarea>
 
                         <ThePostProjectProjectCategory
-                            :value.sync="formModel.project_category"
+                            :value.sync="formModel.category"
                             :rules="[inputRules.required]"
                         ></ThePostProjectProjectCategory>
 
@@ -59,17 +59,34 @@
 
                         <DashboardServiceLevel :value.sync="formModel.service_level"></DashboardServiceLevel>
 
-                        <ThePostProjectProjectType :value.sync="formModel.project_type"></ThePostProjectProjectType>
+                        <ThePostProjectProjectType :value.sync="formModel.type"></ThePostProjectProjectType>
 
                         <ThePostProjectPayment :value.sync="formModel.payment"></ThePostProjectPayment>
 
                         <div>
                             <h4 class="subhead">{{ $t("project_duration.project_duration") }}</h4>
+                            <RadioList :list="projectDurationList" :value.sync="formModel.duration"></RadioList>
+                        </div>
+
+                        <div>
+                            <h4
+                                class="subhead"
+                            >{{ $t("project_time_requirement.time_requirement") }}</h4>
                             <RadioList
-                                :list="projectDurationList"
-                                :value.sync="formModel.project_duration"
+                                :list="projectTimeRequirementList"
+                                :value.sync="formModel.time_requirement"
                             ></RadioList>
                         </div>
+
+                        <v-file-input
+                            show-size
+                            outlined
+                            :label="$t('post_job.attachment')"
+                            append-icon="mdi-paperclip"
+                            prepend-icon
+                        ></v-file-input>
+
+                        <DashboardWhoCanSee :value.sync="formModel.who_can_see"></DashboardWhoCanSee>
 
                         <div class="d-flex justify-end">
                             <v-btn
@@ -92,10 +109,12 @@
 import dashboardTitleMixin from "~/mixins/dashboard-title";
 import inputRules from "~/mixins/input-rules";
 import projectDurationList from "~/mixins/project-duration-list";
+import projectTimeRequirementList from "~/mixins/project-time-requirement-list";
 import ThePostProjectProjectCategory from "@/components/ThePostProjectProjectCategory";
 import DashboardServiceLevel from "@/components/DashboardServiceLevel";
 import ThePostProjectProjectType from "@/components/ThePostProjectProjectType";
 import ThePostProjectPayment from "@/components/ThePostProjectPayment";
+import DashboardWhoCanSee from "@/components/DashboardWhoCanSee";
 
 export default {
     name: "PostProject",
@@ -104,10 +123,16 @@ export default {
         ThePostProjectProjectCategory,
         DashboardServiceLevel,
         ThePostProjectProjectType,
-        ThePostProjectPayment
+        ThePostProjectPayment,
+        DashboardWhoCanSee
     },
 
-    mixins: [dashboardTitleMixin, inputRules, projectDurationList],
+    mixins: [
+        dashboardTitleMixin,
+        inputRules,
+        projectDurationList,
+        projectTimeRequirementList
+    ],
 
     data() {
         return {
@@ -117,14 +142,14 @@ export default {
                 closing_date: new Date().toISOString().substr(0, 10),
                 country: "",
                 city: "",
-                project_name: "",
-                project_description: "",
-                project_category: null,
+                name: "",
+                description: "",
+                category: null,
                 skills: "",
                 service_level: "",
-                project_type: "",
+                type: "",
                 payment: null,
-                project_duration: "",
+                duration: "",
                 time_requirement: "",
                 attachment: "",
                 who_can_see: null

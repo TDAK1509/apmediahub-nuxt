@@ -37,7 +37,7 @@
       "client": "Nhà Tuyển Dụng",
       "agency": "Nhà Môi Giới",
       "journalist": "Nhà Báo",
-      "freelancer": "Nhà Tự Do"
+      "freelancer": "Người Làm Việc Tự Do"
     }
   },
 
@@ -83,14 +83,15 @@
     "qualifications_experiences": "Bằng cấp & kinh nghiệm",
     "challenges_opportunities": "Khó khăn & cơ hội",
     "application_form": "Đơn ứng cử",
-    "who_can_see": "Ai có thể nhìn thấy"
+    "who_can_see": "Ai có thể nhìn thấy công việc này?"
   },
 
   "post_project": {
     "project_description": "Mô tả dự án",
     "project_name": "Tên dự án",
     "project_category": "Lĩnh vực của dự án",
-    "skills": "Những kĩ năng quan trọng cần có"
+    "skills": "Những kĩ năng quan trọng cần có",
+    "who_can_see": "Ai có thể nhìn thấy dự án này?"
   },
 
   "my_information": {
@@ -150,5 +151,24 @@
     "three_to_six_months": "3 đến 6 tháng",
     "six_to_twelve_months": "6 đến 12 tháng",
     "more_than_a_year": "Trên một năm"
+  },
+
+  "project_time_requirement": {
+    "time_requirement": "Yêu cầu giờ làm việc cho dự án",
+    "less_than_ten_hours_week": "Dưới 10 giờ/tuần",
+    "ten_to_twenty_hours_week": "10 đến 20 giờ/tuần",
+    "twenty_to_thirty_hours_week": "20 đến 30 giờ/tuần",
+    "thirty_to_forty_hours_week": "30 đến 40 giờ/tuần",
+    "more_than_forty_hours_week": "Trên 40 giờ/tuần",
+    "flexible": "Linh động"
+  },
+
+  "who_can_see": {
+    "all_agencies": "Tất cả Nhà Môi Giới",
+    "search_agencies": "Những Nhà Môi Giới tôi tìm bây giờ",
+    "my_contact_agencies": "Những Nhà Môi Giới trong danh bạ của tôi",
+    "all_freelancers": "Tất cả Người Làm Việc Tự Do",
+    "search_freelancers": "Những Người Làm Việc Tự Do tôi tìm bây giờ",
+    "my_contact_freelancers": "Những Người Làm Việc Tự Do trong danh bạ của tôi"
   }
 }

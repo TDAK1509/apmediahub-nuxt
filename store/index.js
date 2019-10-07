@@ -2,7 +2,8 @@ export const state = () => ({
   locales: ["vn", "en"],
   locale: "vn",
   dashboardPageTitle: "",
-  inputBorderColor: "blue darken-3"
+  inputBorderColor: "blue darken-3",
+  currentUser: null
 });
 
 export const mutations = {
@@ -14,5 +15,9 @@ export const mutations = {
 
   setPageTitle(state, title) {
     state.dashboardPageTitle = title;
+  },
+
+  setCurrentUser(state, payload) {
+    state.currentUser = payload;
   }
 };

@@ -35,6 +35,17 @@ export default {
         title() {
             return this.dashboardPageTitle;
         }
+    },
+
+    methods: {
+        async getCurrentUser() {
+            const currentUser = await this.apiGetCurrentUser();
+            this.$store.commit("setCurrentUser", currentUser);
+        }
+    },
+
+    async created() {
+        await this.getCurrentUser();
     }
 };
 </script>

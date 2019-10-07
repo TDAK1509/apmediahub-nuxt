@@ -31,7 +31,11 @@ export default {
     middleware: "i18n"
   },
 
-  plugins: ["~/plugins/global_components.js", "~/plugins/i18n.js"],
+  plugins: [
+    "~/plugins/global_components.js",
+    "~/plugins/i18n.js",
+    "~/plugins/api.js"
+  ],
 
   buildModules: ["@nuxtjs/vuetify"],
 
