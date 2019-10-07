@@ -19,12 +19,6 @@ describe("RadioList.vue", () => {
     };
   });
 
-  it("emit update value on change radio", () => {
-    const wrapper = shallowMount(RadioList);
-    wrapper.vm.radio = "hahaha";
-    expect(wrapper.emitted("update:value")).toBeTruthy();
-  });
-
   it("receive list prop", () => {
     const wrapper = shallowMount(RadioList);
     wrapper.setProps(prop);
@@ -43,5 +37,13 @@ describe("RadioList.vue", () => {
     const radio = wrapper.findAll(".v-radio");
     const propLength = wrapper.props("list").length;
     expect(radio.length).toBe(propLength);
+  });
+
+  it("emit update value on change radio", () => {
+    const wrapper = mount(RadioList);
+    wrapper.setProps(prop);
+    const radio = wrapper.find(".v-label");
+    radio.trigger("click");
+    expect(wrapper.emitted("update:value")).toBeTruthy();
   });
 });

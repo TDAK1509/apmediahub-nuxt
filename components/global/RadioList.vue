@@ -1,5 +1,5 @@
 <template>
-    <v-radio-group v-model="radio" column class="flex-grow-1 mt-2 pt-0">
+    <v-radio-group v-model="radio" column class="flex-grow-1 mt-2 pt-0" @change="onChangeRadio">
         <v-radio
             v-for="(item, i) in list"
             :key="i"
@@ -30,9 +30,9 @@ export default {
         }
     },
 
-    watch: {
-        radio(newValue, oldValue) {
-            this.$emit("update:value", newValue);
+    methods: {
+        onChangeRadio(value) {
+            this.$emit("update:value", value);
         }
     }
 };
