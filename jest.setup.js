@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
 import Vuex from "vuex";
+
 import { mount, shallowMount } from "@vue/test-utils";
 
 Vue.use(Vuetify);
@@ -10,7 +11,11 @@ const state = {
   inputBorderColor: ""
 };
 
-const store = new Vuex.Store({ state });
+const mutations = {
+  SET_PAGE_TITLE() {}
+};
+
+const store = new Vuex.Store({ state, mutations });
 
 const factory = (Component, values = {}) => {
   return mount(Component, {
@@ -44,5 +49,5 @@ const shallowFactory = (Component, values = {}) => {
   });
 };
 
-global.mount = factory;
-global.shallowMount = shallowFactory;
+global.factory = factory;
+global.shallowFactory = shallowFactory;

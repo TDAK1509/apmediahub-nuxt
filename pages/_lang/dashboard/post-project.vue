@@ -79,7 +79,7 @@
                     prepend-icon
                 ></v-file-input>
 
-                <DashboardWhoCanSee :value.sync="formModel.who_can_see"></DashboardWhoCanSee>
+                <WhoCanSee :value.sync="formModel.who_can_see"></WhoCanSee>
 
                 <div class="d-flex justify-end">
                     <v-btn
@@ -103,20 +103,18 @@ import projectDurationList from "~/mixins/project-duration-list";
 import projectTimeRequirementList from "~/mixins/project-time-requirement-list";
 import serviceLevelList from "~/mixins/service-level-list";
 import ThePostProjectProjectCategory from "@/components/ThePostProjectProjectCategory";
-import DashboardServiceLevel from "@/components/DashboardServiceLevel";
 import ThePostProjectProjectType from "@/components/ThePostProjectProjectType";
 import ThePostProjectPayment from "@/components/ThePostProjectPayment";
-import DashboardWhoCanSee from "@/components/DashboardWhoCanSee";
+import WhoCanSee from "@/components/DashboardWhoCanSee";
 
 export default {
     name: "PostProject",
 
     components: {
         ThePostProjectProjectCategory,
-        DashboardServiceLevel,
         ThePostProjectProjectType,
         ThePostProjectPayment,
-        DashboardWhoCanSee
+        WhoCanSee
     },
 
     mixins: [

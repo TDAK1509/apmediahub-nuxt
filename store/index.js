@@ -13,11 +13,11 @@ export const mutations = {
     }
   },
 
-  setPageTitle(state, title) {
+  SET_PAGE_TITLE(state, title) {
     state.dashboardPageTitle = title;
   },
 
-  setCurrentUser(state, payload) {
+  SET_CURRENT_USER(state, payload) {
     state.currentUser = payload;
   }
 };

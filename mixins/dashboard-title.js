@@ -6,6 +6,6 @@ export default {
   },
 
   mounted() {
-    this.$store.commit("setPageTitle", this.title);
+    this.$store.commit("SET_PAGE_TITLE", this.title);
   }
 };

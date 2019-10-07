@@ -8,7 +8,7 @@
             multiple
             outlined
             :color="inputBorderColor"
-            @change="$emit('change', value)"
+            @change="$emit('update:value', value)"
             :rules="rules"
             :menu-props="{offsetY: true, transition: 'slide-y-reverse-transition'}"
         ></v-select>
