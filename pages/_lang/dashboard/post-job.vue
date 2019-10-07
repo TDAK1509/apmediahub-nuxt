@@ -84,29 +84,7 @@
                                 prepend-icon
                             ></v-file-input>
 
-                            <v-subheader class="px-0 text-uppercase">{{$t('post_job.who_can_see')}}</v-subheader>
-
-                            <div class="d-flex">
-                                <v-radio-group column class="flex-grow-1 mt-0 pt-0">
-                                    <v-radio
-                                        v-for="(user, i) in whoCanSeeJournalist"
-                                        :key="`journalist${i}`"
-                                        :label="user.text"
-                                        :value="user.value"
-                                        color="warning"
-                                    ></v-radio>
-                                </v-radio-group>
-
-                                <v-radio-group column class="flex-grow-1 mt-0 pt-0">
-                                    <v-radio
-                                        v-for="(user, i) in whoCanSeeFreelancer"
-                                        :key="`freelancer${i}`"
-                                        :label="user.text"
-                                        :value="user.value"
-                                        color="success"
-                                    ></v-radio>
-                                </v-radio-group>
-                            </div>
+                            <DashboardWhoCanSee :value.sync="formModel.who_can_see"></DashboardWhoCanSee>
                         </div>
 
                         <div class="d-flex justify-end">
@@ -131,12 +109,14 @@ import defaultAvatar from "@/assets/images/avatar_default.jpg";
 import dashboardTitleMixin from "~/mixins/dashboard-title";
 import inputRules from "~/mixins/input-rules";
 import ThePostJobJobType from "@/components/ThePostJobJobType";
+import DashboardWhoCanSee from "@/components/DashboardWhoCanSee";
 
 export default {
     name: "PostJob",
 
     components: {
-        ThePostJobJobType
+        ThePostJobJobType,
+        DashboardWhoCanSee
     },
 
     mixins: [dashboardTitleMixin, inputRules],
@@ -165,7 +145,8 @@ export default {
                 attachment: {
                     job_description: "",
                     application_form: ""
-                }
+                },
+                who_can_see: null
             }
         };
     },
