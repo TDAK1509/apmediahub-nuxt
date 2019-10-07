@@ -1,107 +1,101 @@
 <template>
-    <v-row>
-        <v-col justify="center" align="center">
-            <v-card max-width="700">
-                <v-card-title class="d-flex flex-column">
-                    <div class="d-flex align-center">
-                        <v-avatar size="36px">
-                            <img :src="avatar" alt="Avatar / Logo" />
-                        </v-avatar>
+    <v-card max-width="700">
+        <v-card-title class="d-flex flex-column">
+            <div class="d-flex align-center">
+                <v-avatar size="36px">
+                    <img :src="avatar" alt="Avatar / Logo" />
+                </v-avatar>
 
-                        <h4 class="headline ml-5">Company name</h4>
-                    </div>
+                <h4 class="headline ml-5">Company name</h4>
+            </div>
 
-                    <h4
-                        class="headline text-uppercase mt-2 primary--text"
-                    >{{$t('post_job.job_description')}}</h4>
-                </v-card-title>
-                <v-card-text class="black--text">
-                    <v-form ref="form" class="text-left">
-                        <div class="job-description">
-                            <v-subheader
-                                class="px-0 text-uppercase"
-                            >{{$t('post_job.general_information')}}</v-subheader>
+            <h4
+                class="headline text-uppercase mt-2 primary--text"
+            >{{$t('post_job.job_description')}}</h4>
+        </v-card-title>
+        <v-card-text class="black--text">
+            <v-form ref="form" class="text-left">
+                <div class="job-description">
+                    <v-subheader class="px-0 text-uppercase">{{$t('post_job.general_information')}}</v-subheader>
 
-                            <DatePicker :value.sync="formModel.closing_date"></DatePicker>
+                    <DatePicker :value.sync="formModel.closing_date"></DatePicker>
 
-                            <template v-for="f in formTextField">
-                                <SelectCountry
-                                    v-if="f.value_key === 'country'"
-                                    :value.sync="formModel.country"
-                                ></SelectCountry>
+                    <template v-for="f in formTextField">
+                        <SelectCountry
+                            v-if="f.value_key === 'country'"
+                            :value.sync="formModel.country"
+                        ></SelectCountry>
 
-                                <SelectCity
-                                    v-else-if="f.value_key === 'city'"
-                                    :value.sync="formModel.city"
-                                    :country="formModel.country"
-                                ></SelectCity>
+                        <SelectCity
+                            v-else-if="f.value_key === 'city'"
+                            :value.sync="formModel.city"
+                            :country="formModel.country"
+                        ></SelectCity>
 
-                                <ThePostJobJobType
-                                    v-else-if="f.value_key === 'job_type'"
-                                    :value.sync="formModel.job_type"
-                                />
+                        <ThePostJobJobType
+                            v-else-if="f.value_key === 'job_type'"
+                            :value.sync="formModel.job_type"
+                        />
 
-                                <v-text-field
-                                    v-else
-                                    :key="f.value_key"
-                                    :label="$t(f.label_key)"
-                                    type="text"
-                                    outlined
-                                    :color="inputBorderColor"
-                                    :rules="f.rules"
-                                    v-model="formModel[f.value_key]"
-                                    clearable
-                                ></v-text-field>
-                            </template>
+                        <v-text-field
+                            v-else
+                            :key="f.value_key"
+                            :label="$t(f.label_key)"
+                            type="text"
+                            outlined
+                            :color="inputBorderColor"
+                            :rules="f.rules"
+                            v-model="formModel[f.value_key]"
+                            clearable
+                        ></v-text-field>
+                    </template>
 
-                            <v-subheader class="px-0 text-uppercase">{{$t('post_job.details')}}</v-subheader>
+                    <v-subheader class="px-0 text-uppercase">{{$t('post_job.details')}}</v-subheader>
 
-                            <v-textarea
-                                v-for="f in formTextArea"
-                                outlined
-                                :color="inputBorderColor"
-                                :key="f.value_key"
-                                :label="$t(f.label_key)"
-                                v-model="formModel[f.value_key]"
-                                clearable
-                            ></v-textarea>
+                    <v-textarea
+                        v-for="f in formTextArea"
+                        outlined
+                        :color="inputBorderColor"
+                        :key="f.value_key"
+                        :label="$t(f.label_key)"
+                        v-model="formModel[f.value_key]"
+                        clearable
+                    ></v-textarea>
 
-                            <v-subheader class="px-0 text-uppercase">{{$t('post_job.attachment')}}</v-subheader>
+                    <v-subheader class="px-0 text-uppercase">{{$t('post_job.attachment')}}</v-subheader>
 
-                            <v-file-input
-                                show-size
-                                outlined
-                                :label="$t('post_job.job_description')"
-                                append-icon="mdi-paperclip"
-                                prepend-icon
-                            ></v-file-input>
+                    <v-file-input
+                        show-size
+                        outlined
+                        :label="$t('post_job.job_description')"
+                        append-icon="mdi-paperclip"
+                        prepend-icon
+                    ></v-file-input>
 
-                            <v-file-input
-                                show-size
-                                outlined
-                                :label="$t('post_job.application_form')"
-                                append-icon="mdi-paperclip"
-                                prepend-icon
-                            ></v-file-input>
+                    <v-file-input
+                        show-size
+                        outlined
+                        :label="$t('post_job.application_form')"
+                        append-icon="mdi-paperclip"
+                        prepend-icon
+                    ></v-file-input>
 
-                            <DashboardWhoCanSee :value.sync="formModel.who_can_see"></DashboardWhoCanSee>
-                        </div>
+                    <DashboardWhoCanSee :value.sync="formModel.who_can_see"></DashboardWhoCanSee>
+                </div>
 
-                        <div class="d-flex justify-end">
-                            <v-btn
-                                color="primary"
-                                class="px-8"
-                                ref="postButton"
-                                :loading="posting"
-                                :disabled="posting"
-                                @click="postJob"
-                            >{{$t("dashboard.post_job")}}</v-btn>
-                        </div>
-                    </v-form>
-                </v-card-text>
-            </v-card>
-        </v-col>
-    </v-row>
+                <div class="d-flex justify-end">
+                    <v-btn
+                        color="primary"
+                        class="px-8"
+                        ref="postButton"
+                        :loading="posting"
+                        :disabled="posting"
+                        @click="postJob"
+                    >{{$t("dashboard.post_job")}}</v-btn>
+                </div>
+            </v-form>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>

@@ -8,7 +8,11 @@
             <v-container fluid>
                 <DashboardContentTitle>{{title}}</DashboardContentTitle>
 
-                <nuxt-child />
+                <v-row class="mx-1">
+                    <v-col justify="center" align="center">
+                        <nuxt-child />
+                    </v-col>
+                </v-row>
             </v-container>
         </v-content>
     </v-app>
