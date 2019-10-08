@@ -1,42 +1,60 @@
 <template>
-    <v-form ref="form">
-        <div class="search-panel d-flex flex-column justify-center" v-if="showSearchPanel">
-            <div class="search-panel-block d-flex justify-start align-center mb-2">
+    <v-form ref="form" class="text-left">
+        <div class="search-panel d-flex flex-column justify-center">
+            <div class="search-panel-block d-flex justify-start align-center flex-wrap">
                 <SearchFilterItem
-                    class="mr-2"
+                    class="mr-2 mb-2"
                     v-for="(f, index) in selectedCountries"
                     :key="`countryFilter${index}`"
                     @remove="removeFromSelectedCountries(f)"
                 >{{f}}</SearchFilterItem>
             </div>
 
-            <div class="search-panel-block d-flex justify-start mb-2">
+            <div class="search-panel-block d-flex justify-start flex-wrap">
                 <SearchFilterItem
-                    class="mr-2"
+                    class="mr-2 mb-2"
                     v-for="(f, index) in selectedCities"
                     :key="`cityFilter${index}`"
+                    @remove="removeFromSelectedCities(f)"
                 >{{f}}</SearchFilterItem>
             </div>
 
-            <div class="search-panel-block d-flex justify-start mb-2">
+            <div class="search-panel-block d-flex justify-start flex-wrap">
                 <SearchFilterItem
-                    class="mr-2"
-                    v-show="selectedServiceLevel"
-                >{{selectedServiceLevel}}</SearchFilterItem>
-            </div>
-
-            <div class="search-panel-block d-flex justify-start mb-2">
-                <SearchFilterItem
-                    class="mr-2"
-                    v-for="(f, index) in selectedServices"
+                    class="mr-2 mb-2"
+                    v-for="(f, index) in selectedServicesText"
                     :key="`serviceFilter${index}`"
-                >{{f}}</SearchFilterItem>
+                    @remove="removeFromSelectedServices(f.value)"
+                >{{f.text}}</SearchFilterItem>
             </div>
         </div>
 
-        <SelectWithPanel :items="countryList" :label="countryLabel" :value.sync="selectedCountries"></SelectWithPanel>
+        <SearchUserSelectMultiple
+            :items="countryList"
+            :label="countryLabel"
+            @change="removeFromSelectedCountries"
+            :value.sync="selectedCountries"
+        ></SearchUserSelectMultiple>
 
-        <SelectWithPanel :items="cityList" :label="cityLabel" :value.sync="selectedCities"></SelectWithPanel>
+        <SearchUserSelectMultiple
+            :items="cityList"
+            :label="cityLabel"
+            @change="removeFromSelectedCities"
+            :value.sync="selectedCities"
+        ></SearchUserSelectMultiple>
+
+        <SearchUserSelect
+            :items="serviceLevelListWithAllField"
+            :label="$t('service_level.service_level')"
+            :value.sync="selectedServiceLevel"
+        ></SearchUserSelect>
+
+        <SearchUserSelectMultiple
+            :items="serviceList"
+            :label="$t('search_user.services')"
+            @change="removeFromSelectedServices"
+            :value.sync="selectedServices"
+        ></SearchUserSelectMultiple>
 
         <div class="d-flex justify-start">
             <v-btn
@@ -45,7 +63,7 @@
                 ref="postButton"
                 :loading="searching"
                 :disabled="searching"
-                @click="searchForAgency"
+                @click="doSearchAction"
             >
                 {{$t("common.search")}}
                 <v-icon right dark>mdi-magnify</v-icon>
@@ -57,15 +75,26 @@
 <script>
 import mixinDashboardTitle from "~/mixins/dashboard-title";
 import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
+import mixinServiceLevelList from "~/mixins/service-level-list";
+import mixinServiceList from "~/mixins/service-list";
 import SearchFilterItem from "@/components/DashboardSearchFilterItem";
+import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
+import SearchUserSelect from "@/components/DashboardSearchUserSelect";
 
 export default {
     name: "SearchForAgency",
 
-    mixins: [mixinDashboardTitle, mixinCountryCityListForSearchUser],
+    mixins: [
+        mixinDashboardTitle,
+        mixinCountryCityListForSearchUser,
+        mixinServiceLevelList,
+        mixinServiceList
+    ],
 
     components: {
-        SearchFilterItem
+        SearchFilterItem,
+        SearchUserSelectMultiple,
+        SearchUserSelect
     },
 
     data() {
@@ -84,6 +113,28 @@ export default {
             return this.$t("common.search") + " " + this.$t("user.role.agency");
         },
 
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        },
+
+        serviceLevelListWithAllField() {
+            const all = {
+                text: this.$t("common.all"),
+                value: ""
+            };
+
+            return [all, ...this.serviceLevelList];
+        },
+
+        selectedServicesText() {
+            return this.selectedServices.map(serviceKey => {
+                return {
+                    text: this.$t(`services.${serviceKey}`),
+                    value: serviceKey
+                };
+            });
+        },
+
         search() {
             return {
                 countries: this.selectedCountries,
@@ -91,15 +142,6 @@ export default {
                 serviceLevel: this.selectedServiceLevel,
                 services: this.selectedServices
             };
-        },
-
-        showSearchPanel() {
-            return (
-                !!this.selectedCountries.length ||
-                !!this.selectedCities.length ||
-                !!this.selectedServiceLevel ||
-                !!this.selectedServices.length
-            );
         }
     },
 
@@ -114,17 +156,16 @@ export default {
             this.selectedCities.splice(index, 1);
         },
 
-        removeSelectedServiceLevel() {
-            this.selectedServiceLevel = "";
-        },
-
         removeFromSelectedServices(service) {
             const index = this.selectedServices.indexOf(service);
             this.selectedServices.splice(index, 1);
         },
 
-        searchForAgency() {
-            console.log("search");
+        async doSearchAction() {
+            const result = await this.$axios.$get(
+                "https://jsonplaceholder.typicode.com/todos/1"
+            );
+            console.log(result);
         }
     }
 };

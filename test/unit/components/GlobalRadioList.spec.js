@@ -28,7 +28,7 @@ describe("RadioList.vue", () => {
   it("has no radio if no list prop received", () => {
     const wrapper = factory(RadioList);
     const radio = wrapper.findAll(".v-radio");
-    expect(radio.length).toBe(0);
+    expect(radio).toHaveLength(0);
   });
 
   it("has number of radios equal to list prop length", () => {
@@ -36,7 +36,7 @@ describe("RadioList.vue", () => {
     wrapper.setProps(prop);
     const radio = wrapper.findAll(".v-radio");
     const propLength = wrapper.props("list").length;
-    expect(radio.length).toBe(propLength);
+    expect(radio).toHaveLength(propLength);
   });
 
   it("emit update value on change radio", () => {

@@ -4,7 +4,7 @@ describe("ThePostProjectProjectType.vue", () => {
   it("has 3 radio buttons", () => {
     const wrapper = factory(ThePostProjectProjectType);
     const radio = wrapper.findAll(".v-radio");
-    expect(radio.length).toBe(3);
+    expect(radio).toHaveLength(3);
   });
 
   it("emit update value on select radio buttons", () => {

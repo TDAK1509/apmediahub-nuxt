@@ -64,7 +64,8 @@
     "country": "Quốc gia",
     "city": "Thành phố",
     "other": "Khác",
-    "other_text": "Nếu chọn khác, vui lòng ghi rõ"
+    "other_text": "Nếu chọn khác, vui lòng ghi rõ",
+    "all": "Tất cả"
   },
 
   "post_job": {
@@ -170,5 +171,9 @@
     "all_freelancers": "Tất cả Người Làm Việc Tự Do",
     "search_freelancers": "Những Người Làm Việc Tự Do tôi tìm bây giờ",
     "my_contact_freelancers": "Những Người Làm Việc Tự Do trong danh bạ của tôi"
+  },
+
+  "search_user": {
+    "services": "Dịch vụ chính"
   }
 }

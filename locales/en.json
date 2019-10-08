@@ -64,7 +64,8 @@
     "country": "Country",
     "city": "City",
     "other": "Other",
-    "other_text": "If other, please specify"
+    "other_text": "If other, please specify",
+    "all": "All"
   },
 
   "post_job": {
@@ -170,5 +171,9 @@
     "all_freelancers": "All Freelancers",
     "search_freelancers": "Freelancers who I will search now",
     "my_contact_freelancers": "Freelancers in My Contact"
+  },
+
+  "search_user": {
+    "services": "Services"
   }
 }
