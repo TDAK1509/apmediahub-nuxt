@@ -4,7 +4,7 @@
             <div class="search-panel-block d-flex justify-start align-center flex-wrap">
                 <SearchFilterItem
                     class="mr-2 mb-2"
-                    v-for="(f, index) in selectedCountries"
+                    v-for="(f, index) in countries"
                     :key="`countryFilter${index}`"
                     @remove="removeFromSelectedCountries(f)"
                 >{{f}}</SearchFilterItem>
@@ -13,7 +13,7 @@
             <div class="search-panel-block d-flex justify-start flex-wrap">
                 <SearchFilterItem
                     class="mr-2 mb-2"
-                    v-for="(f, index) in selectedCities"
+                    v-for="(f, index) in cities"
                     :key="`cityFilter${index}`"
                     @remove="removeFromSelectedCities(f)"
                 >{{f}}</SearchFilterItem>
@@ -22,7 +22,7 @@
             <div class="search-panel-block d-flex justify-start flex-wrap">
                 <SearchFilterItem
                     class="mr-2 mb-2"
-                    v-for="(f, index) in selectedServicesText"
+                    v-for="(f, index) in servicesForSearchFilter"
                     :key="`serviceFilter${index}`"
                     @remove="removeFromSelectedServices(f.value)"
                 >{{f.text}}</SearchFilterItem>
@@ -32,28 +32,21 @@
         <SearchUserSelectMultiple
             :items="countryList"
             :label="countryLabel"
-            @change="removeFromSelectedCountries"
-            :value.sync="selectedCountries"
+            :value.sync="countries"
         ></SearchUserSelectMultiple>
 
-        <SearchUserSelectMultiple
-            :items="cityList"
-            :label="cityLabel"
-            @change="removeFromSelectedCities"
-            :value.sync="selectedCities"
-        ></SearchUserSelectMultiple>
+        <SearchUserSelectMultiple :items="cityList" :label="cityLabel" :value.sync="cities"></SearchUserSelectMultiple>
 
         <SearchUserSelect
             :items="serviceLevelListWithAllField"
             :label="$t('service_level.service_level')"
-            :value.sync="selectedServiceLevel"
+            :value.sync="serviceLevel"
         ></SearchUserSelect>
 
         <SearchUserSelectMultiple
             :items="serviceList"
             :label="$t('search_user.services')"
-            @change="removeFromSelectedServices"
-            :value.sync="selectedServices"
+            :value.sync="services"
         ></SearchUserSelectMultiple>
 
         <div class="d-flex justify-start">
@@ -101,10 +94,10 @@ export default {
         return {
             searching: false,
 
-            selectedCountries: [],
-            selectedCities: [],
-            selectedServiceLevel: "",
-            selectedServices: []
+            countries: [],
+            cities: [],
+            serviceLevel: "",
+            services: []
         };
     },
 
@@ -126,8 +119,8 @@ export default {
             return [all, ...this.serviceLevelList];
         },
 
-        selectedServicesText() {
-            return this.selectedServices.map(serviceKey => {
+        servicesForSearchFilter() {
+            return this.services.map(serviceKey => {
                 return {
                     text: this.$t(`services.${serviceKey}`),
                     value: serviceKey
@@ -137,28 +130,28 @@ export default {
 
         search() {
             return {
-                countries: this.selectedCountries,
-                cities: this.selectedCities,
-                serviceLevel: this.selectedServiceLevel,
-                services: this.selectedServices
+                countries: this.countries,
+                cities: this.cities,
+                serviceLevel: this.serviceLevel,
+                services: this.services
             };
         }
     },
 
     methods: {
         removeFromSelectedCountries(country) {
-            const index = this.selectedCountries.indexOf(country);
-            this.selectedCountries.splice(index, 1);
+            const index = this.countries.indexOf(country);
+            this.countries.splice(index, 1);
         },
 
         removeFromSelectedCities(city) {
-            const index = this.selectedCities.indexOf(city);
-            this.selectedCities.splice(index, 1);
+            const index = this.cities.indexOf(city);
+            this.cities.splice(index, 1);
         },
 
         removeFromSelectedServices(service) {
-            const index = this.selectedServices.indexOf(service);
-            this.selectedServices.splice(index, 1);
+            const index = this.services.indexOf(service);
+            this.services.splice(index, 1);
         },
 
         async doSearchAction() {

@@ -10,11 +10,11 @@ export default {
     },
 
     cityList() {
-      if (!this.selectedCountries || !this.selectedCountries.length) return [];
+      if (!this.countries || !this.countries.length) return [];
 
       let result = [];
 
-      this.selectedCountries.forEach(country => {
+      this.countries.forEach(country => {
         const cities = countryCityList[country].city.sort();
         result = [...result, ...cities];
       });
