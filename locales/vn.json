@@ -175,5 +175,162 @@
 
   "search_user": {
     "services": "Dịch vụ chính"
+  },
+
+  "segments": {
+    "art_culture": {
+      "text": "Arts & Culture",
+      "child": {
+        "art_culture_literature": "Arts/Culture/Literature",
+        "home_decoration_interior_design": "Home/Decoration/Interior Design",
+        "photography": "Photography"
+      }
+    },
+
+    "business_finance": {
+      "text": "Business & Finance",
+      "child": {
+        "business_finance_economy": "Business/Finance/Economy",
+        "real_estate": "Real Estate",
+        "securities_trading": "Securities & Trading",
+        "sme_m_a": "SME/M&A",
+        "start_up_fintech": "Start up/Fintech"
+      }
+    },
+
+    "communication_media": {
+      "text": "Communication & Media",
+      "child": {
+        "broadcast_cable_television_guide": "Broadcast/cable television guide",
+        "internet_blog_social_media": "Internet/Blog/Social Media",
+        "tv_mdia_newspaper": "TV/Media/Newspaper",
+        "pr_marketing_advertising": "PR/Marketing/Advertising",
+        "classified_ads": "Classified Ads"
+      }
+    },
+
+    "education_training": {
+      "text": "Education & Training",
+      "child": {
+        "education_science": "Education/Science",
+        "trading_online_course": "Training/Online Course",
+        "consulting": "Consulting"
+      }
+    },
+
+    "fmcg_retail": {
+      "text": "FMCG & Retail",
+      "child": {
+        "automobiles": "Automobiles",
+        "e_commerce": "E-Commerce",
+        "fmcg_retail": "FMCG/Retail",
+        "industrial_products": "Industrial Products",
+        "manufacturing": "Manufacturing"
+      }
+    },
+
+    "government": {
+      "text": "Government",
+      "child": {
+        "csr_environment": "CSR/Environment",
+        "government_public_affair": "Government/Public Affair",
+        "ngo_non_profit": "NGO/Non-Profit",
+        "politics": "Politics",
+        "transportation_infrastructure": "Transportation/Infrastructure",
+        "energy_renewable_resource": "Energy/Renewable Resource"
+      }
+    },
+
+    "health_medical_care": {
+      "text": "Health & Medical Care",
+      "child": {
+        "health_medical_care": "Health/Medical Care",
+        "pharmaceutical_biotech": "Pharmaceutical/Biotech"
+      }
+    },
+
+    "hospitality_tourism": {
+      "text": "Hospitality & Tourism",
+      "child": {
+        "entertainment_comics_horoscopes": "Entertainment/Comics/Horoscopes",
+        "events_movies_music_comedies": "Events/Movies/Music/Comedies",
+        "tourism_travel_tips": "Tourism/Travel Tips"
+      }
+    },
+
+    "information_technology": {
+      "text": "Information Technology",
+      "child": {
+        "computer": "Computer",
+        "electronics": "Handhelds/Electronics/Gadgets",
+        "hightech": "HighTech/4.0 Revolution",
+        "gaming": "Gaming/Esport"
+      }
+    },
+
+    "lifestyle": {
+      "text": "Lifestyle",
+      "child": {
+        "beauty": "Beauty & Grooming",
+        "cooking": "Cooking/Cuisine",
+        "fashion": "Fashion/Lifestyle",
+        "food": "Food/Beverage",
+        "kids": "Kids/Youth",
+        "women": "Women's Interest",
+        "men": "Men's Interest",
+        "spa": "Spa & Wellness",
+        "pets": "Pets",
+        "nature": "Nature & Wildlife",
+        "showbiz": "Showbiz/Celebrity"
+      }
+    },
+
+    "news": {
+      "text": "News",
+      "child": {
+        "breaking": "Breaking News",
+        "general": "General News",
+        "local": "Local News",
+        "international": "International News",
+        "legal": "Legal News/Crime & Court"
+      }
+    },
+
+    "society_people": {
+      "text": "Society & People",
+      "child": {
+        "interview": "Interview",
+        "letter_from_reader": "Letter from the reader",
+        "opinion": "Opinion/Editorial",
+        "society": "Society/People",
+        "family": "Family/Relationship/Parenting"
+      }
+    },
+
+    "sport": {
+      "text": "Sport",
+      "child": {
+        "football": "Football",
+        "fitness": "Cardio & Fitness",
+        "mma": "MMA",
+        "basketball": "Basketball",
+        "other": "Trekking/Running/Other Sports"
+      }
+    },
+
+    "others": {
+      "text": "Others",
+      "child": {
+        "agriculture": "Agriculture/Rural",
+        "career": "Career",
+        "expatriate": "Expatriate",
+        "weather": "Weather",
+        "others": "Others"
+      }
+    }
+  },
+
+  "search_for_journalist": {
+    "segment_category": "Đề tài"
   }
 }

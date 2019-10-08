@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex flex-column">
-        <h4 class="subhead mb-1">{{ label }}</h4>
+        <h4 class="subhead mb-1" v-if="label">{{ label }}</h4>
 
         <v-select
             v-model="value"
@@ -22,10 +22,7 @@ export default {
 
     props: {
         items: Array,
-        label: {
-            type: String,
-            default: "Select with panel"
-        },
+        label: String,
         rules: Array
     },
 

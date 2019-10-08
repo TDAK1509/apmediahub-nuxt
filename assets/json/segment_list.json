@@ -1,0 +1,84 @@
+{
+  "art_culture": [
+    "art_culture_literature",
+    "home_decoration_interior_design",
+    "photography"
+  ],
+
+  "business_finance": [
+    "business_finance_economy",
+    "real_estate",
+    "securities_trading",
+    "sme_m_a",
+    "start_up_fintech"
+  ],
+
+  "communication_media": [
+    "broadcast_cable_television_guide",
+    "internet_blog_social_media",
+    "tv_mdia_newspaper",
+    "pr_marketing_advertising",
+    "classified_ads"
+  ],
+
+  "education_training": [
+    "education_science",
+    "trading_online_course",
+    "consulting"
+  ],
+
+  "fmcg_retail": [
+    "automobiles",
+    "e_commerce",
+    "fmcg_retail",
+    "industrial_products",
+    "manufacturing"
+  ],
+
+  "government": [
+    "csr_environment",
+    "government_public_affair",
+    "ngo_non_profit",
+    "politics",
+    "transportation_infrastructure",
+    "energy_renewable_resource"
+  ],
+
+  "health_medical_care": ["health_medical_care", "pharmaceutical_biotech"],
+
+  "hospitality_tourism": [
+    "entertainment_comics_horoscopes",
+    "events_movies_music_comedies",
+    "tourism_travel_tips"
+  ],
+
+  "information_technology": ["computer", "electronics", "hightech", "gaming"],
+
+  "lifestyle": [
+    "beauty",
+    "cooking",
+    "fashion",
+    "food",
+    "kids",
+    "women",
+    "men",
+    "spa",
+    "pets",
+    "nature",
+    "showbiz"
+  ],
+
+  "news": ["breaking", "general", "local", "international", "legal"],
+
+  "society_people": [
+    "interview",
+    "letter_from_reader",
+    "opinion",
+    "society",
+    "family"
+  ],
+
+  "sport": ["football", "fitness", "mma", "basketball", "other"],
+
+  "others": ["agriculture", "career", "expatriate", "weather", "others"]
+}
