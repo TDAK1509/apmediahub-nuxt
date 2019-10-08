@@ -25,7 +25,7 @@ export default {
         const childListItem = jsonList[key].map(childKey => {
           return {
             text: this.$t(`segments.${key}.child.${childKey}`),
-            value: childKey
+            value: `${key}.${childKey}`
           };
         });
 

@@ -18,6 +18,15 @@
                     @remove="removeFromSelectedCities(f)"
                 >{{f}}</SearchFilterItem>
             </div>
+
+            <div class="search-panel-block d-flex justify-start flex-wrap">
+                <SearchFilterItem
+                    class="mr-2 mb-2"
+                    v-for="(f, index) in segmentsForSearchFilter"
+                    :key="`segmentFilter${index}`"
+                    @remove="removeFromSelectedSegments(f.value)"
+                >{{f.text}}</SearchFilterItem>
+            </div>
         </div>
 
         <SearchUserSelectMultiple
@@ -101,6 +110,21 @@ export default {
             return this.segmentChildList[this.segmentCategory];
         },
 
+        segmentsForSearchFilter() {
+            return this.segments.map(key => {
+                // Add .child between 2 parts of key
+                let arrayKeys = key.split(".");
+                arrayKeys.splice(1, 0, "child");
+
+                const localeSuffix = arrayKeys.join(".");
+
+                return {
+                    text: this.$t(`segments.${localeSuffix}`),
+                    value: key
+                };
+            });
+        },
+
         search() {
             return {
                 countries: this.countries,
@@ -118,6 +142,11 @@ export default {
         removeFromSelectedCities(city) {
             const index = this.cities.indexOf(city);
             this.cities.splice(index, 1);
+        },
+
+        removeFromSelectedSegments(city) {
+            const index = this.segments.indexOf(city);
+            this.segments.splice(index, 1);
         },
 
         async doSearchAction() {
