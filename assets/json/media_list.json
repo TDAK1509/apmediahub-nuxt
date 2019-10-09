@@ -1,0 +1,39 @@
+{
+  "print": [
+    "tuoi_tre",
+    "thanh_nien",
+    "phu_nu",
+    "phap_luat",
+    "sai_gon",
+    "the_saigon_times_daily",
+    "tien_phong",
+    "nhan_dan",
+    "cong_an",
+    "lao_dong",
+    "nguoi_lao_dong"
+  ],
+  "broadcast": [
+    "vtv1",
+    "vtv2",
+    "vtv3",
+    "vtv4",
+    "vtv5",
+    "vtv6",
+    "vtv7",
+    "vtv8",
+    "vtv9",
+    "vtv10",
+    "htv1",
+    "htv2",
+    "htv3",
+    "htv4",
+    "htv5",
+    "htv6",
+    "htv7",
+    "htv8",
+    "htv9",
+    "fm999"
+  ],
+  "online": ["vnexpress", "vietnam_net", "dan_tri", "ngoi_sao", "kenh14"],
+  "other": ["other"]
+}

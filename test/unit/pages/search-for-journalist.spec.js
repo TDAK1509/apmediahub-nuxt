@@ -21,9 +21,9 @@ describe("SearchForJournalist.vue", () => {
     expect(wrapper.vm.jobTitle).toBeDefined();
   });
 
-  it("Has variable 'mediaTypes' initialized as array", () => {
+  it("Has variable 'media' initialized as array", () => {
     const wrapper = shallowFactory(SearchForJournalist);
-    expect(wrapper.vm.mediaTypes).toEqual([]);
+    expect(wrapper.vm.media).toEqual([]);
   });
 
   it("Has variable 'language' initialized as string", () => {

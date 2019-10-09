@@ -19,12 +19,12 @@ describe("TheSearchForJournalistSearchPanel.vue", () => {
     expect(wrapper.vm.segments).toHaveLength(0);
   });
 
-  it("Received mediaTypes prop", () => {
+  it("Received media prop", () => {
     const wrapper = shallowFactory(TheSearchForJournalistSearchPanel);
     wrapper.setProps({
-      mediaTypes: ["Tuoi Tre Newspaper", "Cabbage Newspaper"]
+      media: ["Tuoi Tre Newspaper", "Cabbage Newspaper"]
     });
-    expect(wrapper.vm.mediaTypes).toHaveLength(2);
+    expect(wrapper.vm.media).toHaveLength(2);
   });
 
   it("Emit 'removeCountry' when click country filter item", () => {

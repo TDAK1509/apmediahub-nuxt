@@ -65,7 +65,8 @@
     "city": "Thành phố",
     "other": "Khác",
     "other_text": "Nếu chọn khác, vui lòng ghi rõ",
-    "all": "Tất cả"
+    "all": "Tất cả",
+    "language": "Ngôn ngữ"
   },
 
   "post_job": {
@@ -332,7 +333,9 @@
 
   "search_for_journalist": {
     "segment_category": "Đề tài",
-    "select_segments": "Chọn đề tài chi tiết"
+    "select_segments": "Chọn đề tài chi tiết",
+    "media_type": "Loại phương tiện truyền thông",
+    "media_type_details": "Chọn chi tiết"
   },
 
   "journalist_job_title": {
@@ -363,5 +366,63 @@
     "motoring_editor": "Motoring Editor",
     "property_editor": "Property Editor",
     "health_editor": "Health Editor"
+  },
+
+  "media": {
+    "print": {
+      "text": "Báo giấy",
+      "child": {
+        "tuoi_tre": "Báo Tuổi Trẻ",
+        "thanh_nien": "Báo Thanh Niên",
+        "phu_nu": "Báo Phụ Nữ",
+        "phap_luat": "Báo Pháp Luật",
+        "sai_gon": "Báo Sài Gòn",
+        "the_saigon_times_daily": "The Saigon Times Daily",
+        "tien_phong": "Báo Tiền Phong",
+        "nhan_dan": "Báo Nhân Dân",
+        "cong_an": "Báo Công An",
+        "lao_dong": "Báo Lao Động",
+        "nguoi_lao_dong": "Báo Người Lao Động"
+      }
+    },
+    "broadcast": {
+      "text": "Truyền hình",
+      "child": {
+        "vtv1": "VTV1",
+        "vtv2": "VTV2",
+        "vtv3": "VTV3",
+        "vtv4": "VTV4",
+        "vtv5": "VTV5",
+        "vtv6": "VTV6",
+        "vtv7": "VTV7",
+        "vtv8": "VTV8",
+        "vtv9": "VTV9",
+        "vtv10": "VTV10",
+        "htv1": "HTV1",
+        "htv2": "HTV2",
+        "htv3": "HTV3",
+        "htv4": "HTV4",
+        "htv5": "HTV5",
+        "htv6": "HTV6",
+        "htv7": "HTV7",
+        "htv8": "HTV8",
+        "htv9": "HTV9",
+        "fm999": "FM99.9"
+      }
+    },
+    "online": {
+      "text": "Báo online",
+      "child": {
+        "vnexpress": "VNExpress",
+        "vietnam_net": "VietNamNet",
+        "dan_tri": "DanTri",
+        "ngoi_sao": "NgoiSao",
+        "kenh14": "Kenh14"
+      }
+    },
+    "other": {
+      "text": "Phương tiện truyền thông khác",
+      "child": { "other": "Phương tiện truyền thông khác" }
+    }
   }
 }

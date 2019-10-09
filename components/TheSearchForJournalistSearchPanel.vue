@@ -26,6 +26,15 @@
                 @remove="$emit('removeSegment', f.value)"
             >{{f.text}}</SearchFilterItem>
         </div>
+
+        <div class="search-panel-block d-flex justify-start flex-wrap">
+            <SearchFilterItem
+                class="mr-2 mb-2"
+                v-for="(f, index) in media"
+                :key="`mediaFilter${index}`"
+                @remove="$emit('removeMedia', f.value)"
+            >{{f.text}}</SearchFilterItem>
+        </div>
     </div>
 </template>
 
@@ -38,7 +47,7 @@ export default {
         countries: Array,
         cities: Array,
         segments: Array,
-        mediaTypes: Array
+        media: Array
     },
     components: {
         SearchFilterItem

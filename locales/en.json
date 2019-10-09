@@ -65,7 +65,8 @@
     "city": "City",
     "other": "Other",
     "other_text": "If other, please specify",
-    "all": "All"
+    "all": "All",
+    "language": "Language"
   },
 
   "post_job": {
@@ -332,7 +333,9 @@
 
   "search_for_journalist": {
     "segment_category": "Segment coverage category",
-    "select_segments": "Select segments"
+    "select_segments": "Select segments",
+    "media_type": "Media Type",
+    "media_type_details": "Select media"
   },
 
   "journalist_job_title": {
@@ -363,5 +366,63 @@
     "motoring_editor": "Motoring Editor",
     "property_editor": "Property Editor",
     "health_editor": "Health Editor"
+  },
+
+  "media": {
+    "print": {
+      "text": "Print media",
+      "child": {
+        "tuoi_tre": "Tuoi Tre Newspaper",
+        "thanh_nien": "Thanh Nien Newspaper",
+        "phu_nu": "Phu Nu Newspaper",
+        "phap_luat": "Phap Luat Newspaper",
+        "sai_gon": "Saigon Newspaper",
+        "the_saigon_times_daily": "The Saigon Times Daily",
+        "tien_phong": "Tien Phong Newspaper",
+        "nhan_dan": "Nhan Dan Newspaper",
+        "cong_an": "Cong An Newspaper",
+        "lao_dong": "Lao Dong Newspaper",
+        "nguoi_lao_dong": "Nguoi Lao Dong Newspaper"
+      }
+    },
+    "broadcast": {
+      "text": "Broadcast media",
+      "child": {
+        "vtv1": "VTV1",
+        "vtv2": "VTV2",
+        "vtv3": "VTV3",
+        "vtv4": "VTV4",
+        "vtv5": "VTV5",
+        "vtv6": "VTV6",
+        "vtv7": "VTV7",
+        "vtv8": "VTV8",
+        "vtv9": "VTV9",
+        "vtv10": "VTV10",
+        "htv1": "HTV1",
+        "htv2": "HTV2",
+        "htv3": "HTV3",
+        "htv4": "HTV4",
+        "htv5": "HTV5",
+        "htv6": "HTV6",
+        "htv7": "HTV7",
+        "htv8": "HTV8",
+        "htv9": "HTV9",
+        "fm999": "FM99.9"
+      }
+    },
+    "online": {
+      "text": "Online media",
+      "child": {
+        "vnexpress": "VNExpress",
+        "vietnam_net": "VietNamNet",
+        "dan_tri": "DanTri",
+        "ngoi_sao": "NgoiSao",
+        "kenh14": "Kenh14"
+      }
+    },
+    "other": {
+      "text": "Other media",
+      "child": { "other": "Other media" }
+    }
   }
 }

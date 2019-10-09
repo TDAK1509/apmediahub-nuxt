@@ -4,9 +4,11 @@
             :countries="countries"
             :cities="cities"
             :segments="segmentsForSearchFilter"
+            :media="mediaForSearchFilter"
             @removeCountry="removeFromSelectedCountries"
             @removeCity="removeFromSelectedCities"
             @removeSegment="removeFromSelectedSegments"
+            @removeMedia="removeFromSelectedMedia"
         ></TheSearchForJournalistSearchPanel>
 
         <TheSearchForJournalistSearchSelector @change="updateSearchValues"></TheSearchForJournalistSearchSelector>
@@ -51,7 +53,7 @@ export default {
             cities: [],
             segments: [],
             jobTitle: "",
-            mediaTypes: [],
+            media: [],
             language: ""
         };
     },
@@ -80,6 +82,21 @@ export default {
                     value: key
                 };
             });
+        },
+
+        mediaForSearchFilter() {
+            return this.media.map(key => {
+                // Add .child between 2 parts of key
+                let arrayKeys = key.split(".");
+                arrayKeys.splice(1, 0, "child");
+
+                const localeSuffix = arrayKeys.join(".");
+
+                return {
+                    text: this.$t(`media.${localeSuffix}`),
+                    value: key
+                };
+            });
         }
     },
 
@@ -95,9 +112,14 @@ export default {
             this.cities.splice(index, 1);
         },
 
-        removeFromSelectedSegments(city) {
-            const index = this.segments.indexOf(city);
+        removeFromSelectedSegments(segment) {
+            const index = this.segments.indexOf(segment);
             this.segments.splice(index, 1);
+        },
+
+        removeFromSelectedMedia(value) {
+            const index = this.media.indexOf(value);
+            this.media.splice(index, 1);
         },
 
         updateSearchValues({ key, value }) {

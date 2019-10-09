@@ -27,6 +27,26 @@
             :label="$t('my_information.job_title')"
             :value.sync="jobTitle"
         ></SearchUserSelect>
+
+        <SearchUserSelect
+            :items="mediaTypeList"
+            :label="$t('search_for_journalist.media_type')"
+            :value.sync="mediaTypeParent"
+        ></SearchUserSelect>
+
+        <div v-show="mediaTypeParent">
+            <SearchUserSelectMultiple
+                :items="mediaListByType"
+                :label="$t('search_for_journalist.media_type_details')"
+                :value.sync="media"
+            ></SearchUserSelectMultiple>
+        </div>
+
+        <SearchUserSelect
+            :items="languageList"
+            :label="$t('common.language')"
+            :value.sync="language"
+        ></SearchUserSelect>
     </div>
 </template>
 
@@ -34,6 +54,7 @@
 import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
 import mixinSegmentList from "~/mixins/segment-list";
 import mixinJournalistJobTitleList from "~/mixins/journalist-job-title-list";
+import mixinMediaList from "~/mixins/media-list";
 import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
 import SearchUserSelect from "@/components/DashboardSearchUserSelect";
 
@@ -43,7 +64,8 @@ export default {
     mixins: [
         mixinCountryCityListForSearchUser,
         mixinSegmentList,
-        mixinJournalistJobTitleList
+        mixinJournalistJobTitleList,
+        mixinMediaList
     ],
 
     components: {
@@ -59,14 +81,20 @@ export default {
             segments: [],
             jobTitle: "",
             mediaTypeParent: "",
-            mediaTypes: [],
-            language: ""
+            media: [],
+            language: "",
+
+            languageList: ["Vietnamese", "English", "Vietnamese/English"]
         };
     },
 
     computed: {
         segmentChildListByCategory() {
             return this.segmentChildList[this.segmentCategory];
+        },
+
+        mediaListByType() {
+            return this.mediaList[this.mediaTypeParent];
         }
     },
 
@@ -87,8 +115,8 @@ export default {
             this.$emit("change", { key: "jobTitle", value: newValue });
         },
 
-        mediaTypes(newValue, oldValue) {
-            this.$emit("change", { key: "mediaTypes", value: newValue });
+        media(newValue, oldValue) {
+            this.$emit("change", { key: "media", value: newValue });
         },
 
         language(newValue, oldValue) {

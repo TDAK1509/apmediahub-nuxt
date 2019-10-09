@@ -8,16 +8,16 @@ describe("TheSearchForJournalistSearchSelector.vue", () => {
     expect(wrapper.vm.segments).toBeDefined();
     expect(wrapper.vm.jobTitle).toBeDefined();
     expect(wrapper.vm.mediaTypeParent).toBeDefined();
-    expect(wrapper.vm.mediaTypes).toBeDefined();
+    expect(wrapper.vm.media).toBeDefined();
     expect(wrapper.vm.language).toBeDefined();
   });
 
-  it("Local variable 'countries', 'cities', 'segments', 'mediaTypes' is initialized as array", () => {
+  it("Local variable 'countries', 'cities', 'segments', 'media' is initialized as array", () => {
     const wrapper = shallowFactory(TheSearchForJournalistSearchSelector);
     expect(wrapper.vm.countries.push).toBeDefined();
     expect(wrapper.vm.cities.push).toBeDefined();
     expect(wrapper.vm.segments.push).toBeDefined();
-    expect(wrapper.vm.mediaTypes.push).toBeDefined();
+    expect(wrapper.vm.media.push).toBeDefined();
   });
 
   it("Emit 'change' when change countries", () => {
@@ -80,12 +80,12 @@ describe("TheSearchForJournalistSearchSelector.vue", () => {
     expect(emitPayload).toEqual(result);
   });
 
-  it("Emit 'change' when change mediaTypes", () => {
+  it("Emit 'change' when change media", () => {
     const wrapper = shallowFactory(TheSearchForJournalistSearchSelector);
     const test = ["Tien Phong", "Thanh Nien"];
-    const result = { key: "mediaTypes", value: test };
+    const result = { key: "media", value: test };
 
-    wrapper.vm.mediaTypes = test;
+    wrapper.vm.media = test;
 
     // Emit is called
     expect(wrapper.emitted("change")).toBeTruthy();
