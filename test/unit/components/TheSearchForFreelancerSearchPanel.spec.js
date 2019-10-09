@@ -19,7 +19,7 @@ describe("TheSearchForFreelancerSearchPanel.vue", () => {
     expect(wrapper.vm.services).toEqual([]);
   });
 
-  it("Emit 'removeCountry' when click country filter item", () => {
+  it("Emit 'removeCountry' with correct value when click country filter item", () => {
     const wrapper = factory(TheSearchForFreelancerSearchPanel);
     wrapper.setProps({ countries: ["Vietnam"] });
 
@@ -27,20 +27,10 @@ describe("TheSearchForFreelancerSearchPanel.vue", () => {
     btn.trigger("click");
 
     expect(wrapper.emitted("removeCountry")).toBeTruthy();
-  });
-
-  it("Emit 'removeCountry' with correct value", () => {
-    const wrapper = factory(TheSearchForFreelancerSearchPanel);
-
-    wrapper.setProps({ countries: ["Vietnam"] });
-
-    const btn = wrapper.find(".btn-close");
-    btn.trigger("click");
-
     expect(wrapper.emitted("removeCountry")[0]).toEqual(["Vietnam"]);
   });
 
-  it("Emit 'removeCity' when click city filter item", () => {
+  it("Emit 'removeCity' with correct value when click city filter item", () => {
     const wrapper = factory(TheSearchForFreelancerSearchPanel);
     wrapper.setProps({ cities: ["Ho Chi Minh"] });
 
@@ -48,16 +38,6 @@ describe("TheSearchForFreelancerSearchPanel.vue", () => {
     btn.trigger("click");
 
     expect(wrapper.emitted("removeCity")).toBeTruthy();
-  });
-
-  it("Emit 'removeCity' with correct value", () => {
-    const wrapper = factory(TheSearchForFreelancerSearchPanel);
-
-    wrapper.setProps({ cities: ["Ho Chi Minh"] });
-
-    const btn = wrapper.find(".btn-close");
-    btn.trigger("click");
-
     expect(wrapper.emitted("removeCity")[0]).toEqual(["Ho Chi Minh"]);
   });
 
