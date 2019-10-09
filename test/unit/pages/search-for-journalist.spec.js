@@ -11,11 +11,6 @@ describe("SearchForJournalist.vue", () => {
     expect(wrapper.vm.cities).toEqual([]);
   });
 
-  it("Has variable 'segmentCategory' initialized as string", () => {
-    const wrapper = shallowFactory(SearchForJournalist);
-    expect(wrapper.vm.segmentCategory).toBeDefined();
-  });
-
   it("Has variable 'segments' initialized as array", () => {
     const wrapper = shallowFactory(SearchForJournalist);
     expect(wrapper.vm.segments).toEqual([]);
@@ -24,11 +19,6 @@ describe("SearchForJournalist.vue", () => {
   it("Has variable 'jobTitle' initialized as string", () => {
     const wrapper = shallowFactory(SearchForJournalist);
     expect(wrapper.vm.jobTitle).toBeDefined();
-  });
-
-  it("Has variable 'mediaTypeParent' initialized as string", () => {
-    const wrapper = shallowFactory(SearchForJournalist);
-    expect(wrapper.vm.mediaTypeParent).toBeDefined();
   });
 
   it("Has variable 'mediaTypes' initialized as array", () => {

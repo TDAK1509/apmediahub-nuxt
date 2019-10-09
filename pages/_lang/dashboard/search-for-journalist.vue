@@ -9,33 +9,7 @@
             @removeSegment="removeFromSelectedSegments"
         ></TheSearchForJournalistSearchPanel>
 
-        <SearchUserSelectMultiple
-            :items="countryList"
-            :label="countryLabel"
-            :value.sync="countries"
-        ></SearchUserSelectMultiple>
-
-        <SearchUserSelectMultiple :items="cityList" :label="cityLabel" :value.sync="cities"></SearchUserSelectMultiple>
-
-        <SearchUserSelect
-            :items="segmentCategoryList"
-            :label="$t('search_for_journalist.segment_category')"
-            :value.sync="segmentCategory"
-        ></SearchUserSelect>
-
-        <div v-show="segmentCategory">
-            <SearchUserSelectMultiple
-                :items="segmentChildListByCategory"
-                :label="$t('search_for_journalist.select_segments')"
-                :value.sync="segments"
-            ></SearchUserSelectMultiple>
-        </div>
-
-        <SearchUserSelect
-            :items="journalistJobTitle"
-            :label="$t('my_information.job_title')"
-            :value.sync="jobTitle"
-        ></SearchUserSelect>
+        <TheSearchForJournalistSearchSelector @change="updateSearchValues"></TheSearchForJournalistSearchSelector>
 
         <div class="d-flex justify-start">
             <v-btn
@@ -55,28 +29,18 @@
 
 <script>
 import mixinDashboardTitle from "~/mixins/dashboard-title";
-import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
-import mixinSegmentList from "~/mixins/segment-list";
-import mixinJournalistJobTitleList from "~/mixins/journalist-job-title-list";
 
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
 import TheSearchForJournalistSearchPanel from "@/components/TheSearchForJournalistSearchPanel";
+import TheSearchForJournalistSearchSelector from "@/components/TheSearchForJournalistSearchSelector";
 
 export default {
     name: "SearchForJournalist",
 
-    mixins: [
-        mixinDashboardTitle,
-        mixinCountryCityListForSearchUser,
-        mixinSegmentList,
-        mixinJournalistJobTitleList
-    ],
+    mixins: [mixinDashboardTitle],
 
     components: {
-        SearchUserSelectMultiple,
-        SearchUserSelect,
-        TheSearchForJournalistSearchPanel
+        TheSearchForJournalistSearchPanel,
+        TheSearchForJournalistSearchSelector
     },
 
     data() {
@@ -85,10 +49,8 @@ export default {
 
             countries: [],
             cities: [],
-            segmentCategory: "",
             segments: [],
             jobTitle: "",
-            mediaTypeParent: "",
             mediaTypes: [],
             language: ""
         };
@@ -105,10 +67,6 @@ export default {
             return this.$store.state.inputBorderColor;
         },
 
-        segmentChildListByCategory() {
-            return this.segmentChildList[this.segmentCategory];
-        },
-
         segmentsForSearchFilter() {
             return this.segments.map(key => {
                 // Add .child between 2 parts of key
@@ -122,13 +80,6 @@ export default {
                     value: key
                 };
             });
-        },
-
-        search() {
-            return {
-                countries: this.countries,
-                cities: this.cities
-            };
         }
     },
 
@@ -147,6 +98,10 @@ export default {
         removeFromSelectedSegments(city) {
             const index = this.segments.indexOf(city);
             this.segments.splice(index, 1);
+        },
+
+        updateSearchValues({ key, value }) {
+            this[key] = value;
         },
 
         async doSearchAction() {
