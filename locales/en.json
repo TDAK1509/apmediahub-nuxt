@@ -111,18 +111,94 @@
   },
 
   "services": {
-    "animation": "Animation",
-    "audio_video_production": "Audio/Video Production",
-    "photography": "Photography",
-    "logo_design_branding": "Logo Design & Branding",
-    "graphic_design": "Graphic Design",
-    "collateral_design": "Collateral Design",
-    "art_illustration": "Art & Illustration",
-    "voice_talent": "Voice Talent",
-    "brand_identity_strategy": "Brand Identity & Strategy",
-    "motion_graphics": "Motion Graphics",
-    "web_design": "Web Design",
-    "other": "Other Design/Creative"
+    "design_creative_media": {
+      "text": "Design/Creative/Media",
+      "child": {
+        "animation": "Animation",
+        "audio_video_production": "Audio/Video Production",
+        "photography": "Photography",
+        "logo_design_branding": "Logo Design & Branding",
+        "graphic_design": "Graphic Design",
+        "collateral_design": "Collateral Design",
+        "art_illustration": "Art & Illustration",
+        "voice_talent": "Voice Talent",
+        "brand_identity_strategy": "Brand Identity & Strategy",
+        "motion_graphics": "Motion Graphics",
+        "web_design": "Web Design",
+        "other": "Other Design/Creative"
+      }
+    },
+    "writing": {
+      "text": "Writing",
+      "child": {
+        "article_writing": "Article Writing",
+        "content_writing": "Content Writing",
+        "blog_social_media_writing": "Blog & Social Media Writing",
+        "speech_writing": "Speech Writing",
+        "copywriting": "Copywriting",
+        "creative_writing": "Creative Writing",
+        "web_content": "Web Content",
+        "editing_proofreading": "Editing & Proofreading",
+        "grant_writing": "Grant Writing",
+        "resumes_cover_letter": "Resumes & Cover Letter",
+        "technical_writing": "Technical Writing",
+        "academic_writing": "Academic Writing",
+        "newspaper_writing": "Newspaper Writing",
+        "press_releases": "Press Releases",
+        "other_writing": "Other Writing"
+      }
+    },
+    "sale_marketing": {
+      "text": "Sale & Marketing",
+      "child": {
+        "advertising": "Advertising",
+        "email_marketing_automation": "Email & Marketing Automation",
+        "lead_generation": "Lead Generation",
+        "market_customer_research": "Market & Customer Research",
+        "marketing_strategy": "Marketing Strategy",
+        "public_relations": "Public Relations",
+        "sem": "SEM-Search Engine Marketing",
+        "seo": "SEO-Search Engine Optimization",
+        "smm": "SMM-Social Media Marketing",
+        "telemarketing_telesales": "Telemarketing & Telesales",
+        "branding": "Branding",
+        "google_adsense_adWords": "Google Adsense/AdWords",
+        "other_sale_marketing": "Other Sale & Marketing"
+      }
+    },
+    "event": {
+      "text": "Event",
+      "child": {
+        "event_planner": "Event Planner",
+        "event_suppliers": "Event Suppliers",
+        "corporate_gifts": "Corporate Gifts",
+        "pgs_services": "PGs Services"
+      }
+    },
+    "translation_language": {
+      "text": "Translation & Language",
+      "child": {
+        "general_translation": "General Translation",
+        "legal_translation": "Legal Translation",
+        "technical_translation": "Technical Translation",
+        "simultaneous_interpreting": "Simultaneous Interpreting",
+        "conference_interpreting": "Conference Interpreting",
+        "english_vietnamese": "English-Vietnamese",
+        "chinese_vietnamese": "Chinese-Vietnamese"
+      }
+    },
+    "admin_support": {
+      "text": "Admin Support",
+      "child": {
+        "data_entry": "Data Entry",
+        "project_based": "Project based",
+        "transcription": "Transcription",
+        "web_research": "Web Research",
+        "call_center": "Call Center",
+        "phone_support_handling": "Phone Support/Handling",
+        "other_admin_support": "Other Admin Support"
+      }
+    }
   },
 
   "service_level": {
@@ -175,7 +251,9 @@
   },
 
   "search_user": {
-    "services": "Services"
+    "services": "Services",
+    "service_category": "Service category",
+    "select_services": "Select services"
   },
 
   "segments": {

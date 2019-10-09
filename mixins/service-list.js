@@ -1,37 +1,51 @@
+import serviceList from "@/assets/json/service_list.json";
+
 export default {
   data() {
     return {
-      servicesInterface: {
-        animation: false,
-        audio_video_production: false,
-        photography: false,
-        logo_design_branding: false,
-        graphic_design: false,
-        collateral_design: false,
-        art_illustration: false,
-        voice_talent: false,
-        brand_identity_strategy: false,
-        motion_graphics: false,
-        web_design: false,
-        other: false
-      }
+      serviceList: null,
+      serviceCategoryList: [],
+      serviceCategory: "" // chosen category
     };
   },
 
   computed: {
-    serviceKeyList() {
-      return Object.keys(this.servicesInterface);
-    },
-
-    serviceList() {
-      return this.serviceKeyList.map(service => {
-        const localeKey = `services.${service}`;
-
-        return {
-          text: this.$t(localeKey),
-          value: service
-        };
-      });
+    serviceListByCategory() {
+      if (!this.serviceCategory) return [];
+      return this.serviceList[this.serviceCategory];
     }
+  },
+
+  methods: {
+    prepareserviceList(jsonList) {
+      const categoryList = [];
+      const childList = {};
+
+      for (let key in jsonList) {
+        const categoryListItem = {
+          text: this.$t(`services.${key}.text`),
+          value: key
+        };
+        categoryList.push(categoryListItem);
+
+        // Map list from "key": [childKey]
+        // to "key" : [ { text: i18n text, value: childKey}]
+        const childListItem = jsonList[key].map(childKey => {
+          return {
+            text: this.$t(`services.${key}.child.${childKey}`),
+            value: `${key}.${childKey}`
+          };
+        });
+
+        childList[key] = childListItem;
+      }
+
+      this.serviceCategoryList = categoryList;
+      this.serviceList = childList;
+    }
+  },
+
+  created() {
+    this.prepareserviceList(serviceList);
   }
 };

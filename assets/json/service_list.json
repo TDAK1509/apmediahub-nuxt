@@ -1,0 +1,72 @@
+{
+  "design_creative_media": [
+    "animation",
+    "audio_video_production",
+    "photography",
+    "logo_design_branding",
+    "graphic_design",
+    "collateral_design",
+    "art_illustration",
+    "voice_talent",
+    "brand_identity_strategy",
+    "motion_graphics",
+    "web_design",
+    "other"
+  ],
+  "writing": [
+    "article_writing",
+    "content_writing",
+    "blog_social_media_writing",
+    "speech_writing",
+    "copywriting",
+    "creative_writing",
+    "web_content",
+    "editing_proofreading",
+    "grant_writing",
+    "resumes_cover_letter",
+    "technical_writing",
+    "academic_writing",
+    "newspaper_writing",
+    "press_releases",
+    "other_writing"
+  ],
+  "sale_marketing": [
+    "advertising",
+    "email_marketing_automation",
+    "lead_generation",
+    "market_customer_research",
+    "marketing_strategy",
+    "public_relations",
+    "sem",
+    "seo",
+    "smm",
+    "telemarketing_telesales",
+    "branding",
+    "google_adsense_adWords",
+    "other_sale_marketing"
+  ],
+  "event": [
+    "event_planner",
+    "event_suppliers",
+    "corporate_gifts",
+    "pgs_services"
+  ],
+  "translation_language": [
+    "general_translation",
+    "legal_translation",
+    "technical_translation",
+    "simultaneous_interpreting",
+    "conference_interpreting",
+    "english_vietnamese",
+    "chinese_vietnamese"
+  ],
+  "admin_support": [
+    "data_entry",
+    "project_based",
+    "transcription",
+    "web_research",
+    "call_center",
+    "phone_support_handling",
+    "other_admin_support"
+  ]
+}
