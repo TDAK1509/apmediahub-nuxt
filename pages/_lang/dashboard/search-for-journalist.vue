@@ -51,6 +51,12 @@
             ></SearchUserSelectMultiple>
         </div>
 
+        <SearchUserSelect
+            :items="journalistJobTitle"
+            :label="$t('my_information.job_title')"
+            :value.sync="jobTitle"
+        ></SearchUserSelect>
+
         <div class="d-flex justify-start">
             <v-btn
                 color="primary"
@@ -71,6 +77,7 @@
 import mixinDashboardTitle from "~/mixins/dashboard-title";
 import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
 import mixinSegmentList from "~/mixins/segment-list";
+import mixinJournalistJobTitleList from "~/mixins/journalist-job-title-list";
 import SearchFilterItem from "@/components/DashboardSearchFilterItem";
 import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
 import SearchUserSelect from "@/components/DashboardSearchUserSelect";
@@ -81,7 +88,8 @@ export default {
     mixins: [
         mixinDashboardTitle,
         mixinCountryCityListForSearchUser,
-        mixinSegmentList
+        mixinSegmentList,
+        mixinJournalistJobTitleList
     ],
 
     components: {
@@ -97,7 +105,11 @@ export default {
             countries: [],
             cities: [],
             segmentCategory: "",
-            segments: []
+            segments: [],
+            jobTitle: "",
+            mediaTypeParent: "",
+            mediaTypes: [],
+            language: ""
         };
     },
 

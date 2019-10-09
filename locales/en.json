@@ -333,5 +333,35 @@
   "search_for_journalist": {
     "segment_category": "Segment coverage category",
     "select_segments": "Select segments"
+  },
+
+  "journalist_job_title": {
+    "arts_editor": "Arts Editor",
+    "columnists": "Columnists",
+    "blogger": "Blogger",
+    "bureau_chief": "Bureau Chief",
+    "beauty_editor": "Beauty Editor",
+    "fashion_editor": "Fashion Editor",
+    "news_editor": "News Editor",
+    "business_editor": "Business Editor",
+    "sports_editor": "Sports Editor",
+    "features_editor": "Features Editor",
+    "political_editor": "Political Editor",
+    "economics_editor": "Economics Editor",
+    "foreign_correspondent": "Foreign Correspondent",
+    "crime_reporter": "Crime Reporter",
+    "producer": "Producer",
+    "industry_editor": "Industry Editor",
+    "social_media_editor": "Social Media Editor",
+    "technology_editor": "Technology Editor",
+    "travel_editor": "Travel Editor",
+    "chief_of_staff": "Chief of Staff",
+    "digital_online_editor": "Digital / Online Editor",
+    "lifestyle_editor": "Lifestyle Editor",
+    "consumer_editor": "Consumer Editor",
+    "entertainment_editor": "Entertainment Editor",
+    "motoring_editor": "Motoring Editor",
+    "property_editor": "Property Editor",
+    "health_editor": "Health Editor"
   }
 }
