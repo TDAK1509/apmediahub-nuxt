@@ -331,6 +331,7 @@
   },
 
   "search_for_journalist": {
-    "segment_category": "Đề tài"
+    "segment_category": "Đề tài",
+    "select_segments": "Chọn đề tài chi tiết"
   }
 }

@@ -43,7 +43,13 @@
             :value.sync="segmentCategory"
         ></SearchUserSelect>
 
-        <SearchUserSelectMultiple :items="segmentChildListByCategory" :value.sync="segments"></SearchUserSelectMultiple>
+        <div v-show="segmentCategory">
+            <SearchUserSelectMultiple
+                :items="segmentChildListByCategory"
+                :label="$t('search_for_journalist.select_segments')"
+                :value.sync="segments"
+            ></SearchUserSelectMultiple>
+        </div>
 
         <div class="d-flex justify-start">
             <v-btn

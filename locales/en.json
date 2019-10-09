@@ -331,6 +331,7 @@
   },
 
   "search_for_journalist": {
-    "segment_category": "Segment coverage category"
+    "segment_category": "Segment coverage category",
+    "select_segments": "Select segments"
   }
 }
