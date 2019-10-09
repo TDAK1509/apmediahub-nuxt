@@ -1,33 +1,13 @@
 <template>
     <v-form ref="form" class="text-left">
-        <div class="search-panel d-flex flex-column justify-center">
-            <div class="search-panel-block d-flex justify-start align-center flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in countries"
-                    :key="`countryFilter${index}`"
-                    @remove="removeFromSelectedCountries(f)"
-                >{{f}}</SearchFilterItem>
-            </div>
-
-            <div class="search-panel-block d-flex justify-start flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in cities"
-                    :key="`cityFilter${index}`"
-                    @remove="removeFromSelectedCities(f)"
-                >{{f}}</SearchFilterItem>
-            </div>
-
-            <div class="search-panel-block d-flex justify-start flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in segmentsForSearchFilter"
-                    :key="`segmentFilter${index}`"
-                    @remove="removeFromSelectedSegments(f.value)"
-                >{{f.text}}</SearchFilterItem>
-            </div>
-        </div>
+        <TheSearchForJournalistSearchPanel
+            :countries="countries"
+            :cities="cities"
+            :segments="segmentsForSearchFilter"
+            @removeCountry="removeFromSelectedCountries"
+            @removeCity="removeFromSelectedCities"
+            @removeSegment="removeFromSelectedSegments"
+        ></TheSearchForJournalistSearchPanel>
 
         <SearchUserSelectMultiple
             :items="countryList"
@@ -78,9 +58,10 @@ import mixinDashboardTitle from "~/mixins/dashboard-title";
 import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
 import mixinSegmentList from "~/mixins/segment-list";
 import mixinJournalistJobTitleList from "~/mixins/journalist-job-title-list";
-import SearchFilterItem from "@/components/DashboardSearchFilterItem";
+
 import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
 import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+import TheSearchForJournalistSearchPanel from "@/components/TheSearchForJournalistSearchPanel";
 
 export default {
     name: "SearchForJournalist",
@@ -93,9 +74,9 @@ export default {
     ],
 
     components: {
-        SearchFilterItem,
         SearchUserSelectMultiple,
-        SearchUserSelect
+        SearchUserSelect,
+        TheSearchForJournalistSearchPanel
     },
 
     data() {
@@ -153,6 +134,7 @@ export default {
 
     methods: {
         removeFromSelectedCountries(country) {
+            console.log(country);
             const index = this.countries.indexOf(country);
             this.countries.splice(index, 1);
         },
