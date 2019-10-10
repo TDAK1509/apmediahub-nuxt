@@ -1,53 +1,15 @@
 <template>
     <v-form ref="form" class="text-left">
-        <div class="search-panel d-flex flex-column justify-center">
-            <div class="search-panel-block d-flex justify-start align-center flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in countries"
-                    :key="`countryFilter${index}`"
-                    @remove="removeFromSelectedCountries(f)"
-                >{{f}}</SearchFilterItem>
-            </div>
+        <TheSearchForAgencySearchPanel
+            :countries="countries"
+            :cities="cities"
+            :services="servicesForSearchFilter"
+            @removeCountry="removeFromSelectedCountries"
+            @removeCity="removeFromSelectedCities"
+            @removeService="removeFromSelectedServices"
+        ></TheSearchForAgencySearchPanel>
 
-            <div class="search-panel-block d-flex justify-start flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in cities"
-                    :key="`cityFilter${index}`"
-                    @remove="removeFromSelectedCities(f)"
-                >{{f}}</SearchFilterItem>
-            </div>
-
-            <div class="search-panel-block d-flex justify-start flex-wrap">
-                <SearchFilterItem
-                    class="mr-2 mb-2"
-                    v-for="(f, index) in servicesForSearchFilter"
-                    :key="`serviceFilter${index}`"
-                    @remove="removeFromSelectedServices(f.value)"
-                >{{f.text}}</SearchFilterItem>
-            </div>
-        </div>
-
-        <SearchUserSelectMultiple
-            :items="countryList"
-            :label="countryLabel"
-            :value.sync="countries"
-        ></SearchUserSelectMultiple>
-
-        <SearchUserSelectMultiple :items="cityList" :label="cityLabel" :value.sync="cities"></SearchUserSelectMultiple>
-
-        <SearchUserSelect
-            :items="serviceLevelListWithAllField"
-            :label="$t('service_level.service_level')"
-            :value.sync="serviceLevel"
-        ></SearchUserSelect>
-
-        <SearchUserSelectMultiple
-            :items="serviceList"
-            :label="$t('search_user.services')"
-            :value.sync="services"
-        ></SearchUserSelectMultiple>
+        <TheSearchForAgencySearchSelector @change="updateSearchValues"></TheSearchForAgencySearchSelector>
 
         <div class="d-flex justify-start">
             <v-btn
@@ -67,27 +29,18 @@
 
 <script>
 import mixinDashboardTitle from "~/mixins/dashboard-title";
-import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
-import mixinServiceLevelList from "~/mixins/service-level-list";
-import mixinServiceList from "~/mixins/service-list";
-import SearchFilterItem from "@/components/DashboardSearchFilterItem";
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+
+import TheSearchForAgencySearchPanel from "@/components/TheSearchForAgencySearchPanel";
+import TheSearchForAgencySearchSelector from "@/components/TheSearchForAgencySearchSelector";
 
 export default {
     name: "SearchForAgency",
 
-    mixins: [
-        mixinDashboardTitle,
-        mixinCountryCityListForSearchUser,
-        mixinServiceLevelList,
-        mixinServiceList
-    ],
+    mixins: [mixinDashboardTitle],
 
     components: {
-        SearchFilterItem,
-        SearchUserSelectMultiple,
-        SearchUserSelect
+        TheSearchForAgencySearchPanel,
+        TheSearchForAgencySearchSelector
     },
 
     data() {
@@ -110,31 +63,19 @@ export default {
             return this.$store.state.inputBorderColor;
         },
 
-        serviceLevelListWithAllField() {
-            const all = {
-                text: this.$t("common.all"),
-                value: ""
-            };
-
-            return [all, ...this.serviceLevelList];
-        },
-
         servicesForSearchFilter() {
-            return this.services.map(serviceKey => {
+            return this.services.map(key => {
+                // Add .child between 2 parts of key
+                let arrayKeys = key.split(".");
+                arrayKeys.splice(1, 0, "child");
+
+                const localeSuffix = arrayKeys.join(".");
+
                 return {
-                    text: this.$t(`services.${serviceKey}`),
-                    value: serviceKey
+                    text: this.$t(`services.${localeSuffix}`),
+                    value: key
                 };
             });
-        },
-
-        search() {
-            return {
-                countries: this.countries,
-                cities: this.cities,
-                serviceLevel: this.serviceLevel,
-                services: this.services
-            };
         }
     },
 
@@ -154,6 +95,10 @@ export default {
             this.services.splice(index, 1);
         },
 
+        updateSearchValues({ key, value }) {
+            this[key] = value;
+        },
+
         async doSearchAction() {
             const result = await this.$axios.$get(
                 "https://jsonplaceholder.typicode.com/todos/1"
@@ -163,6 +108,3 @@ export default {
     }
 };
 </script>
-
-<style>
-</style>
