@@ -36,7 +36,7 @@
                 ></v-textarea>
 
                 <ThePostProjectProjectCategory
-                    :value.sync="formModel.category"
+                    :value.sync="formModel.services"
                     :rules="[inputRules.required]"
                 ></ThePostProjectProjectCategory>
 
@@ -135,7 +135,7 @@ export default {
                 city: "",
                 name: "",
                 description: "",
-                category: null,
+                services: null,
                 skills: "",
                 service_level: "",
                 type: "",

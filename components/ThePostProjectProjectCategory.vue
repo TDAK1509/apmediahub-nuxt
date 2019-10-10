@@ -1,9 +1,25 @@
 <template>
-    <SelectWithPanel :items="serviceList" :label="label" @change="onChange" :rules="rules"></SelectWithPanel>
+    <div>
+        <SearchUserSelect
+            :items="serviceCategoryList"
+            :label="$t('search_user.service_category')"
+            :value.sync="serviceCategory"
+        ></SearchUserSelect>
+
+        <div v-show="serviceCategory">
+            <SearchUserSelectMultiple
+                :items="serviceListByCategory"
+                :label="$t('search_user.select_services')"
+                :value.sync="services"
+            ></SearchUserSelectMultiple>
+        </div>
+    </div>
 </template>
 
 <script>
-import clone from "lodash/clone";
+import mixinServiceList from "@/mixins/service-list";
+import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
+import SearchUserSelect from "@/components/DashboardSearchUserSelect";
 
 export default {
     name: "ProjectCategory",
@@ -12,55 +28,29 @@ export default {
         rules: Array
     },
 
+    mixins: [mixinServiceList],
+
+    components: {
+        SearchUserSelectMultiple,
+        SearchUserSelect
+    },
+
     data() {
         return {
-            services: {
-                animation: false,
-                audio_video_production: false,
-                photography: false,
-                logo_design_branding: false,
-                graphic_design: false,
-                collateral_design: false,
-                art_illustration: false,
-                voice_talent: false,
-                brand_identity_strategy: false,
-                motion_graphics: false,
-                web_design: false,
-                other: false
-            }
+            services: [],
+            serviceCategory: ""
         };
     },
 
     computed: {
         label() {
             return this.$t("post_project.project_category");
-        },
-
-        serviceKeyList() {
-            return Object.keys(this.services);
-        },
-
-        serviceList() {
-            return this.serviceKeyList.map(service => {
-                const localeKey = `services.${service}`;
-
-                return {
-                    text: this.$t(localeKey),
-                    value: service
-                };
-            });
         }
     },
 
-    methods: {
-        onChange(value) {
-            const selectedServices = clone(this.services);
-
-            value.forEach(key => {
-                selectedServices[key] = true;
-            });
-
-            this.$emit("update:value", selectedServices);
+    watch: {
+        services(newValue, oldValue) {
+            this.$emit("update:value", newValue);
         }
     }
 };
