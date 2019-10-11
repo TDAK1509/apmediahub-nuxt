@@ -2,7 +2,7 @@
     <div class="custom-card d-flex pa-5" ref="container">
         <div class="avatar-container d-flex flex-column">
             <v-avatar size="100">
-                <img :src="user.avatar" alt="Avatar" />
+                <img :src="avatar" alt="Avatar" />
             </v-avatar>
 
             <v-rating
@@ -121,6 +121,8 @@
 </template>
 
 <script>
+import defaultAvatar from "@/assets/images/avatar_default.jpg";
+
 export default {
     name: "SearchResultItem",
 
@@ -137,6 +139,10 @@ export default {
         chipFields() {
             if (!this.chipFieldName) return [];
             return this.user[this.chipFieldName];
+        },
+
+        avatar() {
+            return this.user.avatar || defaultAvatar;
         }
     },
 
