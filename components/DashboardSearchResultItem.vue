@@ -1,5 +1,5 @@
 <template>
-    <div class="custom-card d-flex pa-5">
+    <div class="custom-card d-flex pa-5" ref="container">
         <div class="avatar-container d-flex flex-column">
             <v-avatar size="100">
                 <img :src="user.avatar" alt="Avatar" />
@@ -144,6 +144,7 @@ export default {
         onCheckboxChange(value) {
             const event = true === value ? "checked" : "unchecked";
             this.$emit(event, this.user._id);
+            this.$refs.container.classList.toggle("active");
         }
     }
 };
@@ -153,6 +154,10 @@ export default {
 .custom-card {
     border: 1px solid #e0e0e0;
     background: #fff;
+
+    &.active {
+        border-left: 5px solid #c80000;
+    }
 }
 
 .subhead-container {
