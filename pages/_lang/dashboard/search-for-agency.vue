@@ -1,30 +1,54 @@
 <template>
-    <v-form ref="form" class="text-left">
-        <TheSearchForAgencySearchPanel
-            :countries="countries"
-            :cities="cities"
-            :services="servicesForSearchFilter"
-            @removeCountry="removeFromSelectedCountries"
-            @removeCity="removeFromSelectedCities"
-            @removeService="removeFromSelectedServices"
-        ></TheSearchForAgencySearchPanel>
+    <v-container fluid>
+        <v-row>
+            <v-col cols="12" sm="2">
+                <v-form ref="form" class="text-left filter-panel pr-7">
+                    <TheSearchForAgencySearchSelector @change="updateSearchValues"></TheSearchForAgencySearchSelector>
 
-        <TheSearchForAgencySearchSelector @change="updateSearchValues"></TheSearchForAgencySearchSelector>
+                    <div class="d-flex justify-start">
+                        <v-btn
+                            color="primary"
+                            class="px-8"
+                            ref="postButton"
+                            :loading="searching"
+                            :disabled="searching"
+                            @click="doSearchAction"
+                        >
+                            {{$t("common.search")}}
+                            <v-icon right dark>mdi-magnify</v-icon>
+                        </v-btn>
+                    </div>
+                </v-form>
+            </v-col>
 
-        <div class="d-flex justify-start">
-            <v-btn
-                color="primary"
-                class="px-8"
-                ref="postButton"
-                :loading="searching"
-                :disabled="searching"
-                @click="doSearchAction"
-            >
-                {{$t("common.search")}}
-                <v-icon right dark>mdi-magnify</v-icon>
-            </v-btn>
-        </div>
-    </v-form>
+            <v-col cols="12" sm="10">
+                <v-text-field
+                    label="Type something here"
+                    outlined
+                    single-line
+                    append-icon="mdi-magnify"
+                    class="bold"
+                    @input="doSearchAction"
+                ></v-text-field>
+
+                <TheSearchForAgencySearchPanel
+                    :countries="countries"
+                    :cities="cities"
+                    :services="servicesForSearchFilter"
+                    @removeCountry="removeFromSelectedCountries"
+                    @removeCity="removeFromSelectedCities"
+                    @removeService="removeFromSelectedServices"
+                ></TheSearchForAgencySearchPanel>
+
+                <DashboardSearchResultWrapper
+                    v-show="users.length"
+                    :users="users"
+                    :value.sync="userIdList"
+                    chip-field-name="services"
+                ></DashboardSearchResultWrapper>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -32,6 +56,7 @@ import mixinDashboardTitle from "~/mixins/dashboard-title";
 
 import TheSearchForAgencySearchPanel from "@/components/TheSearchForAgencySearchPanel";
 import TheSearchForAgencySearchSelector from "@/components/TheSearchForAgencySearchSelector";
+import DashboardSearchResultWrapper from "@/components/DashboardSearchResultWrapper";
 
 export default {
     name: "SearchForAgency",
@@ -40,7 +65,8 @@ export default {
 
     components: {
         TheSearchForAgencySearchPanel,
-        TheSearchForAgencySearchSelector
+        TheSearchForAgencySearchSelector,
+        DashboardSearchResultWrapper
     },
 
     data() {
@@ -50,7 +76,35 @@ export default {
             countries: [],
             cities: [],
             serviceLevel: "",
-            services: []
+            services: [],
+
+            userIdList: [],
+
+            users: [
+                {
+                    _id: "haha",
+                    name: "hihi",
+                    rating: 4.5,
+                    avatar: "https://cdn.vuetifyjs.com/images/john.jpg",
+                    company: "APMediahub",
+                    job_title: "Web Designer",
+                    full_name: "Tran Duy An Khuong",
+                    services: ["hahaa", "HTML5", "Audio/Video Production"],
+                    website: "https://www.google.com"
+                },
+                {
+                    _id: "haha1",
+                    name: "hihidfafd",
+                    rating: 4,
+                    avatar:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwPcapaC3wvjcgD8eG-kv5yDba2WHNRrpoNujxdDwiH2W6enlU",
+                    company: "Twice",
+                    job_title: "Singer",
+                    full_name: "Chou Tzu-yu",
+                    services: ["Beautiful", "Angel", "Sing Shoot Dance"],
+                    facebook: "https://www.facebook.com/TzuyuChou.fc/"
+                }
+            ]
         };
     },
 
@@ -100,11 +154,15 @@ export default {
         },
 
         async doSearchAction() {
-            const result = await this.$axios.$get(
-                "https://jsonplaceholder.typicode.com/todos/1"
-            );
-            console.log(result);
+            const users = [{ _id: "haha", name: "hihi" }];
+            this.users = [...users];
         }
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.filter-panel {
+    border-right: 1px solid #e0e0e0;
+}
+</style>

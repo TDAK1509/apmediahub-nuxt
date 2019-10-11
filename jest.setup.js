@@ -17,7 +17,7 @@ const mutations = {
 
 const store = new Vuex.Store({ state, mutations });
 
-const factory = (Component, values = {}) => {
+const factory = (Component, props = {}) => {
   return mount(Component, {
     mocks: {
       $t: () => {}
@@ -25,27 +25,18 @@ const factory = (Component, values = {}) => {
 
     store,
 
-    data() {
-      return {
-        ...values
-      };
-    }
+    propsData: props
   });
 };
 
-const shallowFactory = (Component, values = {}) => {
+const shallowFactory = (Component, props = {}) => {
   return shallowMount(Component, {
     mocks: {
       $t: () => {}
     },
 
     store,
-
-    data() {
-      return {
-        ...values
-      };
-    }
+    propsData: props
   });
 };
 
