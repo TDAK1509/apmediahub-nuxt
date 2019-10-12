@@ -38,10 +38,17 @@ export default {
         SearchUserSelect,
         SearchUserSelectMultiple
     },
+
     data() {
         return {
             media: []
         };
+    },
+
+    computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        }
     },
 
     watch: {
