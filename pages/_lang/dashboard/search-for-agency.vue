@@ -170,10 +170,10 @@ export default {
         },
 
         clearFilter() {
-            this.countries = [];
-            this.cities = [];
-            this.segments = [];
-            this.serviceLevels = [];
+            this.countries.splice(0);
+            this.cities.splice(0);
+            this.services.splice(0);
+            this.serviceLevels.splice(0);
         },
 
         async doSearchAction() {
