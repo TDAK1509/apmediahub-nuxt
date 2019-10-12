@@ -5,7 +5,7 @@
         <v-checkbox
             v-for="l in languageList"
             v-model="languages"
-            class="mt-2 pt-0"
+            class="mt-3 pt-0"
             :key="l.value"
             :color="inputBorderColor"
             :label="l.text"

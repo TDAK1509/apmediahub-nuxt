@@ -7,11 +7,16 @@
         ></SearchUserSelect>
 
         <div v-show="serviceCategory">
-            <SearchUserSelectMultiple
-                :items="serviceListByCategory"
-                :label="$t('search_user.select_services')"
-                :value.sync="services"
-            ></SearchUserSelectMultiple>
+            <v-checkbox
+                v-for="s in serviceListByCategory"
+                v-model="services"
+                class="mt-0 mb-3 pt-0"
+                :key="s.value"
+                :color="inputBorderColor"
+                :label="s.text"
+                :value="s.value"
+                hide-details
+            ></v-checkbox>
         </div>
     </div>
 </template>
@@ -35,6 +40,12 @@ export default {
         return {
             services: []
         };
+    },
+
+    computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        }
     },
 
     watch: {

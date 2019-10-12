@@ -7,11 +7,16 @@
         ></SearchUserSelect>
 
         <div v-show="segmentCategory">
-            <SearchUserSelectMultiple
-                :items="segmentChildListByCategory"
-                :label="$t('search_for_journalist.select_segments')"
-                :value.sync="segments"
-            ></SearchUserSelectMultiple>
+            <v-checkbox
+                v-for="s in segmentChildListByCategory"
+                v-model="segments"
+                class="mt-0 mb-3 pt-0"
+                :key="s.value"
+                :color="inputBorderColor"
+                :label="s.text"
+                :value="s.value"
+                hide-details
+            ></v-checkbox>
         </div>
     </div>
 </template>

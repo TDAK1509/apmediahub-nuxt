@@ -7,11 +7,16 @@
         ></SearchUserSelect>
 
         <div v-show="mediaTypeParent">
-            <SearchUserSelectMultiple
-                :items="mediaListByType"
-                :label="$t('search_for_journalist.media_type_details')"
-                :value.sync="media"
-            ></SearchUserSelectMultiple>
+            <v-checkbox
+                v-for="m in mediaListByType"
+                v-model="media"
+                class="mt-0 mb-3 pt-0"
+                :key="m.value"
+                :color="inputBorderColor"
+                :label="m.text"
+                :value="m.value"
+                hide-details
+            ></v-checkbox>
         </div>
     </div>
 </template>

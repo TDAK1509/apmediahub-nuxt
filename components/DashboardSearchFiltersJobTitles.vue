@@ -5,7 +5,7 @@
         <v-checkbox
             v-for="j in journalistJobTitle"
             v-model="jobTitles"
-            class="mt-2 pt-0"
+            class="mt-3 pt-0"
             :key="j.value"
             :color="inputBorderColor"
             :label="j.text"

@@ -5,7 +5,7 @@
         <v-checkbox
             v-for="s in serviceLevelList"
             v-model="serviceLevels"
-            class="mt-2 pt-0"
+            class="mt-3 pt-0"
             :key="s.value"
             :color="inputBorderColor"
             :label="s.text"
