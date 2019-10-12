@@ -62,6 +62,7 @@ export default {
   },
 
   build: {
-    extend(config, context) {}
+    extend(config, context) {},
+    standalone: true
   }
 };

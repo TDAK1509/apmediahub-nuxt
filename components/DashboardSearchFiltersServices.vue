@@ -6,18 +6,20 @@
             :value.sync="serviceCategory"
         ></SearchUserSelect>
 
-        <div v-show="serviceCategory">
-            <v-checkbox
-                v-for="s in serviceListByCategory"
-                v-model="services"
-                class="mt-0 mb-3 pt-0"
-                :key="s.value"
-                :color="inputBorderColor"
-                :label="s.text"
-                :value="s.value"
-                hide-details
-            ></v-checkbox>
-        </div>
+        <v-scroll-x-reverse-transition>
+            <div v-show="serviceCategory">
+                <v-checkbox
+                    v-for="s in serviceListByCategory"
+                    v-model="services"
+                    class="mt-0 mb-3 pt-0"
+                    :key="s.value"
+                    :color="inputBorderColor"
+                    :label="s.text"
+                    :value="s.value"
+                    hide-details
+                ></v-checkbox>
+            </div>
+        </v-scroll-x-reverse-transition>
     </div>
 </template>
 

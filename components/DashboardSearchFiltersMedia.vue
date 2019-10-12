@@ -6,18 +6,20 @@
             :value.sync="mediaTypeParent"
         ></SearchUserSelect>
 
-        <div v-show="mediaTypeParent">
-            <v-checkbox
-                v-for="m in mediaListByType"
-                v-model="media"
-                class="mt-0 mb-3 pt-0"
-                :key="m.value"
-                :color="inputBorderColor"
-                :label="m.text"
-                :value="m.value"
-                hide-details
-            ></v-checkbox>
-        </div>
+        <v-scroll-x-reverse-transition>
+            <div v-show="mediaTypeParent">
+                <v-checkbox
+                    v-for="m in mediaListByType"
+                    v-model="media"
+                    class="mt-0 mb-3 pt-0"
+                    :key="m.value"
+                    :color="inputBorderColor"
+                    :label="m.text"
+                    :value="m.value"
+                    hide-details
+                ></v-checkbox>
+            </div>
+        </v-scroll-x-reverse-transition>
     </div>
 </template>
 
