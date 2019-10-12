@@ -19,20 +19,12 @@
                     outlined
                     single-line
                     append-icon="mdi-magnify"
-                    class="bold"
+                    class="mb-4"
                     @input="doSearchAction"
+                    hide-details
                 ></v-text-field>
 
-                <TheSearchForAgencySearchPanel
-                    :countries="countries"
-                    :cities="cities"
-                    :services="servicesForSearchFilter"
-                    :serviceLevels="serviceLevels"
-                    @removeCountry="removeFromSelectedCountries"
-                    @removeCity="removeFromSelectedCities"
-                    @removeService="removeFromSelectedServices"
-                    @removeServiceLevel="removeFromSelectedServiceLevels"
-                ></TheSearchForAgencySearchPanel>
+                <DashboardSearchPanel :items="searchPanelItems" @remove="removeFromSearchPanel"></DashboardSearchPanel>
 
                 <DashboardSearchResultWrapper
                     v-show="users.length"
@@ -47,11 +39,9 @@
 
 <script>
 import mixinDashboardTitle from "~/mixins/dashboard-title";
-
-import TheSearchForAgencySearchPanel from "@/components/TheSearchForAgencySearchPanel";
-import TheSearchForAgencySearchSelector from "@/components/TheSearchForAgencySearchSelector";
 import DashboardSearchResultWrapper from "@/components/DashboardSearchResultWrapper";
 import DashboardSearchFilters from "@/components/DashboardSearchFilters";
+import DashboardSearchPanel from "@/components/DashboardSearchPanel";
 
 export default {
     name: "SearchForAgency",
@@ -59,10 +49,9 @@ export default {
     mixins: [mixinDashboardTitle],
 
     components: {
-        TheSearchForAgencySearchPanel,
-        TheSearchForAgencySearchSelector,
         DashboardSearchResultWrapper,
-        DashboardSearchFilters
+        DashboardSearchFilters,
+        DashboardSearchPanel
     },
 
     data() {
@@ -113,6 +102,15 @@ export default {
             return this.$store.state.inputBorderColor;
         },
 
+        searchPanelItems() {
+            return {
+                countries: this.countriesForSearchFilter,
+                cities: this.citiesForSearchFilter,
+                services: this.servicesForSearchFilter,
+                serviceLevels: this.serviceLevelsForSearchFilter
+            };
+        },
+
         servicesForSearchFilter() {
             return this.services.map(key => {
                 // Add .child between 2 parts of key
@@ -126,10 +124,36 @@ export default {
                     value: key
                 };
             });
+        },
+
+        countriesForSearchFilter() {
+            return this.countries.map(country => {
+                return { text: country, value: country };
+            });
+        },
+
+        citiesForSearchFilter() {
+            return this.cities.map(city => {
+                return { text: city, value: city };
+            });
+        },
+
+        serviceLevelsForSearchFilter() {
+            return this.serviceLevels.map(serviceLevel => {
+                return {
+                    text: this.$t(`service_level.${serviceLevel}`),
+                    value: serviceLevel
+                };
+            });
         }
     },
 
     methods: {
+        removeFromSearchPanel({ key, value }) {
+            const index = this[key].indexOf(value);
+            this[key].splice(index, 1);
+        },
+
         removeFromSelectedCountries(country) {
             const index = this.countries.indexOf(country);
             this.countries.splice(index, 1);
