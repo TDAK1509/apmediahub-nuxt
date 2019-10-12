@@ -203,9 +203,12 @@
 
   "service_level": {
     "service_level": "Service level",
-    "basic": "Basic (start to build experience)",
-    "intermediate": "Intermediate (a few years of professional experience)",
-    "expert": "Expert (many years of professional experience and have done many complex projects)"
+    "basic": "Basic",
+    "basic_hint": "start to build experience",
+    "intermediate": "Intermediate",
+    "itnermediate_hint": "a few years of professional experience",
+    "expert": "Expert",
+    "expert_hint": "many years of professional experience and have done many complex projects"
   },
 
   "project_type": {

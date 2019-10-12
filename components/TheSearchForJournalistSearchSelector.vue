@@ -88,16 +88,6 @@ export default {
         };
     },
 
-    computed: {
-        segmentChildListByCategory() {
-            return this.segmentChildList[this.segmentCategory];
-        },
-
-        mediaListByType() {
-            return this.mediaList[this.mediaTypeParent];
-        }
-    },
-
     watch: {
         countries(newValue, oldValue) {
             this.$emit("change", { key: "countries", value: newValue });

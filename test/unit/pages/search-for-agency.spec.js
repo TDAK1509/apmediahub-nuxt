@@ -11,9 +11,9 @@ describe("SearchForAgency.vue", () => {
     expect(wrapper.vm.cities).toEqual([]);
   });
 
-  it("Has variable 'serviceLevel' initialized as string", () => {
+  it("Has variable 'serviceLevels' initialized as array", () => {
     const wrapper = shallowFactory(SearchForAgency);
-    expect(wrapper.vm.serviceLevel).toBeDefined();
+    expect(wrapper.vm.serviceLevels).toEqual([]);
   });
 
   it("Has variable 'services' initialized as array", () => {

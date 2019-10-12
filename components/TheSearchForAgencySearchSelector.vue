@@ -22,11 +22,20 @@
             ></SearchUserSelectMultiple>
         </div>
 
-        <SearchUserSelect
-            :items="serviceLevelList"
-            :label="$t('service_level.service_level')"
-            :value.sync="serviceLevel"
-        ></SearchUserSelect>
+        <div>
+            <h4 class="subhead mb-2">{{$t('service_level.service_level')}}</h4>
+
+            <v-checkbox
+                v-for="s in serviceLevelList"
+                v-model="serviceLevel"
+                class="mt-2 pt-0"
+                :key="s.value"
+                :color="inputBorderColor"
+                :label="s.text"
+                :value="s.value"
+                hide-details
+            ></v-checkbox>
+        </div>
     </div>
 </template>
 
@@ -59,6 +68,12 @@ export default {
             services: [],
             serviceLevel: ""
         };
+    },
+
+    computed: {
+        inputBorderColor() {
+            return this.$store.state.inputBorderColor;
+        }
     },
 
     watch: {

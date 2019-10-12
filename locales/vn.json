@@ -203,9 +203,12 @@
 
   "service_level": {
     "service_level": "Cấp độ dịch vụ",
-    "basic": "Cơ bản (bắt đầu xây dựng kinh nghiệm)",
-    "intermediate": "Trung bình (một vài năm kinh nghiệm)",
-    "expert": "Chuyên gia (nhiều năm kinh nghiệm và đã thực hiện nhiều dự án phức tạp)"
+    "basic": "Cơ bản",
+    "basic_hint": "bắt đầu xây dựng kinh nghiệm",
+    "intermediate": "Trung bình",
+    "intermediate_hint": "một vài năm kinh nghiệm",
+    "expert": "Chuyên gia",
+    "expert_hint": "nhiều năm kinh nghiệm và đã thực hiện nhiều dự án phức tạp"
   },
 
   "project_type": {

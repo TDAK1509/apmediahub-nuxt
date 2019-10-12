@@ -3,21 +3,13 @@
         <v-row>
             <v-col cols="12" sm="2">
                 <v-form ref="form" class="text-left filter-panel pr-7">
-                    <TheSearchForAgencySearchSelector @change="updateSearchValues"></TheSearchForAgencySearchSelector>
-
-                    <div class="d-flex justify-start">
-                        <v-btn
-                            color="primary"
-                            class="px-8"
-                            ref="postButton"
-                            :loading="searching"
-                            :disabled="searching"
-                            @click="doSearchAction"
-                        >
-                            {{$t("common.search")}}
-                            <v-icon right dark>mdi-magnify</v-icon>
-                        </v-btn>
-                    </div>
+                    <DashboardSearchFilters
+                        showCountries
+                        showCities
+                        showServices
+                        showServiceLevels
+                        @change="updateSearchValues"
+                    ></DashboardSearchFilters>
                 </v-form>
             </v-col>
 
@@ -35,9 +27,11 @@
                     :countries="countries"
                     :cities="cities"
                     :services="servicesForSearchFilter"
+                    :serviceLevels="serviceLevels"
                     @removeCountry="removeFromSelectedCountries"
                     @removeCity="removeFromSelectedCities"
                     @removeService="removeFromSelectedServices"
+                    @removeServiceLevel="removeFromSelectedServiceLevels"
                 ></TheSearchForAgencySearchPanel>
 
                 <DashboardSearchResultWrapper
@@ -57,6 +51,7 @@ import mixinDashboardTitle from "~/mixins/dashboard-title";
 import TheSearchForAgencySearchPanel from "@/components/TheSearchForAgencySearchPanel";
 import TheSearchForAgencySearchSelector from "@/components/TheSearchForAgencySearchSelector";
 import DashboardSearchResultWrapper from "@/components/DashboardSearchResultWrapper";
+import DashboardSearchFilters from "@/components/DashboardSearchFilters";
 
 export default {
     name: "SearchForAgency",
@@ -66,7 +61,8 @@ export default {
     components: {
         TheSearchForAgencySearchPanel,
         TheSearchForAgencySearchSelector,
-        DashboardSearchResultWrapper
+        DashboardSearchResultWrapper,
+        DashboardSearchFilters
     },
 
     data() {
@@ -75,7 +71,7 @@ export default {
 
             countries: [],
             cities: [],
-            serviceLevel: "",
+            serviceLevels: [],
             services: [],
 
             userIdList: [],
@@ -147,6 +143,11 @@ export default {
         removeFromSelectedServices(service) {
             const index = this.services.indexOf(service);
             this.services.splice(index, 1);
+        },
+
+        removeFromSelectedServiceLevels(serviceLevel) {
+            const index = this.serviceLevels.indexOf(serviceLevel);
+            this.serviceLevels.splice(index, 1);
         },
 
         updateSearchValues({ key, value }) {

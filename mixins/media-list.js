@@ -4,8 +4,16 @@ export default {
   data() {
     return {
       mediaList: null,
-      mediaTypeList: []
+      mediaTypeList: [],
+      mediaTypeParent: ""
     };
+  },
+
+  computed: {
+    mediaListByType() {
+      if (!this.mediaTypeParent) return [];
+      return this.mediaList[this.mediaTypeParent];
+    }
   },
 
   methods: {

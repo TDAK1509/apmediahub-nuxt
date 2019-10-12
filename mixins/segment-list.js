@@ -4,8 +4,16 @@ export default {
   data() {
     return {
       segmentChildList: null,
-      segmentCategoryList: []
+      segmentCategoryList: [],
+      segmentCategory: ""
     };
+  },
+
+  computed: {
+    segmentChildListByCategory() {
+      if (!this.segmentCategory) return [];
+      return this.segmentChildList[this.segmentCategory];
+    }
   },
 
   methods: {

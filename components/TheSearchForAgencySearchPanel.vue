@@ -1,6 +1,6 @@
 <template>
     <div class="search-panel d-flex flex-column justify-center">
-        <div class="search-panel-block d-flex justify-start align-center flex-wrap">
+        <div class="search-panel-block d-flex justify-start flex-wrap">
             <SearchFilterItem
                 class="mr-2 mb-2"
                 v-for="(f, index) in countries"
