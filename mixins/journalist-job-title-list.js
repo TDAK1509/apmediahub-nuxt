@@ -3,7 +3,7 @@ import journalistJobTitleKey from "@/assets/json/journalist_job_title_key_list.j
 export default {
   data() {
     return {
-      journalistJobTitle: []
+      journalistJobTitleList: []
     };
   },
 
@@ -16,7 +16,7 @@ export default {
         };
       });
 
-      this.journalistJobTitle = list;
+      this.journalistJobTitleList = [...list];
     }
   },
 

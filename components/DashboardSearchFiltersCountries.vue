@@ -6,7 +6,6 @@
 import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
 
 import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
 
 export default {
     name: "DashboardSearchFiltersCountries",
