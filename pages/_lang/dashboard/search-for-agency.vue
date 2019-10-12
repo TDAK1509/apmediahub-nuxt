@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
         <v-row>
-            <v-col cols="12" sm="2">
+            <DashboardSearchUserColumnLeft>
                 <div class="text-left pr-7">
                     <button
                         class="clear-filter mb-4 primary--text body-2"
@@ -22,9 +22,9 @@
                         @change="updateSearchValues"
                     ></DashboardSearchFilters>
                 </v-form>
-            </v-col>
+            </DashboardSearchUserColumnLeft>
 
-            <v-col cols="12" sm="10">
+            <DashboardSearchUserColumnRight>
                 <v-text-field
                     label="Type something here"
                     outlined
@@ -43,7 +43,7 @@
                     :value.sync="userIdList"
                     chip-field-name="services"
                 ></DashboardSearchResultWrapper>
-            </v-col>
+            </DashboardSearchUserColumnRight>
         </v-row>
     </v-container>
 </template>
@@ -53,6 +53,8 @@ import mixinDashboardTitle from "~/mixins/dashboard-title";
 import DashboardSearchResultWrapper from "@/components/DashboardSearchResultWrapper";
 import DashboardSearchFilters from "@/components/DashboardSearchFilters";
 import DashboardSearchPanel from "@/components/DashboardSearchPanel";
+import DashboardSearchUserColumnLeft from "@/components/DashboardSearchUserColumnLeft";
+import DashboardSearchUserColumnRight from "@/components/DashboardSearchUserColumnRight";
 
 export default {
     name: "SearchForAgency",
@@ -62,7 +64,9 @@ export default {
     components: {
         DashboardSearchResultWrapper,
         DashboardSearchFilters,
-        DashboardSearchPanel
+        DashboardSearchPanel,
+        DashboardSearchUserColumnLeft,
+        DashboardSearchUserColumnRight
     },
 
     data() {
