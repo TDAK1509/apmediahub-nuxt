@@ -106,22 +106,22 @@ describe("DashboardSearchFilters.vue", () => {
     expect(wrapper.find(".segments-container").exists()).toBe(true);
   });
 
-  it("Only show jobTitle block if 'showJobTitle' prop is true", () => {
+  it("Only show jobTitle block if 'showJobTitles' prop is true", () => {
     const wrapper = shallowFactory(DashboardSearchFilters);
 
     expect(wrapper.find(".job-title-container").exists()).toBe(false);
 
-    wrapper.setProps({ showJobTitle: true });
+    wrapper.setProps({ showJobTitles: true });
 
     expect(wrapper.find(".job-title-container").exists()).toBe(true);
   });
 
-  it("Only show Language block if 'showLanguage' prop is true", () => {
+  it("Only show Language block if 'showLanguages' prop is true", () => {
     const wrapper = shallowFactory(DashboardSearchFilters);
 
     expect(wrapper.find(".language-container").exists()).toBe(false);
 
-    wrapper.setProps({ showLanguage: true });
+    wrapper.setProps({ showLanguages: true });
 
     expect(wrapper.find(".language-container").exists()).toBe(true);
   });
