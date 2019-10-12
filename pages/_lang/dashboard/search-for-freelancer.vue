@@ -113,10 +113,6 @@ export default {
             );
         },
 
-        inputBorderColor() {
-            return this.$store.state.inputBorderColor;
-        },
-
         searchPanelItems() {
             return {
                 countries: this.countriesForSearchFilter,

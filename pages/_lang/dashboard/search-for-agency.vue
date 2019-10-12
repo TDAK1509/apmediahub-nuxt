@@ -109,10 +109,6 @@ export default {
             return this.$t("common.search") + " " + this.$t("user.role.agency");
         },
 
-        inputBorderColor() {
-            return this.$store.state.inputBorderColor;
-        },
-
         searchPanelItems() {
             return {
                 countries: this.countriesForSearchFilter,
