@@ -2,6 +2,17 @@
     <v-container fluid>
         <v-row>
             <v-col cols="12" sm="2">
+                <div class="text-left pr-7">
+                    <button
+                        class="clear-filter mb-4 primary--text body-2"
+                        type="button"
+                        @click="clearFilter"
+                    >
+                        <v-icon left small color="primary">mdi-filter-remove</v-icon>
+                        {{ $t('search_user.clear_filter') }}
+                    </button>
+                </div>
+
                 <v-form ref="form" class="text-left filter-panel pr-7">
                     <DashboardSearchFilters
                         showCountries
@@ -154,28 +165,15 @@ export default {
             this[key].splice(index, 1);
         },
 
-        removeFromSelectedCountries(country) {
-            const index = this.countries.indexOf(country);
-            this.countries.splice(index, 1);
-        },
-
-        removeFromSelectedCities(city) {
-            const index = this.cities.indexOf(city);
-            this.cities.splice(index, 1);
-        },
-
-        removeFromSelectedServices(service) {
-            const index = this.services.indexOf(service);
-            this.services.splice(index, 1);
-        },
-
-        removeFromSelectedServiceLevels(serviceLevel) {
-            const index = this.serviceLevels.indexOf(serviceLevel);
-            this.serviceLevels.splice(index, 1);
-        },
-
         updateSearchValues({ key, value }) {
             this[key] = value;
+        },
+
+        clearFilter() {
+            this.countries = [];
+            this.cities = [];
+            this.segments = [];
+            this.serviceLevels = [];
         },
 
         async doSearchAction() {
@@ -189,5 +187,13 @@ export default {
 <style lang="scss" scoped>
 .filter-panel {
     border-right: 1px solid #e0e0e0;
+}
+
+.clear-filter {
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+        border-bottom: 1px solid #ccc;
+    }
 }
 </style>

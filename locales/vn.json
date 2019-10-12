@@ -256,7 +256,8 @@
   "search_user": {
     "services": "Dịch vụ chính",
     "service_category": "Nhóm dịch vụ",
-    "select_services": "Chọn chi tiết"
+    "select_services": "Chọn chi tiết",
+    "clear_filter": "Xóa bộ lọc"
   },
 
   "segments": {

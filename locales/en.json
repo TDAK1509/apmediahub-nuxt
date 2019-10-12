@@ -256,7 +256,8 @@
   "search_user": {
     "services": "Services",
     "service_category": "Service category",
-    "select_services": "Select services"
+    "select_services": "Select services",
+    "clear_filter": "Clear filter"
   },
 
   "segments": {
