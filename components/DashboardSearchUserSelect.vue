@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex flex-column">
-        <h4 class="subhead mb-1" v-if="label">{{ label }}</h4>
+        <h4 class="subhead mb-2" v-if="label">{{ label }}</h4>
 
         <v-select
             v-model="value"
@@ -11,6 +11,7 @@
             @change="$emit('update:value', value)"
             :rules="rules"
             :menu-props="{offsetY: true, transition: 'slide-y-reverse-transition'}"
+            hide-details
         ></v-select>
     </div>
 </template>

@@ -4,31 +4,31 @@
             <DashboardSearchFiltersCountries :value.sync="countries"></DashboardSearchFiltersCountries>
         </div>
 
-        <div class="cities-container" v-if="showCities">
+        <div class="cities-container mt-5" v-if="showCities">
             <DashboardSearchFiltersCities :countries="countries" :value.sync="cities"></DashboardSearchFiltersCities>
         </div>
 
-        <div class="services-container" v-if="showServices">
+        <div class="services-container mt-5" v-if="showServices">
             <DashboardSearchFiltersServices :value.sync="services"></DashboardSearchFiltersServices>
         </div>
 
-        <div class="service-levels-container" v-if="showServiceLevels">
+        <div class="service-levels-container mt-5" v-if="showServiceLevels">
             <DashboardSearchFiltersServiceLevels :value.sync="serviceLevels"></DashboardSearchFiltersServiceLevels>
         </div>
 
-        <div class="segments-container" v-if="showSegments">
+        <div class="segments-container mt-5" v-if="showSegments">
             <DashboardSearchFiltersSegments :value.sync="segments"></DashboardSearchFiltersSegments>
         </div>
 
-        <div class="media-container" v-if="showMedia">
+        <div class="media-container mt-5" v-if="showMedia">
             <DashboardSearchFiltersMedia :value.sync="media"></DashboardSearchFiltersMedia>
         </div>
 
-        <div class="job-title-container" v-if="showJobTitles">
+        <div class="job-title-container mt-5" v-if="showJobTitles">
             <DashboardSearchFiltersJobTitles :value.sync="jobTitles"></DashboardSearchFiltersJobTitles>
         </div>
 
-        <div class="language-container" v-if="showLanguages">
+        <div class="language-container mt-5" v-if="showLanguages">
             <DashboardSearchFiltersLanguages :value.sync="languages"></DashboardSearchFiltersLanguages>
         </div>
     </div>

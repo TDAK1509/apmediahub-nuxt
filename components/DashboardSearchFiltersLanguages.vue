@@ -6,10 +6,10 @@
             v-for="l in languageList"
             v-model="languages"
             class="mt-3 pt-0"
-            :key="l.value"
+            :key="l"
             :color="inputBorderColor"
-            :label="l.text"
-            :value="l.value"
+            :label="l"
+            :value="l"
             hide-details
         ></v-checkbox>
     </div>

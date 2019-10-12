@@ -7,7 +7,7 @@
         ></SearchUserSelect>
 
         <v-scroll-x-reverse-transition>
-            <div v-show="serviceCategory">
+            <div v-show="serviceCategory" class="mt-4">
                 <v-checkbox
                     v-for="s in serviceListByCategory"
                     v-model="services"

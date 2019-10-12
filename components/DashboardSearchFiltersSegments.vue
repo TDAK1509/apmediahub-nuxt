@@ -7,7 +7,7 @@
         ></SearchUserSelect>
 
         <v-scroll-x-reverse-transition>
-            <div v-show="segmentCategory">
+            <div v-show="segmentCategory" class="mt-4">
                 <v-checkbox
                     v-for="s in segmentChildListByCategory"
                     v-model="segments"

@@ -7,7 +7,7 @@
         ></SearchUserSelect>
 
         <v-scroll-x-reverse-transition>
-            <div v-show="mediaTypeParent">
+            <div v-show="mediaTypeParent" class="mt-4">
                 <v-checkbox
                     v-for="m in mediaListByType"
                     v-model="media"
