@@ -1,10 +1,10 @@
 <template>
     <div>
-        <SearchUserSelect
+        <SearchSelect
             :items="serviceCategoryList"
             :label="$t('search_user.service_category')"
             :value.sync="serviceCategory"
-        ></SearchUserSelect>
+        ></SearchSelect>
 
         <v-scroll-x-reverse-transition>
             <div v-show="serviceCategory" class="mt-4">
@@ -26,8 +26,8 @@
 <script>
 import mixinServiceList from "~/mixins/service-list";
 
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
+import SearchSelect from "@/components/DashboardSearchSelect";
 
 export default {
     name: "DashboardSearchFiltersServices",
@@ -35,8 +35,8 @@ export default {
     mixins: [mixinServiceList],
 
     components: {
-        SearchUserSelect,
-        SearchUserSelectMultiple
+        SearchSelect,
+        SearchSelectMultiple
     },
     data() {
         return {

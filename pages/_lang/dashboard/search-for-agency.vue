@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
         <v-row>
-            <DashboardSearchUserColumnLeft>
+            <DashboardSearchColumnLeft>
                 <div class="text-left pr-7">
                     <button
                         class="clear-filter mb-4 primary--text body-2"
@@ -22,9 +22,9 @@
                         @change="updateSearchValues"
                     ></DashboardSearchFilters>
                 </v-form>
-            </DashboardSearchUserColumnLeft>
+            </DashboardSearchColumnLeft>
 
-            <DashboardSearchUserColumnRight>
+            <DashboardSearchColumnRight>
                 <v-text-field
                     label="Type something here"
                     outlined
@@ -43,7 +43,7 @@
                     :value.sync="userIdList"
                     chip-field-name="services"
                 ></DashboardSearchResultWrapper>
-            </DashboardSearchUserColumnRight>
+            </DashboardSearchColumnRight>
         </v-row>
     </v-container>
 </template>
@@ -53,8 +53,8 @@ import mixinDashboardTitle from "~/mixins/dashboard-title";
 import DashboardSearchResultWrapper from "@/components/DashboardSearchResultWrapper";
 import DashboardSearchFilters from "@/components/DashboardSearchFilters";
 import DashboardSearchPanel from "@/components/DashboardSearchPanel";
-import DashboardSearchUserColumnLeft from "@/components/DashboardSearchUserColumnLeft";
-import DashboardSearchUserColumnRight from "@/components/DashboardSearchUserColumnRight";
+import DashboardSearchColumnLeft from "@/components/DashboardSearchColumnLeft";
+import DashboardSearchColumnRight from "@/components/DashboardSearchColumnRight";
 
 export default {
     name: "SearchForAgency",
@@ -65,8 +65,8 @@ export default {
         DashboardSearchResultWrapper,
         DashboardSearchFilters,
         DashboardSearchPanel,
-        DashboardSearchUserColumnLeft,
-        DashboardSearchUserColumnRight
+        DashboardSearchColumnLeft,
+        DashboardSearchColumnRight
     },
 
     data() {

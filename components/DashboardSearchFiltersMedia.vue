@@ -1,10 +1,10 @@
 <template>
     <div>
-        <SearchUserSelect
+        <SearchSelect
             :items="mediaTypeList"
             :label="$t('search_for_journalist.media_type')"
             :value.sync="mediaTypeParent"
-        ></SearchUserSelect>
+        ></SearchSelect>
 
         <v-scroll-x-reverse-transition>
             <div v-show="mediaTypeParent" class="mt-4">
@@ -26,8 +26,8 @@
 <script>
 import mixinMediaList from "~/mixins/media-list";
 
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
+import SearchSelect from "@/components/DashboardSearchSelect";
 
 export default {
     name: "DashboardSearchFiltersMedia",
@@ -35,8 +35,8 @@ export default {
     mixins: [mixinMediaList],
 
     components: {
-        SearchUserSelect,
-        SearchUserSelectMultiple
+        SearchSelect,
+        SearchSelectMultiple
     },
 
     data() {

@@ -1,19 +1,19 @@
 <template>
-    <SearchUserSelectMultiple :items="cityList" :label="cityLabel" :value.sync="cities"></SearchUserSelectMultiple>
+    <SearchSelectMultiple :items="cityList" :label="cityLabel" :value.sync="cities"></SearchSelectMultiple>
 </template>
 
 <script>
-import mixinCountryCityListForSearchUser from "~/mixins/search-user-country-city-list";
+import mixinCountryCityListForSearch from "~/mixins/search-user-country-city-list";
 
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
 
 export default {
     name: "DashboardSearchFiltersCities",
 
-    mixins: [mixinCountryCityListForSearchUser],
+    mixins: [mixinCountryCityListForSearch],
 
     components: {
-        SearchUserSelectMultiple
+        SearchSelectMultiple
     },
 
     props: {

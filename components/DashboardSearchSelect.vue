@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    name: "SearchUserSelect",
+    name: "SearchSelect",
 
     props: {
         items: Array,

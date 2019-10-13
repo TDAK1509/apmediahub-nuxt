@@ -1,14 +1,14 @@
 <template>
-    <SearchUserSelectMultiple
+    <SearchSelectMultiple
         :items="journalistJobTitleList"
         :label="$t('my_information.job_title')"
         :value.sync="jobTitles"
-    ></SearchUserSelectMultiple>
+    ></SearchSelectMultiple>
 </template>
 
 <script>
 import mixinJournalistJobTitleList from "~/mixins/journalist-job-title-list";
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
 
 export default {
     name: "DashboardSearchFiltersJobTitles",
@@ -16,7 +16,7 @@ export default {
     mixins: [mixinJournalistJobTitleList],
 
     components: {
-        SearchUserSelectMultiple
+        SearchSelectMultiple
     },
 
     data() {

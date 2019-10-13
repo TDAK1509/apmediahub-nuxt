@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: "SearchUserSelectMultiple",
+    name: "SearchSelectMultiple",
 
     props: {
         items: Array,

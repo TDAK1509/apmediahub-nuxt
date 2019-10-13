@@ -1,10 +1,10 @@
 <template>
     <div>
-        <SearchUserSelect
+        <SearchSelect
             :items="segmentCategoryList"
             :label="$t('search_for_journalist.segment_category')"
             :value.sync="segmentCategory"
-        ></SearchUserSelect>
+        ></SearchSelect>
 
         <v-scroll-x-reverse-transition>
             <div v-show="segmentCategory" class="mt-4">
@@ -26,8 +26,8 @@
 <script>
 import mixinSegmentList from "~/mixins/segment-list";
 
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
+import SearchSelect from "@/components/DashboardSearchSelect";
 
 export default {
     name: "DashboardSearchFiltersSegments",
@@ -35,8 +35,8 @@ export default {
     mixins: [mixinSegmentList],
 
     components: {
-        SearchUserSelect,
-        SearchUserSelectMultiple
+        SearchSelect,
+        SearchSelectMultiple
     },
 
     data() {

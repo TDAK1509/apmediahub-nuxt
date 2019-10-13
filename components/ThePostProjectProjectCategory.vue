@@ -1,25 +1,25 @@
 <template>
     <div>
-        <SearchUserSelect
+        <SearchSelect
             :items="serviceCategoryList"
             :label="$t('search_user.service_category')"
             :value.sync="serviceCategory"
-        ></SearchUserSelect>
+        ></SearchSelect>
 
         <div v-show="serviceCategory">
-            <SearchUserSelectMultiple
+            <SearchSelectMultiple
                 :items="serviceListByCategory"
                 :label="$t('search_user.select_services')"
                 :value.sync="services"
-            ></SearchUserSelectMultiple>
+            ></SearchSelectMultiple>
         </div>
     </div>
 </template>
 
 <script>
 import mixinServiceList from "@/mixins/service-list";
-import SearchUserSelectMultiple from "@/components/DashboardSearchUserSelectMultiple";
-import SearchUserSelect from "@/components/DashboardSearchUserSelect";
+import SearchSelectMultiple from "@/components/DashboardSearchSelectMultiple";
+import SearchSelect from "@/components/DashboardSearchSelect";
 
 export default {
     name: "ProjectCategory",
@@ -31,8 +31,8 @@ export default {
     mixins: [mixinServiceList],
 
     components: {
-        SearchUserSelectMultiple,
-        SearchUserSelect
+        SearchSelectMultiple,
+        SearchSelect
     },
 
     data() {
