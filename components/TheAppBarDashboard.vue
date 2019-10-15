@@ -10,6 +10,8 @@
         </v-toolbar-title>
 
         <v-spacer></v-spacer>
+
+        <LanguageSwitcher></LanguageSwitcher>
     </v-app-bar>
 </template>
 

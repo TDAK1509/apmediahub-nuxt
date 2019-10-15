@@ -1,21 +1,22 @@
 <template>
-    <v-menu offset-y transition="scroll-y-transition" lazy>
+    <v-menu offset-y transition="scroll-y-transition">
         <template #activator="{ on }">
-            <v-list-item v-on="on">
-                <v-list-item-title>
-                    <v-img :src="selectedLanguage" width="30" height="20"></v-img>
-                </v-list-item-title>
-            </v-list-item>
+            <v-btn text v-on="on">
+                <v-img :src="selectedLanguage"></v-img>
+            </v-btn>
         </template>
 
         <v-list>
             <v-list-item
-                v-for="(flag, lang) in languages"
-                :key="`lang${lang}`"
-                @click="setLanguague(lang)"
+                v-for="item in languages"
+                :key="`lang${item.lang}`"
+                @click="setLanguague(item.lang)"
             >
                 <v-list-item-title>
-                    <v-img :src="flag" width="30" height="20"></v-img>
+                    <div class="d-flex">
+                        <img :src="item.flag" class="flag" />
+                        <span class="ml-2">{{item.text}}</span>
+                    </div>
                 </v-list-item-title>
             </v-list-item>
         </v-list>
@@ -31,14 +32,23 @@ export default {
     name: "ChangeLanguage",
     data() {
         return {
-            languages: { vn: flagVn, en: flagEn }
+            languages: [
+                { flag: flagVn, lang: "vn", text: "Tiếng Việt" },
+                { flag: flagEn, lang: "en", text: "English" }
+            ],
+
+            flag: {
+                en: flagEn,
+                vn: flagVn
+            }
         };
     },
 
     computed: {
         ...mapState(["locale"]),
+
         selectedLanguage() {
-            return this.languages[this.locale];
+            return this.flag[this.locale];
         }
     },
 
@@ -57,3 +67,11 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.flag {
+    width: 30px;
+    height: 20px;
+    object-fit: cover;
+}
+</style>
