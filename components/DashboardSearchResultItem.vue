@@ -12,6 +12,7 @@
                 half-increments
                 dense
                 small
+                readonly
             ></v-rating>
         </div>
 

@@ -6,6 +6,6 @@
 
 <script>
 export default {
-    name: "DashboardSearchColumnRight"
+    name: "DashboardSearchColumnLeft"
 };
 </script>
