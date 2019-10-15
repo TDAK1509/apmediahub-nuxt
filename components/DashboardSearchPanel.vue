@@ -1,10 +1,11 @@
 <template>
     <div class="search-panel d-flex justify-start flex-wrap">
-        <template v-for="(item, key) in items">
+        <template v-for="(item, key, i) in items">
             <SearchFilterItem
                 class="mr-2 mb-4"
-                v-for="(child, index) in item"
-                :key="`${key}-${index}`"
+                v-for="(child, j) in item"
+                :key="`${key}-${j}`"
+                :colorIndex="i"
                 @remove="$emit('remove', { key: key, value: child.value})"
             >{{child.text}}</SearchFilterItem>
         </template>
