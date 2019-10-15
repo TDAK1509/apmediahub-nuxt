@@ -90,21 +90,21 @@
         <div class="contact-container text-left body-2">
             <div class="grid-item">
                 <v-icon size="18">mdi-phone-classic</v-icon>
-                <span class="ml-2">+8428123456</span>
+                <span class="ml-2">{{ userLandline }}</span>
             </div>
 
             <div class="grid-item">
                 <v-icon size="18">mdi-map-marker</v-icon>
-                <span class="ml-2">Vietnam, Ho Chi Minh City</span>
+                <span class="ml-2">{{ userLocation }}</span>
             </div>
             <div class="grid-item">
                 <v-icon size="18">mdi-cellphone-iphone</v-icon>
-                <span class="ml-2">+84932523257</span>
+                <span class="ml-2">{{ userMobile }}</span>
             </div>
 
             <div class="grid-item">
                 <v-icon size="18">mdi-email-outline</v-icon>
-                <span class="ml-2">anh.nguyen@apmediahub.com</span>
+                <span class="ml-2">{{ user.email }}</span>
             </div>
         </div>
 
@@ -151,6 +151,33 @@ export default {
 
         avatarSize() {
             return this.$vuetify.breakpoint.mdAndUp ? "100" : "80";
+        },
+
+        userMobile() {
+            if (!this.user.mobile) return "";
+            return (
+                this.user.mobile.country_code + " " + this.user.mobile.number
+            );
+        },
+
+        userLandline() {
+            if (!this.user.landline) return "";
+            return (
+                this.user.landline.country_code +
+                " " +
+                this.user.landline.number +
+                this.userLandlineExt
+            );
+        },
+
+        userLandlineExt() {
+            if (!this.user.landline) return "";
+            if (this.user.landline.ext) return " - " + this.user.landline.ext;
+        },
+
+        userLocation() {
+            if (!this.user.country) return "";
+            return this.user.country + ", " + this.user.city;
         }
     },
 

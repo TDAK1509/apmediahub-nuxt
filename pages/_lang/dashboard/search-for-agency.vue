@@ -90,7 +90,14 @@ export default {
                     job_title: "Web Designer",
                     full_name: "Tran Duy An Khuong",
                     services: ["hahaa", "HTML5", "Audio/Video Production"],
-                    website: "https://www.google.com"
+                    website: "https://www.google.com",
+                    mobile: {
+                        country_code: "+84",
+                        number: "932523257"
+                    },
+                    country: "Vietnam",
+                    city: "Ho Chi Minh",
+                    email: "dbcgdhh@gmail.com"
                 },
                 {
                     _id: "haha1",
@@ -102,7 +109,14 @@ export default {
                     job_title: "Singer",
                     full_name: "Chou Tzu-yu",
                     services: ["Beautiful", "Angel", "Sing Shoot Dance"],
-                    facebook: "https://www.facebook.com/TzuyuChou.fc/"
+                    facebook: "https://www.facebook.com/TzuyuChou.fc/",
+                    mobile: {
+                        country_code: "+84",
+                        number: "932523257"
+                    },
+                    country: "Korea",
+                    city: "Seoul",
+                    email: "tzuyu@gmail.com"
                 }
             ]
         };
