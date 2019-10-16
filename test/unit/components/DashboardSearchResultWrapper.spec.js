@@ -24,32 +24,16 @@ describe("DashboardSearchResultWrapper.vue", () => {
     expect(wrapper.emitted("update:value")).toBeTruthy();
   });
 
-  it("Update userIdList on checkbox checked/unchecked", () => {
+  it("'addToUserList' push new id to 'userIdList'", () => {
     const wrapper = factory(DashboardSearchResultWrapper);
-    wrapper.setProps({ users });
-
-    const checkbox = wrapper.find('input[type="checkbox"]');
-    checkbox.trigger("click");
-
-    const userIdList = wrapper.vm.userIdList;
-
-    expect(userIdList).toHaveLength(1);
-    // Has correct value
-    expect(userIdList[0]).toBe(users[0]._id);
-
-    checkbox.trigger("click");
-
-    expect(userIdList).toEqual([]);
+    wrapper.vm.addToUserList("test");
+    expect(wrapper.vm.userIdList[0]).toBe("test");
   });
 
-  it("Has number of checkbox equals to 'users' length", () => {
+  it("'removeFromUserList' remove id from 'userIdList'", () => {
     const wrapper = factory(DashboardSearchResultWrapper);
-    const usersLong = [{ _id: "hahaha" }, { _id: "hehehe" }, { _id: "hihihi" }];
-
-    wrapper.setProps({ users: usersLong });
-
-    const checkbox = wrapper.findAll('input[type="checkbox"]');
-
-    expect(checkbox).toHaveLength(usersLong.length);
+    wrapper.vm.userIdList = ["haha", "test", "hihi"];
+    wrapper.vm.removeFromUserList("test");
+    expect(wrapper.vm.userIdList).toEqual(["haha", "hihi"]);
   });
 });
