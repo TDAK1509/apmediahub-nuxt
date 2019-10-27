@@ -27,22 +27,33 @@ export default {
 
   css: ["~/assets/page-transition.css"],
 
-  router: {
-    middleware: "i18n"
-  },
-
-  plugins: [
-    "~/plugins/global_components.js",
-    "~/plugins/i18n.js",
-    "~/plugins/api.js"
-  ],
+  plugins: ["~/plugins/global_components.js", "~/plugins/api.js"],
 
   buildModules: ["@nuxtjs/vuetify"],
 
-  modules: ["@nuxtjs/axios"],
+  modules: ["@nuxtjs/axios", "nuxt-i18n"],
 
   axios: {
     browserBaseURL: "http://localhost:5000"
+  },
+
+  i18n: {
+    locales: ["vn", "en"],
+    defaultLocale: "vn",
+    strategy: "prefix_except_default",
+    vueI18nLoader: true,
+    vueI18n: {
+      fallbackLocale: "vn",
+      messages: {
+        vn: {
+          welcome: "Xin chào"
+        },
+
+        en: {
+          welcome: "Welcome"
+        }
+      }
+    }
   },
 
   vuetify: {
