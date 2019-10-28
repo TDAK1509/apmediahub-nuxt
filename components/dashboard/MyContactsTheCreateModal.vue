@@ -2,10 +2,10 @@
     <div class="text-left">
         <v-btn data-test="createButton" color="primary" @click="showModal = true">
             <v-icon left>mdi-plus</v-icon>
-            {{ $t("create") }}
+            {{ $t("create_new_list") }}
         </v-btn>
 
-        <ModalPopup v-model="showModal" :title="$t('create')">
+        <ModalPopup v-model="showModal" :title="$t('create_new_list')">
             <div class="text-center">
                 <v-text-field
                     data-test="listNameInput"
@@ -13,7 +13,7 @@
                     v-model="listName"
                 ></v-text-field>
 
-                <v-btn data-test="saveButton" color="primary" @click="save">Save</v-btn>
+                <v-btn data-test="saveButton" color="primary" @click="save">{{$t("save")}}</v-btn>
             </div>
         </ModalPopup>
     </div>
@@ -46,21 +46,20 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
-
 <i18n>
 {
     "en": {
-        "create": "Create a new contact list",
+        "create_new_list": "Create a new contact list",
         "save": "Save",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "contact_list_name": "Contact list name"
     },
 
     "vn": {
-        "create": "Tạo danh bạ mới",
+        "create_new_list": "Tạo danh bạ mới",
         "save": "Lưu",
-        "cancel": "Hủy"
+        "cancel": "Hủy",
+        "contact_list_name": "Tên danh bạ"
     }
 }
 </i18n>
