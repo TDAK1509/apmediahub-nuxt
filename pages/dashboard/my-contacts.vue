@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreateModal @save="createNewList"></CreateModal>
-        <ContactList :list="contactList"></ContactList>
+        <ContactList v-if="currentUser" :list="contactList"></ContactList>
     </div>
 </template>
 
@@ -9,6 +9,7 @@
 import CreateModal from "@/components/dashboard/MyContactsTheCreateModal";
 import ContactList from "@/components/dashboard/MyContactsTheContactList";
 import mixinDashboardTitle from "~/mixins/dashboard-title";
+import { mapState } from "vuex";
 
 export default {
     name: "MyContacts",
@@ -20,21 +21,9 @@ export default {
         ContactList
     },
 
-    data() {
-        return {
-            currentUser: {
-                contact_list: [
-                    {
-                        id: 1,
-                        name: "List 1",
-                        users: [1, 2]
-                    }
-                ]
-            }
-        };
-    },
-
     computed: {
+        ...mapState(["currentUser"]),
+
         title() {
             return this.$t("dashboard.my_contacts");
         },

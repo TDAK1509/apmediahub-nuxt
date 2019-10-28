@@ -22,6 +22,9 @@
 import TheAppBarDashboard from "@/components/TheAppBarDashboard";
 import TheNavigationDrawer from "@/components/TheNavigationDrawer";
 import DashboardContentTitle from "@/components/DashboardContentTitle";
+
+import mixinApi from "@/mixins/api";
+
 import { mapState } from "vuex";
 
 export default {
@@ -33,6 +36,8 @@ export default {
         DashboardContentTitle
     },
 
+    mixins: [mixinApi],
+
     computed: {
         ...mapState(["dashboardPageTitle"]),
 
@@ -43,7 +48,7 @@ export default {
 
     methods: {
         async getCurrentUser() {
-            const currentUser = await this.apiGetCurrentUser();
+            const currentUser = await this.$api_getCurrentUser();
             this.$store.commit("SET_CURRENT_USER", currentUser);
         }
     },

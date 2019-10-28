@@ -27,7 +27,7 @@ export default {
 
   css: ["~/assets/page-transition.css"],
 
-  plugins: ["~/plugins/global_components.js", "~/plugins/api.js"],
+  plugins: ["~/plugins/global_components.js"],
 
   buildModules: ["@nuxtjs/vuetify"],
 
