@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("resetDatabase", () => {
+  const data = {
+    currentUser: []
+  };
+  const str = JSON.stringify(data);
+  cy.writeFile("../../db/db.json", str);
+});

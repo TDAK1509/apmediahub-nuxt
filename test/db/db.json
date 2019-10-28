@@ -1,0 +1,17 @@
+{
+  "currentUser": {
+    "contact_list": [
+      {
+        "id": 1,
+        "name": "List 1",
+        "users": [1, 2, 3]
+      },
+
+      {
+        "id": 2,
+        "name": "List 2",
+        "users": [4]
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-    <v-card-title class="d-flex">
+    <v-card-title class="d-flex" data-test="pageTitle">
         <div class="flex-grow-1 pb-3 text-capitalize title-container">
             <slot></slot>
         </div>
