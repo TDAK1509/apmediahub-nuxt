@@ -5,22 +5,24 @@
             {{ $t("create_new_list") }}
         </v-btn>
 
-        <ModalPopup v-model="showModal" :title="$t('create_new_list')">
-            <div class="text-center">
+        <ModalPopup v-model="showModal" :title="$t('create_new_list')" data-test="createModal">
+            <v-form class="text-center" ref="form">
                 <v-text-field
                     data-test="listNameInput"
                     label="Contact list name"
                     v-model="listName"
+                    :rules="[inputRules.required]"
                 ></v-text-field>
 
                 <v-btn data-test="saveButton" color="primary" @click="save">{{$t("save")}}</v-btn>
-            </div>
+            </v-form>
         </ModalPopup>
     </div>
 </template>
 
 <script>
 import ModalPopup from "@/components/ModalPopup";
+import mixinInputRules from "@/mixins/input-rules";
 
 export default {
     name: "CreateModal",
@@ -28,6 +30,8 @@ export default {
     components: {
         ModalPopup
     },
+
+    mixins: [mixinInputRules],
 
     data() {
         return {
@@ -39,8 +43,10 @@ export default {
 
     methods: {
         save() {
-            this.$emit("save", this.listName);
-            this.showModal = false;
+            if (this.$refs.form.validate()) {
+                this.$emit("save", this.listName);
+                this.showModal = false;
+            }
         }
     }
 };

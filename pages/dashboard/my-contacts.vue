@@ -9,16 +9,23 @@
 import CreateModal from "@/components/dashboard/MyContactsTheCreateModal";
 import ContactList from "@/components/dashboard/MyContactsTheContactList";
 import mixinDashboardTitle from "~/mixins/dashboard-title";
+import mixinApi from "@/mixins/api";
 import { mapState } from "vuex";
 
 export default {
     name: "MyContacts",
 
-    mixins: [mixinDashboardTitle],
+    mixins: [mixinDashboardTitle, mixinApi],
 
     components: {
         CreateModal,
         ContactList
+    },
+
+    data() {
+        return {
+            newContactList: []
+        };
     },
 
     computed: {
@@ -29,18 +36,21 @@ export default {
         },
 
         contactList() {
-            return this.currentUser.contact_list;
+            return [...this.newContactList, ...this.currentUser.contact_list];
         }
     },
 
     methods: {
-        createNewList(value) {
+        async createNewList(value) {
             const list = {
                 id: this.currentUser.contact_list.length + 1,
                 name: value,
                 users: []
             };
-            this.currentUser.contact_list.push(list);
+
+            this.newContactList.push(list);
+
+            await this.$api_updateContactList(this.contactList);
         }
     }
 };
