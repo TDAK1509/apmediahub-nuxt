@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreateModal @save="createNewList"></CreateModal>
-        <ContactList v-if="currentUser" :list="contactList"></ContactList>
+        <ContactList v-if="currentUser" :list="contactList" class="mt-5"></ContactList>
     </div>
 </template>
 
