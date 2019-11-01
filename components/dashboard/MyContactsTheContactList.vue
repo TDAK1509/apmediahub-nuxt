@@ -1,6 +1,12 @@
 <template>
     <div>
-        <ContactListRow v-for="l in list" :list-item="l" :key="l.id" class="contact-list-row"></ContactListRow>
+        <ContactListRow
+            v-for="l in list"
+            :list-item="l"
+            :key="l.id"
+            class="contact-list-row"
+            @delete="deleteList"
+        ></ContactListRow>
     </div>
 </template>
 
@@ -18,6 +24,12 @@ export default {
         list: {
             type: Array,
             required: true
+        }
+    },
+
+    methods: {
+        deleteList(listId) {
+            this.$emit("delete", listId);
         }
     }
 };

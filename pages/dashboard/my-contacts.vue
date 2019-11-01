@@ -1,7 +1,7 @@
 <template>
     <div>
         <CreateModal @save="createNewList"></CreateModal>
-        <ContactList v-if="currentUser" :list="contactList" class="mt-5"></ContactList>
+        <ContactList v-if="currentUser" :list="contactList" class="mt-5" @delete="deleteList"></ContactList>
     </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
 
     data() {
         return {
-            newContactList: []
+            newContactList: [],
+            currentContactList: []
         };
     },
 
@@ -32,11 +33,19 @@ export default {
         ...mapState(["currentUser"]),
 
         title() {
-            return this.$t("dashboard.my_contacts");
+            return this.$t("title");
         },
 
         contactList() {
-            return [...this.newContactList, ...this.currentUser.contact_list];
+            return [...this.newContactList, ...this.currentContactList];
+        }
+    },
+
+    watch: {
+        currentUser(newValue, oldValue) {
+            if (newValue) {
+                this.currentContactList = [...this.currentUser.contact_list];
+            }
         }
     },
 
@@ -51,10 +60,30 @@ export default {
             this.newContactList.push(list);
 
             await this.$api_updateContactList(this.contactList);
+        },
+
+        async deleteList(listId) {
+            this.newContactList = this.newContactList.filter(
+                item => item.id != listId
+            );
+            this.currentContactList = this.currentContactList.filter(
+                item => item.id != listId
+            );
+
+            await this.$api_updateContactList(this.contactList);
         }
     }
 };
 </script>
 
-<style>
-</style>
+<i18n>
+{
+    "en": {
+        "title": "My contacts"
+    },
+
+    "vn": {
+        "title": "Danh bạ của tôi"
+    }
+}
+</i18n>

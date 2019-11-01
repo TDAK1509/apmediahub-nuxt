@@ -3,6 +3,10 @@ describe("my-contacts.vue", () => {
         cy.visit("/en/dashboard/my-contacts");
     });
 
+    afterEach(() => {
+        cy.resetDatabase();
+    });
+
     it("Has content title", () => {
         cy.get("[data-test=pageTitle]").should("be.visible");
     });
@@ -52,7 +56,12 @@ describe("my-contacts.vue", () => {
             });
 
             it("Clicks 'yes' in modal delete contact list row", () => {
+                cy.get("[data-test=deleteButton]")
+                    .first()
+                    .click();
+
                 cy.get("[data-test=yesButton]").click();
+
                 cy.contains("asdklfj;asdl;fjas").should("not.visible");
             });
         });

@@ -1,7 +1,7 @@
 <template>
     <div class="container d-flex justify-space-between align-center">
         <div class="list flex-grow-1 d-flex justify-space-between align-center">
-            <div class="subtitle-2">{{listItem.name}}</div>
+            <div class="subtitle-2" data-test="listName">{{listItem.name}}</div>
 
             <div class="d-flex justify-space-between align-center black--text">
                 <span data-test="userCount">{{listItem.users.length}}</span>
@@ -26,23 +26,37 @@
                 color="primary"
                 data-test="deleteButton"
                 class="ml-10"
-                @click="deleteList"
+                @click="showDeleteConfirmModal"
             >
                 <v-icon>mdi-trash-can-outline</v-icon>
             </v-btn>
         </div>
+
+        <ModalConfirm v-model="confirmModalIsShow" data-test="confirmModal" @yes="deleteList"></ModalConfirm>
     </div>
 </template>
 
 <script>
+import ModalConfirm from "@/components/ModalConfirm";
+
 export default {
     name: "ContactListRow",
+
+    components: {
+        ModalConfirm
+    },
 
     props: {
         listItem: {
             type: Object,
             required: true
         }
+    },
+
+    data() {
+        return {
+            confirmModalIsShow: false
+        };
     },
 
     methods: {
@@ -54,7 +68,13 @@ export default {
             console.log("haha");
         },
 
-        deleteList() {}
+        showDeleteConfirmModal() {
+            this.confirmModalIsShow = true;
+        },
+
+        deleteList() {
+            this.$emit("delete", this.listItem.id);
+        }
     }
 };
 </script>

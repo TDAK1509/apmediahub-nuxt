@@ -58,7 +58,7 @@ describe("MyContactsTheContactListRow.vue", () => {
         expect(spy).toHaveBeenCalled();
     });
 
-    it("Call copyEmails() on click 'copy emails'", () => {
+    it("Call copy() on click 'copy emails'", () => {
         const copy = jest.fn();
 
         wrapper = factory(ContactListRow, {
@@ -80,7 +80,7 @@ describe("MyContactsTheContactListRow.vue", () => {
     });
 
     it("Call detele() on click 'delete'", () => {
-        const deleteList = jest.fn();
+        const showDeleteConfirmModal = jest.fn();
 
         wrapper = factory(ContactListRow, {
             propsData: {
@@ -92,11 +92,11 @@ describe("MyContactsTheContactListRow.vue", () => {
             },
 
             methods: {
-                deleteList
+                showDeleteConfirmModal
             }
         });
 
         wrapper.find("[data-test=deleteButton]").trigger("click");
-        expect(deleteList).toHaveBeenCalled();
+        expect(showDeleteConfirmModal).toHaveBeenCalled();
     });
 });
