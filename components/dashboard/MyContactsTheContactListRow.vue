@@ -32,7 +32,12 @@
             </v-btn>
         </div>
 
-        <ModalConfirm v-model="confirmModalIsShow" data-test="confirmModal" @yes="deleteList"></ModalConfirm>
+        <ModalConfirm
+            v-model="confirmModalIsShow"
+            data-test="confirmModal"
+            @yes="deleteList"
+            :message="$t('confirm_delete')"
+        ></ModalConfirm>
     </div>
 </template>
 
@@ -83,12 +88,14 @@ export default {
 {
     "en": {
         "open": "View",
-        "copy": "Copy emails"
+        "copy": "Copy emails",
+        "confirm_delete": "Do you want to delete the list?"
     },
 
     "vn": {
         "open": "Xem",
-        "copy": "Sao chép email"
+        "copy": "Sao chép email",
+        "confirm_delete": "Bạn muốn xóa danh bạ này?"
     }
 }
 </i18n>

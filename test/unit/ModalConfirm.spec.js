@@ -6,7 +6,7 @@ describe("ModalConfirm.vue", () => {
     it("Renders title", () => {
         wrapper = shallowFactory(ModalConfirm, {
             propsData: {
-                title: "cai lon gi vay",
+                message: "cai lon gi vay",
                 value: true
             }
         });
