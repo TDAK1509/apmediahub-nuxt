@@ -1,510 +1,510 @@
 {
-  "login": {
-    "login": "Đăng nhập",
-    "remember_me": "Lưu đăng nhập",
-    "create_new_account": "Tạo tài khoản mới"
-  },
-
-  "register": {
-    "register": "Đăng ký",
-    "register_as": "Chức năng"
-  },
-
-  "form": {
-    "field": {
-      "password": "Mật khẩu",
-      "password_confirm": "Nhập lại mật khẩu",
-      "company": "Công ty",
-      "full_name": "Họ tên"
+    "login": {
+        "login": "Đăng nhập",
+        "remember_me": "Lưu đăng nhập",
+        "create_new_account": "Tạo tài khoản mới"
     },
 
-    "error": {
-      "email_required": "Vui lòng nhập email",
-      "email_invalid": "Email không đúng",
-      "email_duplicated": "Email này đã được sử dụng",
-      "password_blank": "Vui lòng nhập mật khẩu",
-      "wrong_email_password": "Email hoặc mật khẩu không đúng",
-      "password_not_match": "Mật khẩu không giống nhau",
-      "password_short": "Password phải chứa ít nhất 6 ký tự",
-      "empty": "Không được bỏ trống",
-      "server": "Lỗi hệ thống, vui lòng thử lại sau!",
-      "not_number": "Vui lòng điền một con số"
+    "register": {
+        "register": "Đăng ký",
+        "register_as": "Chức năng"
+    },
+
+    "form": {
+        "field": {
+            "password": "Mật khẩu",
+            "password_confirm": "Nhập lại mật khẩu",
+            "company": "Công ty",
+            "full_name": "Họ tên"
+        },
+
+        "error": {
+            "email_required": "Vui lòng nhập email",
+            "email_invalid": "Email không đúng",
+            "email_duplicated": "Email này đã được sử dụng",
+            "password_blank": "Vui lòng nhập mật khẩu",
+            "wrong_email_password": "Email hoặc mật khẩu không đúng",
+            "password_not_match": "Mật khẩu không giống nhau",
+            "password_short": "Password phải chứa ít nhất 6 ký tự",
+            "empty": "Không được bỏ trống",
+            "server": "Lỗi hệ thống, vui lòng thử lại sau!",
+            "not_number": "Vui lòng điền một con số"
+        }
+    },
+
+    "user": {
+        "role": {
+            "client": "Nhà Tuyển Dụng",
+            "agency": "Nhà Môi Giới",
+            "journalist": "Nhà Báo",
+            "freelancer": "Người Làm Việc Tự Do"
+        }
+    },
+
+    "dashboard": {
+        "dashboard": "Bảng điều khiển",
+        "personal": "Cá nhân",
+        "my_contacts": "Danh bạ",
+        "my_projects": "Dự án",
+        "my_jobs": "Công việc",
+        "my_media_alerts": "Thông báo",
+        "my_information": "Thông tin cá nhân",
+        "my_membership": "Thông tin thành viên",
+        "post_job": "Đăng việc làm",
+        "post_project": "Đăng dự án"
+    },
+
+    "common": {
+        "search": "Tìm kiếm",
+        "post": "Đăng bài",
+        "media": "Phương tiện truyền thông",
+        "job": "Công việc",
+        "project": "Dự án",
+        "media_alert": "Thông báo",
+        "country": "Quốc gia",
+        "city": "Thành phố",
+        "other": "Khác",
+        "other_text": "Nếu chọn khác, vui lòng ghi rõ",
+        "all": "Tất cả",
+        "language": "Ngôn ngữ"
+    },
+
+    "post_job": {
+        "job_description": "Mô tả công việc",
+        "job_id": "Mã số công việc",
+        "general_information": "Thông tin chung",
+        "details": "Thông tin chi tiết",
+        "attachment": "Đính kèm",
+        "closing_date": "Ngày kết thúc",
+        "department": "Phòng/ban",
+        "reports_to": "Báo cáo tới",
+        "job_purpose": "Mục đích công việc",
+        "company_overview": "Quan điểm công ty",
+        "key_responsibilities": "Trách nhiệm của ứng viên",
+        "competencies": "Năng lực của ứng viên",
+        "qualifications_experiences": "Bằng cấp & kinh nghiệm",
+        "challenges_opportunities": "Khó khăn & cơ hội",
+        "application_form": "Đơn ứng cử",
+        "who_can_see": "Ai có thể nhìn thấy công việc này?"
+    },
+
+    "post_project": {
+        "project_description": "Mô tả dự án",
+        "project_name": "Tên dự án",
+        "project_category": "Lĩnh vực của dự án",
+        "skills": "Những kĩ năng quan trọng cần có",
+        "who_can_see": "Ai có thể nhìn thấy dự án này?"
+    },
+
+    "my_information": {
+        "job_title": "Chức danh"
+    },
+
+    "job_type": {
+        "job_type": "Loại công việc",
+        "all": "Tất cả",
+        "full-time": "Toàn thời gian",
+        "part-time": "Bán thời gian",
+        "freelance": "Tự do",
+        "internship": "Thực tập",
+        "short-term": "Ngắn hạn"
+    },
+
+    "services": {
+        "design_creative_media": {
+            "text": "Design/Creative/Media",
+            "child": {
+                "animation": "Hoạt hình",
+                "audio_video_production": "Sản xuất âm thanh/video",
+                "photography": "Chụp hình",
+                "logo_design_branding": "Thiết kế logo & thương hiệu",
+                "graphic_design": "Đồ họa",
+                "collateral_design": "Thiết kế khác",
+                "art_illustration": "Nghệ thuật và minh họa",
+                "voice_talent": "Kĩ năng nói chuyện",
+                "brand_identity_strategy": "Định hình và chiến thuật thương hiệu",
+                "motion_graphics": "Đồ họa ảnh động",
+                "web_design": "Thiết kế web",
+                "other": "Thiết kế / sáng tạo khác"
+            }
+        },
+        "writing": {
+            "text": "Writing",
+            "child": {
+                "article_writing": "Article Writing",
+                "content_writing": "Content Writing",
+                "blog_social_media_writing": "Blog & Social Media Writing",
+                "speech_writing": "Speech Writing",
+                "copywriting": "Copywriting",
+                "creative_writing": "Creative Writing",
+                "web_content": "Web Content",
+                "editing_proofreading": "Editing & Proofreading",
+                "grant_writing": "Grant Writing",
+                "resumes_cover_letter": "Resumes & Cover Letter",
+                "technical_writing": "Technical Writing",
+                "academic_writing": "Academic Writing",
+                "newspaper_writing": "Newspaper Writing",
+                "press_releases": "Press Releases",
+                "other_writing": "Other Writing"
+            }
+        },
+        "sale_marketing": {
+            "text": "Sale & Marketing",
+            "child": {
+                "advertising": "Advertising",
+                "email_marketing_automation": "Email & Marketing Automation",
+                "lead_generation": "Lead Generation",
+                "market_customer_research": "Market & Customer Research",
+                "marketing_strategy": "Marketing Strategy",
+                "public_relations": "Public Relations",
+                "sem": "SEM-Search Engine Marketing",
+                "seo": "SEO-Search Engine Optimization",
+                "smm": "SMM-Social Media Marketing",
+                "telemarketing_telesales": "Telemarketing & Telesales",
+                "branding": "Branding",
+                "google_adsense_adWords": "Google Adsense/AdWords",
+                "other_sale_marketing": "Other Sale & Marketing"
+            }
+        },
+        "event": {
+            "text": "Event",
+            "child": {
+                "event_planner": "Event Planner",
+                "event_suppliers": "Event Suppliers",
+                "corporate_gifts": "Corporate Gifts",
+                "pgs_services": "PGs Services"
+            }
+        },
+        "translation_language": {
+            "text": "Translation & Language",
+            "child": {
+                "general_translation": "General Translation",
+                "legal_translation": "Legal Translation",
+                "technical_translation": "Technical Translation",
+                "simultaneous_interpreting": "Simultaneous Interpreting",
+                "conference_interpreting": "Conference Interpreting",
+                "english_vietnamese": "English-Vietnamese",
+                "chinese_vietnamese": "Chinese-Vietnamese"
+            }
+        },
+        "admin_support": {
+            "text": "Admin Support",
+            "child": {
+                "data_entry": "Data Entry",
+                "project_based": "Project based",
+                "transcription": "Transcription",
+                "web_research": "Web Research",
+                "call_center": "Call Center",
+                "phone_support_handling": "Phone Support/Handling",
+                "other_admin_support": "Other Admin Support"
+            }
+        }
+    },
+
+    "service_level": {
+        "service_level": "Cấp độ dịch vụ",
+        "basic": "Cơ bản",
+        "basic_hint": "bắt đầu xây dựng kinh nghiệm",
+        "intermediate": "Trung bình",
+        "intermediate_hint": "một vài năm kinh nghiệm",
+        "expert": "Chuyên gia",
+        "expert_hint": "nhiều năm kinh nghiệm và đã thực hiện nhiều dự án phức tạp"
+    },
+
+    "project_type": {
+        "project_type": "Phân loại dự án",
+        "one_time": "Dự án một lần",
+        "ongoing": "Dự án kéo dài"
+    },
+
+    "project_payment": {
+        "project_payment": "Hình thức thanh toán",
+        "fixed": "Giá cố định (phù hợp cho các dự án một lần)",
+        "hour": "Thanh toán theo giờ (phù hợp cho các dự án kéo dài)",
+        "payment_amount": "Mức giá"
+    },
+
+    "project_duration": {
+        "project_duration": "Thời gian của dự án",
+        "less_than_a_week": "Dưới một tuần",
+        "less_than_a_month": "Dưới một tháng",
+        "one_to_three_months": "1 đến 3 tháng",
+        "three_to_six_months": "3 đến 6 tháng",
+        "six_to_twelve_months": "6 đến 12 tháng",
+        "more_than_a_year": "Trên một năm"
+    },
+
+    "project_time_requirement": {
+        "time_requirement": "Yêu cầu giờ làm việc cho dự án",
+        "less_than_ten_hours_week": "Dưới 10 giờ/tuần",
+        "ten_to_twenty_hours_week": "10 đến 20 giờ/tuần",
+        "twenty_to_thirty_hours_week": "20 đến 30 giờ/tuần",
+        "thirty_to_forty_hours_week": "30 đến 40 giờ/tuần",
+        "more_than_forty_hours_week": "Trên 40 giờ/tuần",
+        "flexible": "Linh động"
+    },
+
+    "who_can_see": {
+        "all_agencies": "Tất cả Nhà Môi Giới",
+        "search_agencies": "Những Nhà Môi Giới tôi tìm bây giờ",
+        "my_contact_agencies": "Những Nhà Môi Giới trong danh bạ của tôi",
+        "all_freelancers": "Tất cả Người Làm Việc Tự Do",
+        "search_freelancers": "Những Người Làm Việc Tự Do tôi tìm bây giờ",
+        "my_contact_freelancers": "Những Người Làm Việc Tự Do trong danh bạ của tôi"
+    },
+
+    "search_user": {
+        "services": "Dịch vụ chính",
+        "service_category": "Nhóm dịch vụ",
+        "select_services": "Chọn chi tiết",
+        "clear_filter": "Xóa bộ lọc"
+    },
+
+    "segments": {
+        "art_culture": {
+            "text": "Arts & Culture",
+            "child": {
+                "art_culture_literature": "Arts/Culture/Literature",
+                "home_decoration_interior_design": "Home/Decoration/Interior Design",
+                "photography": "Photography"
+            }
+        },
+
+        "business_finance": {
+            "text": "Business & Finance",
+            "child": {
+                "business_finance_economy": "Business/Finance/Economy",
+                "real_estate": "Real Estate",
+                "securities_trading": "Securities & Trading",
+                "sme_m_a": "SME/M&A",
+                "start_up_fintech": "Start up/Fintech"
+            }
+        },
+
+        "communication_media": {
+            "text": "Communication & Media",
+            "child": {
+                "broadcast_cable_television_guide": "Broadcast/cable television guide",
+                "internet_blog_social_media": "Internet/Blog/Social Media",
+                "tv_mdia_newspaper": "TV/Media/Newspaper",
+                "pr_marketing_advertising": "PR/Marketing/Advertising",
+                "classified_ads": "Classified Ads"
+            }
+        },
+
+        "education_training": {
+            "text": "Education & Training",
+            "child": {
+                "education_science": "Education/Science",
+                "trading_online_course": "Training/Online Course",
+                "consulting": "Consulting"
+            }
+        },
+
+        "fmcg_retail": {
+            "text": "FMCG & Retail",
+            "child": {
+                "automobiles": "Automobiles",
+                "e_commerce": "E-Commerce",
+                "fmcg_retail": "FMCG/Retail",
+                "industrial_products": "Industrial Products",
+                "manufacturing": "Manufacturing"
+            }
+        },
+
+        "government": {
+            "text": "Government",
+            "child": {
+                "csr_environment": "CSR/Environment",
+                "government_public_affair": "Government/Public Affair",
+                "ngo_non_profit": "NGO/Non-Profit",
+                "politics": "Politics",
+                "transportation_infrastructure": "Transportation/Infrastructure",
+                "energy_renewable_resource": "Energy/Renewable Resource"
+            }
+        },
+
+        "health_medical_care": {
+            "text": "Health & Medical Care",
+            "child": {
+                "health_medical_care": "Health/Medical Care",
+                "pharmaceutical_biotech": "Pharmaceutical/Biotech"
+            }
+        },
+
+        "hospitality_tourism": {
+            "text": "Hospitality & Tourism",
+            "child": {
+                "entertainment_comics_horoscopes": "Entertainment/Comics/Horoscopes",
+                "events_movies_music_comedies": "Events/Movies/Music/Comedies",
+                "tourism_travel_tips": "Tourism/Travel Tips"
+            }
+        },
+
+        "information_technology": {
+            "text": "Information Technology",
+            "child": {
+                "computer": "Computer",
+                "electronics": "Handhelds/Electronics/Gadgets",
+                "hightech": "HighTech/4.0 Revolution",
+                "gaming": "Gaming/Esport"
+            }
+        },
+
+        "lifestyle": {
+            "text": "Lifestyle",
+            "child": {
+                "beauty": "Beauty & Grooming",
+                "cooking": "Cooking/Cuisine",
+                "fashion": "Fashion/Lifestyle",
+                "food": "Food/Beverage",
+                "kids": "Kids/Youth",
+                "women": "Women's Interest",
+                "men": "Men's Interest",
+                "spa": "Spa & Wellness",
+                "pets": "Pets",
+                "nature": "Nature & Wildlife",
+                "showbiz": "Showbiz/Celebrity"
+            }
+        },
+
+        "news": {
+            "text": "News",
+            "child": {
+                "breaking": "Breaking News",
+                "general": "General News",
+                "local": "Local News",
+                "international": "International News",
+                "legal": "Legal News/Crime & Court"
+            }
+        },
+
+        "society_people": {
+            "text": "Society & People",
+            "child": {
+                "interview": "Interview",
+                "letter_from_reader": "Letter from the reader",
+                "opinion": "Opinion/Editorial",
+                "society": "Society/People",
+                "family": "Family/Relationship/Parenting"
+            }
+        },
+
+        "sport": {
+            "text": "Sport",
+            "child": {
+                "football": "Football",
+                "fitness": "Cardio & Fitness",
+                "mma": "MMA",
+                "basketball": "Basketball",
+                "other": "Trekking/Running/Other Sports"
+            }
+        },
+
+        "others": {
+            "text": "Others",
+            "child": {
+                "agriculture": "Agriculture/Rural",
+                "career": "Career",
+                "expatriate": "Expatriate",
+                "weather": "Weather",
+                "others": "Others"
+            }
+        }
+    },
+
+    "search_for_journalist": {
+        "segment_category": "Đề tài",
+        "select_segments": "Chọn đề tài chi tiết",
+        "media_type": "Loại phương tiện truyền thông",
+        "media_type_details": "Chọn chi tiết"
+    },
+
+    "journalist_job_title": {
+        "arts_editor": "Arts Editor",
+        "columnists": "Columnists",
+        "blogger": "Blogger",
+        "bureau_chief": "Bureau Chief",
+        "beauty_editor": "Beauty Editor",
+        "fashion_editor": "Fashion Editor",
+        "news_editor": "News Editor",
+        "business_editor": "Business Editor",
+        "sports_editor": "Sports Editor",
+        "features_editor": "Features Editor",
+        "political_editor": "Political Editor",
+        "economics_editor": "Economics Editor",
+        "foreign_correspondent": "Foreign Correspondent",
+        "crime_reporter": "Crime Reporter",
+        "producer": "Producer",
+        "industry_editor": "Industry Editor",
+        "social_media_editor": "Social Media Editor",
+        "technology_editor": "Technology Editor",
+        "travel_editor": "Travel Editor",
+        "chief_of_staff": "Chief of Staff",
+        "digital_online_editor": "Digital / Online Editor",
+        "lifestyle_editor": "Lifestyle Editor",
+        "consumer_editor": "Consumer Editor",
+        "entertainment_editor": "Entertainment Editor",
+        "motoring_editor": "Motoring Editor",
+        "property_editor": "Property Editor",
+        "health_editor": "Health Editor"
+    },
+
+    "media": {
+        "print": {
+            "text": "Báo giấy",
+            "child": {
+                "tuoi_tre": "Báo Tuổi Trẻ",
+                "thanh_nien": "Báo Thanh Niên",
+                "phu_nu": "Báo Phụ Nữ",
+                "phap_luat": "Báo Pháp Luật",
+                "sai_gon": "Báo Sài Gòn",
+                "the_saigon_times_daily": "The Saigon Times Daily",
+                "tien_phong": "Báo Tiền Phong",
+                "nhan_dan": "Báo Nhân Dân",
+                "cong_an": "Báo Công An",
+                "lao_dong": "Báo Lao Động",
+                "nguoi_lao_dong": "Báo Người Lao Động"
+            }
+        },
+        "broadcast": {
+            "text": "Truyền hình",
+            "child": {
+                "vtv1": "VTV1",
+                "vtv2": "VTV2",
+                "vtv3": "VTV3",
+                "vtv4": "VTV4",
+                "vtv5": "VTV5",
+                "vtv6": "VTV6",
+                "vtv7": "VTV7",
+                "vtv8": "VTV8",
+                "vtv9": "VTV9",
+                "vtv10": "VTV10",
+                "htv1": "HTV1",
+                "htv2": "HTV2",
+                "htv3": "HTV3",
+                "htv4": "HTV4",
+                "htv5": "HTV5",
+                "htv6": "HTV6",
+                "htv7": "HTV7",
+                "htv8": "HTV8",
+                "htv9": "HTV9",
+                "fm999": "FM99.9"
+            }
+        },
+        "online": {
+            "text": "Báo online",
+            "child": {
+                "vnexpress": "VNExpress",
+                "vietnam_net": "VietNamNet",
+                "dan_tri": "DanTri",
+                "ngoi_sao": "NgoiSao",
+                "kenh14": "Kenh14"
+            }
+        },
+        "other": {
+            "text": "Phương tiện truyền thông khác",
+            "child": { "other": "Phương tiện truyền thông khác" }
+        }
     }
-  },
-
-  "user": {
-    "role": {
-      "client": "Nhà Tuyển Dụng",
-      "agency": "Nhà Môi Giới",
-      "journalist": "Nhà Báo",
-      "freelancer": "Người Làm Việc Tự Do"
-    }
-  },
-
-  "dashboard": {
-    "dashboard": "Bảng điều khiển",
-    "personal": "Cá nhân",
-    "my_contacts": "Danh bạ",
-    "my_projects": "Dự án",
-    "my_jobs": "Công việc",
-    "my_media_alerts": "Thông báo",
-    "my_information": "Thông tin cá nhân",
-    "my_membership": "Thông tin thành viên",
-    "post_job": "Đăng việc làm",
-    "post_project": "Đăng dự án"
-  },
-
-  "common": {
-    "search": "Tìm kiếm",
-    "post": "Đăng bài",
-    "media": "Phương tiện truyền thông",
-    "job": "Công việc",
-    "project": "Dự án",
-    "media_alert": "Thông báo",
-    "country": "Quốc gia",
-    "city": "Thành phố",
-    "other": "Khác",
-    "other_text": "Nếu chọn khác, vui lòng ghi rõ",
-    "all": "Tất cả",
-    "language": "Ngôn ngữ"
-  },
-
-  "post_job": {
-    "job_description": "Mô tả công việc",
-    "job_id": "Mã số công việc",
-    "general_information": "Thông tin chung",
-    "details": "Thông tin chi tiết",
-    "attachment": "Đính kèm",
-    "closing_date": "Ngày kết thúc",
-    "department": "Phòng/ban",
-    "reports_to": "Báo cáo tới",
-    "job_purpose": "Mục đích công việc",
-    "company_overview": "Quan điểm công ty",
-    "key_responsibilities": "Trách nhiệm của ứng viên",
-    "competencies": "Năng lực của ứng viên",
-    "qualifications_experiences": "Bằng cấp & kinh nghiệm",
-    "challenges_opportunities": "Khó khăn & cơ hội",
-    "application_form": "Đơn ứng cử",
-    "who_can_see": "Ai có thể nhìn thấy công việc này?"
-  },
-
-  "post_project": {
-    "project_description": "Mô tả dự án",
-    "project_name": "Tên dự án",
-    "project_category": "Lĩnh vực của dự án",
-    "skills": "Những kĩ năng quan trọng cần có",
-    "who_can_see": "Ai có thể nhìn thấy dự án này?"
-  },
-
-  "my_information": {
-    "job_title": "Chức danh"
-  },
-
-  "job_type": {
-    "job_type": "Loại công việc",
-    "all": "Tất cả",
-    "full-time": "Toàn thời gian",
-    "part-time": "Bán thời gian",
-    "freelance": "Tự do",
-    "internship": "Thực tập",
-    "short-term": "Ngắn hạn"
-  },
-
-  "services": {
-    "design_creative_media": {
-      "text": "Design/Creative/Media",
-      "child": {
-        "animation": "Hoạt hình",
-        "audio_video_production": "Sản xuất âm thanh/video",
-        "photography": "Chụp hình",
-        "logo_design_branding": "Thiết kế logo & thương hiệu",
-        "graphic_design": "Đồ họa",
-        "collateral_design": "Thiết kế khác",
-        "art_illustration": "Nghệ thuật và minh họa",
-        "voice_talent": "Kĩ năng nói chuyện",
-        "brand_identity_strategy": "Định hình và chiến thuật thương hiệu",
-        "motion_graphics": "Đồ họa ảnh động",
-        "web_design": "Thiết kế web",
-        "other": "Thiết kế / sáng tạo khác"
-      }
-    },
-    "writing": {
-      "text": "Writing",
-      "child": {
-        "article_writing": "Article Writing",
-        "content_writing": "Content Writing",
-        "blog_social_media_writing": "Blog & Social Media Writing",
-        "speech_writing": "Speech Writing",
-        "copywriting": "Copywriting",
-        "creative_writing": "Creative Writing",
-        "web_content": "Web Content",
-        "editing_proofreading": "Editing & Proofreading",
-        "grant_writing": "Grant Writing",
-        "resumes_cover_letter": "Resumes & Cover Letter",
-        "technical_writing": "Technical Writing",
-        "academic_writing": "Academic Writing",
-        "newspaper_writing": "Newspaper Writing",
-        "press_releases": "Press Releases",
-        "other_writing": "Other Writing"
-      }
-    },
-    "sale_marketing": {
-      "text": "Sale & Marketing",
-      "child": {
-        "advertising": "Advertising",
-        "email_marketing_automation": "Email & Marketing Automation",
-        "lead_generation": "Lead Generation",
-        "market_customer_research": "Market & Customer Research",
-        "marketing_strategy": "Marketing Strategy",
-        "public_relations": "Public Relations",
-        "sem": "SEM-Search Engine Marketing",
-        "seo": "SEO-Search Engine Optimization",
-        "smm": "SMM-Social Media Marketing",
-        "telemarketing_telesales": "Telemarketing & Telesales",
-        "branding": "Branding",
-        "google_adsense_adWords": "Google Adsense/AdWords",
-        "other_sale_marketing": "Other Sale & Marketing"
-      }
-    },
-    "event": {
-      "text": "Event",
-      "child": {
-        "event_planner": "Event Planner",
-        "event_suppliers": "Event Suppliers",
-        "corporate_gifts": "Corporate Gifts",
-        "pgs_services": "PGs Services"
-      }
-    },
-    "translation_language": {
-      "text": "Translation & Language",
-      "child": {
-        "general_translation": "General Translation",
-        "legal_translation": "Legal Translation",
-        "technical_translation": "Technical Translation",
-        "simultaneous_interpreting": "Simultaneous Interpreting",
-        "conference_interpreting": "Conference Interpreting",
-        "english_vietnamese": "English-Vietnamese",
-        "chinese_vietnamese": "Chinese-Vietnamese"
-      }
-    },
-    "admin_support": {
-      "text": "Admin Support",
-      "child": {
-        "data_entry": "Data Entry",
-        "project_based": "Project based",
-        "transcription": "Transcription",
-        "web_research": "Web Research",
-        "call_center": "Call Center",
-        "phone_support_handling": "Phone Support/Handling",
-        "other_admin_support": "Other Admin Support"
-      }
-    }
-  },
-
-  "service_level": {
-    "service_level": "Cấp độ dịch vụ",
-    "basic": "Cơ bản",
-    "basic_hint": "bắt đầu xây dựng kinh nghiệm",
-    "intermediate": "Trung bình",
-    "intermediate_hint": "một vài năm kinh nghiệm",
-    "expert": "Chuyên gia",
-    "expert_hint": "nhiều năm kinh nghiệm và đã thực hiện nhiều dự án phức tạp"
-  },
-
-  "project_type": {
-    "project_type": "Phân loại dự án",
-    "one_time": "Dự án một lần",
-    "ongoing": "Dự án kéo dài"
-  },
-
-  "project_payment": {
-    "project_payment": "Hình thức thanh toán",
-    "fixed": "Giá cố định (phù hợp cho các dự án một lần)",
-    "hour": "Thanh toán theo giờ (phù hợp cho các dự án kéo dài)",
-    "payment_amount": "Mức giá"
-  },
-
-  "project_duration": {
-    "project_duration": "Thời gian của dự án",
-    "less_than_a_week": "Dưới một tuần",
-    "less_than_a_month": "Dưới một tháng",
-    "one_to_three_months": "1 đến 3 tháng",
-    "three_to_six_months": "3 đến 6 tháng",
-    "six_to_twelve_months": "6 đến 12 tháng",
-    "more_than_a_year": "Trên một năm"
-  },
-
-  "project_time_requirement": {
-    "time_requirement": "Yêu cầu giờ làm việc cho dự án",
-    "less_than_ten_hours_week": "Dưới 10 giờ/tuần",
-    "ten_to_twenty_hours_week": "10 đến 20 giờ/tuần",
-    "twenty_to_thirty_hours_week": "20 đến 30 giờ/tuần",
-    "thirty_to_forty_hours_week": "30 đến 40 giờ/tuần",
-    "more_than_forty_hours_week": "Trên 40 giờ/tuần",
-    "flexible": "Linh động"
-  },
-
-  "who_can_see": {
-    "all_agencies": "Tất cả Nhà Môi Giới",
-    "search_agencies": "Những Nhà Môi Giới tôi tìm bây giờ",
-    "my_contact_agencies": "Những Nhà Môi Giới trong danh bạ của tôi",
-    "all_freelancers": "Tất cả Người Làm Việc Tự Do",
-    "search_freelancers": "Những Người Làm Việc Tự Do tôi tìm bây giờ",
-    "my_contact_freelancers": "Những Người Làm Việc Tự Do trong danh bạ của tôi"
-  },
-
-  "search_user": {
-    "services": "Dịch vụ chính",
-    "service_category": "Nhóm dịch vụ",
-    "select_services": "Chọn chi tiết",
-    "clear_filter": "Xóa bộ lọc"
-  },
-
-  "segments": {
-    "art_culture": {
-      "text": "Arts & Culture",
-      "child": {
-        "art_culture_literature": "Arts/Culture/Literature",
-        "home_decoration_interior_design": "Home/Decoration/Interior Design",
-        "photography": "Photography"
-      }
-    },
-
-    "business_finance": {
-      "text": "Business & Finance",
-      "child": {
-        "business_finance_economy": "Business/Finance/Economy",
-        "real_estate": "Real Estate",
-        "securities_trading": "Securities & Trading",
-        "sme_m_a": "SME/M&A",
-        "start_up_fintech": "Start up/Fintech"
-      }
-    },
-
-    "communication_media": {
-      "text": "Communication & Media",
-      "child": {
-        "broadcast_cable_television_guide": "Broadcast/cable television guide",
-        "internet_blog_social_media": "Internet/Blog/Social Media",
-        "tv_mdia_newspaper": "TV/Media/Newspaper",
-        "pr_marketing_advertising": "PR/Marketing/Advertising",
-        "classified_ads": "Classified Ads"
-      }
-    },
-
-    "education_training": {
-      "text": "Education & Training",
-      "child": {
-        "education_science": "Education/Science",
-        "trading_online_course": "Training/Online Course",
-        "consulting": "Consulting"
-      }
-    },
-
-    "fmcg_retail": {
-      "text": "FMCG & Retail",
-      "child": {
-        "automobiles": "Automobiles",
-        "e_commerce": "E-Commerce",
-        "fmcg_retail": "FMCG/Retail",
-        "industrial_products": "Industrial Products",
-        "manufacturing": "Manufacturing"
-      }
-    },
-
-    "government": {
-      "text": "Government",
-      "child": {
-        "csr_environment": "CSR/Environment",
-        "government_public_affair": "Government/Public Affair",
-        "ngo_non_profit": "NGO/Non-Profit",
-        "politics": "Politics",
-        "transportation_infrastructure": "Transportation/Infrastructure",
-        "energy_renewable_resource": "Energy/Renewable Resource"
-      }
-    },
-
-    "health_medical_care": {
-      "text": "Health & Medical Care",
-      "child": {
-        "health_medical_care": "Health/Medical Care",
-        "pharmaceutical_biotech": "Pharmaceutical/Biotech"
-      }
-    },
-
-    "hospitality_tourism": {
-      "text": "Hospitality & Tourism",
-      "child": {
-        "entertainment_comics_horoscopes": "Entertainment/Comics/Horoscopes",
-        "events_movies_music_comedies": "Events/Movies/Music/Comedies",
-        "tourism_travel_tips": "Tourism/Travel Tips"
-      }
-    },
-
-    "information_technology": {
-      "text": "Information Technology",
-      "child": {
-        "computer": "Computer",
-        "electronics": "Handhelds/Electronics/Gadgets",
-        "hightech": "HighTech/4.0 Revolution",
-        "gaming": "Gaming/Esport"
-      }
-    },
-
-    "lifestyle": {
-      "text": "Lifestyle",
-      "child": {
-        "beauty": "Beauty & Grooming",
-        "cooking": "Cooking/Cuisine",
-        "fashion": "Fashion/Lifestyle",
-        "food": "Food/Beverage",
-        "kids": "Kids/Youth",
-        "women": "Women's Interest",
-        "men": "Men's Interest",
-        "spa": "Spa & Wellness",
-        "pets": "Pets",
-        "nature": "Nature & Wildlife",
-        "showbiz": "Showbiz/Celebrity"
-      }
-    },
-
-    "news": {
-      "text": "News",
-      "child": {
-        "breaking": "Breaking News",
-        "general": "General News",
-        "local": "Local News",
-        "international": "International News",
-        "legal": "Legal News/Crime & Court"
-      }
-    },
-
-    "society_people": {
-      "text": "Society & People",
-      "child": {
-        "interview": "Interview",
-        "letter_from_reader": "Letter from the reader",
-        "opinion": "Opinion/Editorial",
-        "society": "Society/People",
-        "family": "Family/Relationship/Parenting"
-      }
-    },
-
-    "sport": {
-      "text": "Sport",
-      "child": {
-        "football": "Football",
-        "fitness": "Cardio & Fitness",
-        "mma": "MMA",
-        "basketball": "Basketball",
-        "other": "Trekking/Running/Other Sports"
-      }
-    },
-
-    "others": {
-      "text": "Others",
-      "child": {
-        "agriculture": "Agriculture/Rural",
-        "career": "Career",
-        "expatriate": "Expatriate",
-        "weather": "Weather",
-        "others": "Others"
-      }
-    }
-  },
-
-  "search_for_journalist": {
-    "segment_category": "Đề tài",
-    "select_segments": "Chọn đề tài chi tiết",
-    "media_type": "Loại phương tiện truyền thông",
-    "media_type_details": "Chọn chi tiết"
-  },
-
-  "journalist_job_title": {
-    "arts_editor": "Arts Editor",
-    "columnists": "Columnists",
-    "blogger": "Blogger",
-    "bureau_chief": "Bureau Chief",
-    "beauty_editor": "Beauty Editor",
-    "fashion_editor": "Fashion Editor",
-    "news_editor": "News Editor",
-    "business_editor": "Business Editor",
-    "sports_editor": "Sports Editor",
-    "features_editor": "Features Editor",
-    "political_editor": "Political Editor",
-    "economics_editor": "Economics Editor",
-    "foreign_correspondent": "Foreign Correspondent",
-    "crime_reporter": "Crime Reporter",
-    "producer": "Producer",
-    "industry_editor": "Industry Editor",
-    "social_media_editor": "Social Media Editor",
-    "technology_editor": "Technology Editor",
-    "travel_editor": "Travel Editor",
-    "chief_of_staff": "Chief of Staff",
-    "digital_online_editor": "Digital / Online Editor",
-    "lifestyle_editor": "Lifestyle Editor",
-    "consumer_editor": "Consumer Editor",
-    "entertainment_editor": "Entertainment Editor",
-    "motoring_editor": "Motoring Editor",
-    "property_editor": "Property Editor",
-    "health_editor": "Health Editor"
-  },
-
-  "media": {
-    "print": {
-      "text": "Báo giấy",
-      "child": {
-        "tuoi_tre": "Báo Tuổi Trẻ",
-        "thanh_nien": "Báo Thanh Niên",
-        "phu_nu": "Báo Phụ Nữ",
-        "phap_luat": "Báo Pháp Luật",
-        "sai_gon": "Báo Sài Gòn",
-        "the_saigon_times_daily": "The Saigon Times Daily",
-        "tien_phong": "Báo Tiền Phong",
-        "nhan_dan": "Báo Nhân Dân",
-        "cong_an": "Báo Công An",
-        "lao_dong": "Báo Lao Động",
-        "nguoi_lao_dong": "Báo Người Lao Động"
-      }
-    },
-    "broadcast": {
-      "text": "Truyền hình",
-      "child": {
-        "vtv1": "VTV1",
-        "vtv2": "VTV2",
-        "vtv3": "VTV3",
-        "vtv4": "VTV4",
-        "vtv5": "VTV5",
-        "vtv6": "VTV6",
-        "vtv7": "VTV7",
-        "vtv8": "VTV8",
-        "vtv9": "VTV9",
-        "vtv10": "VTV10",
-        "htv1": "HTV1",
-        "htv2": "HTV2",
-        "htv3": "HTV3",
-        "htv4": "HTV4",
-        "htv5": "HTV5",
-        "htv6": "HTV6",
-        "htv7": "HTV7",
-        "htv8": "HTV8",
-        "htv9": "HTV9",
-        "fm999": "FM99.9"
-      }
-    },
-    "online": {
-      "text": "Báo online",
-      "child": {
-        "vnexpress": "VNExpress",
-        "vietnam_net": "VietNamNet",
-        "dan_tri": "DanTri",
-        "ngoi_sao": "NgoiSao",
-        "kenh14": "Kenh14"
-      }
-    },
-    "other": {
-      "text": "Phương tiện truyền thông khác",
-      "child": { "other": "Phương tiện truyền thông khác" }
-    }
-  }
 }
