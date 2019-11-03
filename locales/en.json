@@ -1,510 +1,510 @@
 {
-  "login": {
-    "login": "Login",
-    "remember_me": "Remember me",
-    "create_new_account": "Create new account"
-  },
-
-  "register": {
-    "register": "Register",
-    "register_as": "Register as"
-  },
-
-  "form": {
-    "field": {
-      "password": "Password",
-      "password_confirm": "Confirm password",
-      "company": "Company / Media / Organization",
-      "full_name": "Full name"
+    "login": {
+        "login": "Login",
+        "remember_me": "Remember me",
+        "create_new_account": "Create new account"
     },
 
-    "error": {
-      "email_required": "Please enter email",
-      "email_invalid": "Not valid email",
-      "email_duplicated": "This email is used by another account",
-      "password_blank": "Please enter password",
-      "wrong_email_password": "Email or password is wrong",
-      "password_not_match": "Passwords do not match",
-      "password_short": "Password must be at least 6 characters long",
-      "empty": "This field is required",
-      "server": "Something is wrong with our server, please try again later!",
-      "not_number": "Please enter a number"
+    "register": {
+        "register": "Register",
+        "register_as": "Register as"
+    },
+
+    "form": {
+        "field": {
+            "password": "Password",
+            "password_confirm": "Confirm password",
+            "company": "Company / Media / Organization",
+            "full_name": "Full name"
+        },
+
+        "error": {
+            "email_required": "Please enter email",
+            "email_invalid": "Not valid email",
+            "email_duplicated": "This email is used by another account",
+            "password_blank": "Please enter password",
+            "wrong_email_password": "Email or password is wrong",
+            "password_not_match": "Passwords do not match",
+            "password_short": "Password must be at least 6 characters long",
+            "empty": "This field is required",
+            "server": "Something is wrong with our server, please try again later!",
+            "not_number": "Please enter a number"
+        }
+    },
+
+    "user": {
+        "role": {
+            "client": "Client",
+            "agency": "Agency",
+            "journalist": "Journalist",
+            "freelancer": "Freelancer"
+        }
+    },
+
+    "dashboard": {
+        "dashboard": "Dashboard",
+        "personal": "Personal",
+        "my_contacts": "My contacts",
+        "my_projects": "My projects",
+        "my_jobs": "My jobs",
+        "my_media_alerts": "My media alerts",
+        "my_information": "My information",
+        "my_membership": "My membership",
+        "post_job": "Post job",
+        "post_project": "Post project"
+    },
+
+    "common": {
+        "search": "Search for",
+        "post": "Post",
+        "media": "Media",
+        "job": "Job",
+        "project": "Project",
+        "media_alert": "Media alert",
+        "country": "Country",
+        "city": "City",
+        "other": "Other",
+        "other_text": "If other, please specify",
+        "all": "All",
+        "language": "Language"
+    },
+
+    "post_job": {
+        "job_description": "Job description",
+        "job_id": "Job ID",
+        "general_information": "General information",
+        "details": "Details",
+        "attachment": "Attachment",
+        "closing_date": "Closing date",
+        "department": "Division/Dept",
+        "reports_to": "Reports to",
+        "job_purpose": "Job purpose",
+        "company_overview": "Company overview",
+        "key_responsibilities": "Key responsibilites",
+        "competencies": "competencies",
+        "qualifications_experiences": "Qualifications & experiences",
+        "challenges_opportunities": "Challenges & opportunities",
+        "application_form": "Application form",
+        "who_can_see": "Who can see this job?"
+    },
+
+    "post_project": {
+        "project_description": "Project description",
+        "project_name": "Project name",
+        "project_category": "Project category",
+        "skills": "The most important skills to be required",
+        "who_can_see": "Who can see this project?"
+    },
+
+    "my_information": {
+        "job_title": "Job title"
+    },
+
+    "job_type": {
+        "job_type": "Job type",
+        "all": "All",
+        "full-time": "Full-time",
+        "part-time": "Part-time",
+        "freelance": "Freelance",
+        "internship": "Internship",
+        "short-term": "Short term"
+    },
+
+    "services": {
+        "design_creative_media": {
+            "text": "Design/Creative/Media",
+            "child": {
+                "animation": "Animation",
+                "audio_video_production": "Audio/Video Production",
+                "photography": "Photography",
+                "logo_design_branding": "Logo Design & Branding",
+                "graphic_design": "Graphic Design",
+                "collateral_design": "Collateral Design",
+                "art_illustration": "Art & Illustration",
+                "voice_talent": "Voice Talent",
+                "brand_identity_strategy": "Brand Identity & Strategy",
+                "motion_graphics": "Motion Graphics",
+                "web_design": "Web Design",
+                "other": "Other Design/Creative"
+            }
+        },
+        "writing": {
+            "text": "Writing",
+            "child": {
+                "article_writing": "Article Writing",
+                "content_writing": "Content Writing",
+                "blog_social_media_writing": "Blog & Social Media Writing",
+                "speech_writing": "Speech Writing",
+                "copywriting": "Copywriting",
+                "creative_writing": "Creative Writing",
+                "web_content": "Web Content",
+                "editing_proofreading": "Editing & Proofreading",
+                "grant_writing": "Grant Writing",
+                "resumes_cover_letter": "Resumes & Cover Letter",
+                "technical_writing": "Technical Writing",
+                "academic_writing": "Academic Writing",
+                "newspaper_writing": "Newspaper Writing",
+                "press_releases": "Press Releases",
+                "other_writing": "Other Writing"
+            }
+        },
+        "sale_marketing": {
+            "text": "Sale & Marketing",
+            "child": {
+                "advertising": "Advertising",
+                "email_marketing_automation": "Email & Marketing Automation",
+                "lead_generation": "Lead Generation",
+                "market_customer_research": "Market & Customer Research",
+                "marketing_strategy": "Marketing Strategy",
+                "public_relations": "Public Relations",
+                "sem": "SEM-Search Engine Marketing",
+                "seo": "SEO-Search Engine Optimization",
+                "smm": "SMM-Social Media Marketing",
+                "telemarketing_telesales": "Telemarketing & Telesales",
+                "branding": "Branding",
+                "google_adsense_adWords": "Google Adsense/AdWords",
+                "other_sale_marketing": "Other Sale & Marketing"
+            }
+        },
+        "event": {
+            "text": "Event",
+            "child": {
+                "event_planner": "Event Planner",
+                "event_suppliers": "Event Suppliers",
+                "corporate_gifts": "Corporate Gifts",
+                "pgs_services": "PGs Services"
+            }
+        },
+        "translation_language": {
+            "text": "Translation & Language",
+            "child": {
+                "general_translation": "General Translation",
+                "legal_translation": "Legal Translation",
+                "technical_translation": "Technical Translation",
+                "simultaneous_interpreting": "Simultaneous Interpreting",
+                "conference_interpreting": "Conference Interpreting",
+                "english_vietnamese": "English-Vietnamese",
+                "chinese_vietnamese": "Chinese-Vietnamese"
+            }
+        },
+        "admin_support": {
+            "text": "Admin Support",
+            "child": {
+                "data_entry": "Data Entry",
+                "project_based": "Project based",
+                "transcription": "Transcription",
+                "web_research": "Web Research",
+                "call_center": "Call Center",
+                "phone_support_handling": "Phone Support/Handling",
+                "other_admin_support": "Other Admin Support"
+            }
+        }
+    },
+
+    "service_level": {
+        "service_level": "Service level",
+        "basic": "Basic",
+        "basic_hint": "start to build experience",
+        "intermediate": "Intermediate",
+        "itnermediate_hint": "a few years of professional experience",
+        "expert": "Expert",
+        "expert_hint": "many years of professional experience and have done many complex projects"
+    },
+
+    "project_type": {
+        "project_type": "Project type",
+        "one_time": "One-time project",
+        "ongoing": "Ongoing project"
+    },
+
+    "project_payment": {
+        "project_payment": "Project payment",
+        "fixed": "Pay a fixed price (popular for one-time projects)",
+        "hour": "Pay by the hour (popular for ongoing projects)",
+        "payment_amount": "Payment amount"
+    },
+
+    "project_duration": {
+        "project_duration": "Project duration",
+        "less_than_a_week": "Less than a week",
+        "less_than_a_month": "Less than a month",
+        "one_to_three_months": "1 to 3 months",
+        "three_to_six_months": "3 to 6 months",
+        "six_to_twelve_months": "6 to 12 months",
+        "more_than_a_year": "More than a year"
+    },
+
+    "project_time_requirement": {
+        "time_requirement": "Time requirement for the project",
+        "less_than_ten_hours_week": "Less than 10 hrs/week",
+        "ten_to_twenty_hours_week": "10 to 20 hrs/week",
+        "twenty_to_thirty_hours_week": "20 to 30 hrs/week",
+        "thirty_to_forty_hours_week": "30 to 40 hrs/week",
+        "more_than_forty_hours_week": "More than 40 hrs/week",
+        "flexible": "Flexible"
+    },
+
+    "who_can_see": {
+        "all_agencies": "All Agencies (who registered a business plan)",
+        "search_agencies": "Agencies who I will search now",
+        "my_contact_agencies": "Agencies in My Contact",
+        "all_freelancers": "All Freelancers",
+        "search_freelancers": "Freelancers who I will search now",
+        "my_contact_freelancers": "Freelancers in My Contact"
+    },
+
+    "search_user": {
+        "services": "Services",
+        "service_category": "Service category",
+        "select_services": "Select services",
+        "clear_filter": "Clear filter"
+    },
+
+    "segments": {
+        "art_culture": {
+            "text": "Arts & Culture",
+            "child": {
+                "art_culture_literature": "Arts/Culture/Literature",
+                "home_decoration_interior_design": "Home/Decoration/Interior Design",
+                "photography": "Photography"
+            }
+        },
+
+        "business_finance": {
+            "text": "Business & Finance",
+            "child": {
+                "business_finance_economy": "Business/Finance/Economy",
+                "real_estate": "Real Estate",
+                "securities_trading": "Securities & Trading",
+                "sme_m_a": "SME/M&A",
+                "start_up_fintech": "Start up/Fintech"
+            }
+        },
+
+        "communication_media": {
+            "text": "Communication & Media",
+            "child": {
+                "broadcast_cable_television_guide": "Broadcast/cable television guide",
+                "internet_blog_social_media": "Internet/Blog/Social Media",
+                "tv_mdia_newspaper": "TV/Media/Newspaper",
+                "pr_marketing_advertising": "PR/Marketing/Advertising",
+                "classified_ads": "Classified Ads"
+            }
+        },
+
+        "education_training": {
+            "text": "Education & Training",
+            "child": {
+                "education_science": "Education/Science",
+                "trading_online_course": "Training/Online Course",
+                "consulting": "Consulting"
+            }
+        },
+
+        "fmcg_retail": {
+            "text": "FMCG & Retail",
+            "child": {
+                "automobiles": "Automobiles",
+                "e_commerce": "E-Commerce",
+                "fmcg_retail": "FMCG/Retail",
+                "industrial_products": "Industrial Products",
+                "manufacturing": "Manufacturing"
+            }
+        },
+
+        "government": {
+            "text": "Government",
+            "child": {
+                "csr_environment": "CSR/Environment",
+                "government_public_affair": "Government/Public Affair",
+                "ngo_non_profit": "NGO/Non-Profit",
+                "politics": "Politics",
+                "transportation_infrastructure": "Transportation/Infrastructure",
+                "energy_renewable_resource": "Energy/Renewable Resource"
+            }
+        },
+
+        "health_medical_care": {
+            "text": "Health & Medical Care",
+            "child": {
+                "health_medical_care": "Health/Medical Care",
+                "pharmaceutical_biotech": "Pharmaceutical/Biotech"
+            }
+        },
+
+        "hospitality_tourism": {
+            "text": "Hospitality & Tourism",
+            "child": {
+                "entertainment_comics_horoscopes": "Entertainment/Comics/Horoscopes",
+                "events_movies_music_comedies": "Events/Movies/Music/Comedies",
+                "tourism_travel_tips": "Tourism/Travel Tips"
+            }
+        },
+
+        "information_technology": {
+            "text": "Information Technology",
+            "child": {
+                "computer": "Computer",
+                "electronics": "Handhelds/Electronics/Gadgets",
+                "hightech": "HighTech/4.0 Revolution",
+                "gaming": "Gaming/Esport"
+            }
+        },
+
+        "lifestyle": {
+            "text": "Lifestyle",
+            "child": {
+                "beauty": "Beauty & Grooming",
+                "cooking": "Cooking/Cuisine",
+                "fashion": "Fashion/Lifestyle",
+                "food": "Food/Beverage",
+                "kids": "Kids/Youth",
+                "women": "Women's Interest",
+                "men": "Men's Interest",
+                "spa": "Spa & Wellness",
+                "pets": "Pets",
+                "nature": "Nature & Wildlife",
+                "showbiz": "Showbiz/Celebrity"
+            }
+        },
+
+        "news": {
+            "text": "News",
+            "child": {
+                "breaking": "Breaking News",
+                "general": "General News",
+                "local": "Local News",
+                "international": "International News",
+                "legal": "Legal News/Crime & Court"
+            }
+        },
+
+        "society_people": {
+            "text": "Society & People",
+            "child": {
+                "interview": "Interview",
+                "letter_from_reader": "Letter from the reader",
+                "opinion": "Opinion/Editorial",
+                "society": "Society/People",
+                "family": "Family/Relationship/Parenting"
+            }
+        },
+
+        "sport": {
+            "text": "Sport",
+            "child": {
+                "football": "Football",
+                "fitness": "Cardio & Fitness",
+                "mma": "MMA",
+                "basketball": "Basketball",
+                "other": "Trekking/Running/Other Sports"
+            }
+        },
+
+        "others": {
+            "text": "Others",
+            "child": {
+                "agriculture": "Agriculture/Rural",
+                "career": "Career",
+                "expatriate": "Expatriate",
+                "weather": "Weather",
+                "others": "Others"
+            }
+        }
+    },
+
+    "search_for_journalist": {
+        "segment_category": "Segment coverage category",
+        "select_segments": "Select segments",
+        "media_type": "Media Type",
+        "media_type_details": "Select media"
+    },
+
+    "journalist_job_title": {
+        "arts_editor": "Arts Editor",
+        "columnists": "Columnists",
+        "blogger": "Blogger",
+        "bureau_chief": "Bureau Chief",
+        "beauty_editor": "Beauty Editor",
+        "fashion_editor": "Fashion Editor",
+        "news_editor": "News Editor",
+        "business_editor": "Business Editor",
+        "sports_editor": "Sports Editor",
+        "features_editor": "Features Editor",
+        "political_editor": "Political Editor",
+        "economics_editor": "Economics Editor",
+        "foreign_correspondent": "Foreign Correspondent",
+        "crime_reporter": "Crime Reporter",
+        "producer": "Producer",
+        "industry_editor": "Industry Editor",
+        "social_media_editor": "Social Media Editor",
+        "technology_editor": "Technology Editor",
+        "travel_editor": "Travel Editor",
+        "chief_of_staff": "Chief of Staff",
+        "digital_online_editor": "Digital / Online Editor",
+        "lifestyle_editor": "Lifestyle Editor",
+        "consumer_editor": "Consumer Editor",
+        "entertainment_editor": "Entertainment Editor",
+        "motoring_editor": "Motoring Editor",
+        "property_editor": "Property Editor",
+        "health_editor": "Health Editor"
+    },
+
+    "media": {
+        "print": {
+            "text": "Print media",
+            "child": {
+                "tuoi_tre": "Tuoi Tre Newspaper",
+                "thanh_nien": "Thanh Nien Newspaper",
+                "phu_nu": "Phu Nu Newspaper",
+                "phap_luat": "Phap Luat Newspaper",
+                "sai_gon": "Saigon Newspaper",
+                "the_saigon_times_daily": "The Saigon Times Daily",
+                "tien_phong": "Tien Phong Newspaper",
+                "nhan_dan": "Nhan Dan Newspaper",
+                "cong_an": "Cong An Newspaper",
+                "lao_dong": "Lao Dong Newspaper",
+                "nguoi_lao_dong": "Nguoi Lao Dong Newspaper"
+            }
+        },
+        "broadcast": {
+            "text": "Broadcast media",
+            "child": {
+                "vtv1": "VTV1",
+                "vtv2": "VTV2",
+                "vtv3": "VTV3",
+                "vtv4": "VTV4",
+                "vtv5": "VTV5",
+                "vtv6": "VTV6",
+                "vtv7": "VTV7",
+                "vtv8": "VTV8",
+                "vtv9": "VTV9",
+                "vtv10": "VTV10",
+                "htv1": "HTV1",
+                "htv2": "HTV2",
+                "htv3": "HTV3",
+                "htv4": "HTV4",
+                "htv5": "HTV5",
+                "htv6": "HTV6",
+                "htv7": "HTV7",
+                "htv8": "HTV8",
+                "htv9": "HTV9",
+                "fm999": "FM99.9"
+            }
+        },
+        "online": {
+            "text": "Online media",
+            "child": {
+                "vnexpress": "VNExpress",
+                "vietnam_net": "VietNamNet",
+                "dan_tri": "DanTri",
+                "ngoi_sao": "NgoiSao",
+                "kenh14": "Kenh14"
+            }
+        },
+        "other": {
+            "text": "Other media",
+            "child": { "other": "Other media" }
+        }
     }
-  },
-
-  "user": {
-    "role": {
-      "client": "Client",
-      "agency": "Agency",
-      "journalist": "Journalist",
-      "freelancer": "Freelancer"
-    }
-  },
-
-  "dashboard": {
-    "dashboard": "Dashboard",
-    "personal": "Personal",
-    "my_contacts": "My contacts",
-    "my_projects": "My projects",
-    "my_jobs": "My jobs",
-    "my_media_alerts": "My media alerts",
-    "my_information": "My information",
-    "my_membership": "My membership",
-    "post_job": "Post job",
-    "post_project": "Post project"
-  },
-
-  "common": {
-    "search": "Search for",
-    "post": "Post",
-    "media": "Media",
-    "job": "Job",
-    "project": "Project",
-    "media_alert": "Media alert",
-    "country": "Country",
-    "city": "City",
-    "other": "Other",
-    "other_text": "If other, please specify",
-    "all": "All",
-    "language": "Language"
-  },
-
-  "post_job": {
-    "job_description": "Job description",
-    "job_id": "Job ID",
-    "general_information": "General information",
-    "details": "Details",
-    "attachment": "Attachment",
-    "closing_date": "Closing date",
-    "department": "Division/Dept",
-    "reports_to": "Reports to",
-    "job_purpose": "Job purpose",
-    "company_overview": "Company overview",
-    "key_responsibilities": "Key responsibilites",
-    "competencies": "competencies",
-    "qualifications_experiences": "Qualifications & experiences",
-    "challenges_opportunities": "Challenges & opportunities",
-    "application_form": "Application form",
-    "who_can_see": "Who can see this job?"
-  },
-
-  "post_project": {
-    "project_description": "Project description",
-    "project_name": "Project name",
-    "project_category": "Project category",
-    "skills": "The most important skills to be required",
-    "who_can_see": "Who can see this project?"
-  },
-
-  "my_information": {
-    "job_title": "Job title"
-  },
-
-  "job_type": {
-    "job_type": "Job type",
-    "all": "All",
-    "full-time": "Full-time",
-    "part-time": "Part-time",
-    "freelance": "Freelance",
-    "internship": "Internship",
-    "short-term": "Short term"
-  },
-
-  "services": {
-    "design_creative_media": {
-      "text": "Design/Creative/Media",
-      "child": {
-        "animation": "Animation",
-        "audio_video_production": "Audio/Video Production",
-        "photography": "Photography",
-        "logo_design_branding": "Logo Design & Branding",
-        "graphic_design": "Graphic Design",
-        "collateral_design": "Collateral Design",
-        "art_illustration": "Art & Illustration",
-        "voice_talent": "Voice Talent",
-        "brand_identity_strategy": "Brand Identity & Strategy",
-        "motion_graphics": "Motion Graphics",
-        "web_design": "Web Design",
-        "other": "Other Design/Creative"
-      }
-    },
-    "writing": {
-      "text": "Writing",
-      "child": {
-        "article_writing": "Article Writing",
-        "content_writing": "Content Writing",
-        "blog_social_media_writing": "Blog & Social Media Writing",
-        "speech_writing": "Speech Writing",
-        "copywriting": "Copywriting",
-        "creative_writing": "Creative Writing",
-        "web_content": "Web Content",
-        "editing_proofreading": "Editing & Proofreading",
-        "grant_writing": "Grant Writing",
-        "resumes_cover_letter": "Resumes & Cover Letter",
-        "technical_writing": "Technical Writing",
-        "academic_writing": "Academic Writing",
-        "newspaper_writing": "Newspaper Writing",
-        "press_releases": "Press Releases",
-        "other_writing": "Other Writing"
-      }
-    },
-    "sale_marketing": {
-      "text": "Sale & Marketing",
-      "child": {
-        "advertising": "Advertising",
-        "email_marketing_automation": "Email & Marketing Automation",
-        "lead_generation": "Lead Generation",
-        "market_customer_research": "Market & Customer Research",
-        "marketing_strategy": "Marketing Strategy",
-        "public_relations": "Public Relations",
-        "sem": "SEM-Search Engine Marketing",
-        "seo": "SEO-Search Engine Optimization",
-        "smm": "SMM-Social Media Marketing",
-        "telemarketing_telesales": "Telemarketing & Telesales",
-        "branding": "Branding",
-        "google_adsense_adWords": "Google Adsense/AdWords",
-        "other_sale_marketing": "Other Sale & Marketing"
-      }
-    },
-    "event": {
-      "text": "Event",
-      "child": {
-        "event_planner": "Event Planner",
-        "event_suppliers": "Event Suppliers",
-        "corporate_gifts": "Corporate Gifts",
-        "pgs_services": "PGs Services"
-      }
-    },
-    "translation_language": {
-      "text": "Translation & Language",
-      "child": {
-        "general_translation": "General Translation",
-        "legal_translation": "Legal Translation",
-        "technical_translation": "Technical Translation",
-        "simultaneous_interpreting": "Simultaneous Interpreting",
-        "conference_interpreting": "Conference Interpreting",
-        "english_vietnamese": "English-Vietnamese",
-        "chinese_vietnamese": "Chinese-Vietnamese"
-      }
-    },
-    "admin_support": {
-      "text": "Admin Support",
-      "child": {
-        "data_entry": "Data Entry",
-        "project_based": "Project based",
-        "transcription": "Transcription",
-        "web_research": "Web Research",
-        "call_center": "Call Center",
-        "phone_support_handling": "Phone Support/Handling",
-        "other_admin_support": "Other Admin Support"
-      }
-    }
-  },
-
-  "service_level": {
-    "service_level": "Service level",
-    "basic": "Basic",
-    "basic_hint": "start to build experience",
-    "intermediate": "Intermediate",
-    "itnermediate_hint": "a few years of professional experience",
-    "expert": "Expert",
-    "expert_hint": "many years of professional experience and have done many complex projects"
-  },
-
-  "project_type": {
-    "project_type": "Project type",
-    "one_time": "One-time project",
-    "ongoing": "Ongoing project"
-  },
-
-  "project_payment": {
-    "project_payment": "Project payment",
-    "fixed": "Pay a fixed price (popular for one-time projects)",
-    "hour": "Pay by the hour (popular for ongoing projects)",
-    "payment_amount": "Payment amount"
-  },
-
-  "project_duration": {
-    "project_duration": "Project duration",
-    "less_than_a_week": "Less than a week",
-    "less_than_a_month": "Less than a month",
-    "one_to_three_months": "1 to 3 months",
-    "three_to_six_months": "3 to 6 months",
-    "six_to_twelve_months": "6 to 12 months",
-    "more_than_a_year": "More than a year"
-  },
-
-  "project_time_requirement": {
-    "time_requirement": "Time requirement for the project",
-    "less_than_ten_hours_week": "Less than 10 hrs/week",
-    "ten_to_twenty_hours_week": "10 to 20 hrs/week",
-    "twenty_to_thirty_hours_week": "20 to 30 hrs/week",
-    "thirty_to_forty_hours_week": "30 to 40 hrs/week",
-    "more_than_forty_hours_week": "More than 40 hrs/week",
-    "flexible": "Flexible"
-  },
-
-  "who_can_see": {
-    "all_agencies": "All Agencies (who registered a business plan)",
-    "search_agencies": "Agencies who I will search now",
-    "my_contact_agencies": "Agencies in My Contact",
-    "all_freelancers": "All Freelancers",
-    "search_freelancers": "Freelancers who I will search now",
-    "my_contact_freelancers": "Freelancers in My Contact"
-  },
-
-  "search_user": {
-    "services": "Services",
-    "service_category": "Service category",
-    "select_services": "Select services",
-    "clear_filter": "Clear filter"
-  },
-
-  "segments": {
-    "art_culture": {
-      "text": "Arts & Culture",
-      "child": {
-        "art_culture_literature": "Arts/Culture/Literature",
-        "home_decoration_interior_design": "Home/Decoration/Interior Design",
-        "photography": "Photography"
-      }
-    },
-
-    "business_finance": {
-      "text": "Business & Finance",
-      "child": {
-        "business_finance_economy": "Business/Finance/Economy",
-        "real_estate": "Real Estate",
-        "securities_trading": "Securities & Trading",
-        "sme_m_a": "SME/M&A",
-        "start_up_fintech": "Start up/Fintech"
-      }
-    },
-
-    "communication_media": {
-      "text": "Communication & Media",
-      "child": {
-        "broadcast_cable_television_guide": "Broadcast/cable television guide",
-        "internet_blog_social_media": "Internet/Blog/Social Media",
-        "tv_mdia_newspaper": "TV/Media/Newspaper",
-        "pr_marketing_advertising": "PR/Marketing/Advertising",
-        "classified_ads": "Classified Ads"
-      }
-    },
-
-    "education_training": {
-      "text": "Education & Training",
-      "child": {
-        "education_science": "Education/Science",
-        "trading_online_course": "Training/Online Course",
-        "consulting": "Consulting"
-      }
-    },
-
-    "fmcg_retail": {
-      "text": "FMCG & Retail",
-      "child": {
-        "automobiles": "Automobiles",
-        "e_commerce": "E-Commerce",
-        "fmcg_retail": "FMCG/Retail",
-        "industrial_products": "Industrial Products",
-        "manufacturing": "Manufacturing"
-      }
-    },
-
-    "government": {
-      "text": "Government",
-      "child": {
-        "csr_environment": "CSR/Environment",
-        "government_public_affair": "Government/Public Affair",
-        "ngo_non_profit": "NGO/Non-Profit",
-        "politics": "Politics",
-        "transportation_infrastructure": "Transportation/Infrastructure",
-        "energy_renewable_resource": "Energy/Renewable Resource"
-      }
-    },
-
-    "health_medical_care": {
-      "text": "Health & Medical Care",
-      "child": {
-        "health_medical_care": "Health/Medical Care",
-        "pharmaceutical_biotech": "Pharmaceutical/Biotech"
-      }
-    },
-
-    "hospitality_tourism": {
-      "text": "Hospitality & Tourism",
-      "child": {
-        "entertainment_comics_horoscopes": "Entertainment/Comics/Horoscopes",
-        "events_movies_music_comedies": "Events/Movies/Music/Comedies",
-        "tourism_travel_tips": "Tourism/Travel Tips"
-      }
-    },
-
-    "information_technology": {
-      "text": "Information Technology",
-      "child": {
-        "computer": "Computer",
-        "electronics": "Handhelds/Electronics/Gadgets",
-        "hightech": "HighTech/4.0 Revolution",
-        "gaming": "Gaming/Esport"
-      }
-    },
-
-    "lifestyle": {
-      "text": "Lifestyle",
-      "child": {
-        "beauty": "Beauty & Grooming",
-        "cooking": "Cooking/Cuisine",
-        "fashion": "Fashion/Lifestyle",
-        "food": "Food/Beverage",
-        "kids": "Kids/Youth",
-        "women": "Women's Interest",
-        "men": "Men's Interest",
-        "spa": "Spa & Wellness",
-        "pets": "Pets",
-        "nature": "Nature & Wildlife",
-        "showbiz": "Showbiz/Celebrity"
-      }
-    },
-
-    "news": {
-      "text": "News",
-      "child": {
-        "breaking": "Breaking News",
-        "general": "General News",
-        "local": "Local News",
-        "international": "International News",
-        "legal": "Legal News/Crime & Court"
-      }
-    },
-
-    "society_people": {
-      "text": "Society & People",
-      "child": {
-        "interview": "Interview",
-        "letter_from_reader": "Letter from the reader",
-        "opinion": "Opinion/Editorial",
-        "society": "Society/People",
-        "family": "Family/Relationship/Parenting"
-      }
-    },
-
-    "sport": {
-      "text": "Sport",
-      "child": {
-        "football": "Football",
-        "fitness": "Cardio & Fitness",
-        "mma": "MMA",
-        "basketball": "Basketball",
-        "other": "Trekking/Running/Other Sports"
-      }
-    },
-
-    "others": {
-      "text": "Others",
-      "child": {
-        "agriculture": "Agriculture/Rural",
-        "career": "Career",
-        "expatriate": "Expatriate",
-        "weather": "Weather",
-        "others": "Others"
-      }
-    }
-  },
-
-  "search_for_journalist": {
-    "segment_category": "Segment coverage category",
-    "select_segments": "Select segments",
-    "media_type": "Media Type",
-    "media_type_details": "Select media"
-  },
-
-  "journalist_job_title": {
-    "arts_editor": "Arts Editor",
-    "columnists": "Columnists",
-    "blogger": "Blogger",
-    "bureau_chief": "Bureau Chief",
-    "beauty_editor": "Beauty Editor",
-    "fashion_editor": "Fashion Editor",
-    "news_editor": "News Editor",
-    "business_editor": "Business Editor",
-    "sports_editor": "Sports Editor",
-    "features_editor": "Features Editor",
-    "political_editor": "Political Editor",
-    "economics_editor": "Economics Editor",
-    "foreign_correspondent": "Foreign Correspondent",
-    "crime_reporter": "Crime Reporter",
-    "producer": "Producer",
-    "industry_editor": "Industry Editor",
-    "social_media_editor": "Social Media Editor",
-    "technology_editor": "Technology Editor",
-    "travel_editor": "Travel Editor",
-    "chief_of_staff": "Chief of Staff",
-    "digital_online_editor": "Digital / Online Editor",
-    "lifestyle_editor": "Lifestyle Editor",
-    "consumer_editor": "Consumer Editor",
-    "entertainment_editor": "Entertainment Editor",
-    "motoring_editor": "Motoring Editor",
-    "property_editor": "Property Editor",
-    "health_editor": "Health Editor"
-  },
-
-  "media": {
-    "print": {
-      "text": "Print media",
-      "child": {
-        "tuoi_tre": "Tuoi Tre Newspaper",
-        "thanh_nien": "Thanh Nien Newspaper",
-        "phu_nu": "Phu Nu Newspaper",
-        "phap_luat": "Phap Luat Newspaper",
-        "sai_gon": "Saigon Newspaper",
-        "the_saigon_times_daily": "The Saigon Times Daily",
-        "tien_phong": "Tien Phong Newspaper",
-        "nhan_dan": "Nhan Dan Newspaper",
-        "cong_an": "Cong An Newspaper",
-        "lao_dong": "Lao Dong Newspaper",
-        "nguoi_lao_dong": "Nguoi Lao Dong Newspaper"
-      }
-    },
-    "broadcast": {
-      "text": "Broadcast media",
-      "child": {
-        "vtv1": "VTV1",
-        "vtv2": "VTV2",
-        "vtv3": "VTV3",
-        "vtv4": "VTV4",
-        "vtv5": "VTV5",
-        "vtv6": "VTV6",
-        "vtv7": "VTV7",
-        "vtv8": "VTV8",
-        "vtv9": "VTV9",
-        "vtv10": "VTV10",
-        "htv1": "HTV1",
-        "htv2": "HTV2",
-        "htv3": "HTV3",
-        "htv4": "HTV4",
-        "htv5": "HTV5",
-        "htv6": "HTV6",
-        "htv7": "HTV7",
-        "htv8": "HTV8",
-        "htv9": "HTV9",
-        "fm999": "FM99.9"
-      }
-    },
-    "online": {
-      "text": "Online media",
-      "child": {
-        "vnexpress": "VNExpress",
-        "vietnam_net": "VietNamNet",
-        "dan_tri": "DanTri",
-        "ngoi_sao": "NgoiSao",
-        "kenh14": "Kenh14"
-      }
-    },
-    "other": {
-      "text": "Other media",
-      "child": { "other": "Other media" }
-    }
-  }
 }

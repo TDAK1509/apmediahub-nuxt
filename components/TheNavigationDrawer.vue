@@ -55,7 +55,7 @@
                 </v-list-item-icon>
 
                 <v-list-item-content>
-                    <v-list-item-title v-text="$t('dashboard')"></v-list-item-title>
+                    <v-list-item-title v-text="$t('dashboard.dashboard')"></v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
         </v-list>
@@ -125,6 +125,10 @@ export default {
         };
     },
 
+    computed: {
+        ...mapState(["locale"])
+    },
+
     methods: {
         fullPath(path) {
             return `/${this.locale}/dashboard/${path}`;
@@ -157,41 +161,3 @@ export default {
     }
 };
 </script>
-
-<i18n>
-{
-    "en": {
-        "dashboard": "Dashboard",
-        "search": "Search for",
-        "post": "Post",
-        "media": "Media",
-        "job": "Job",
-        "project": "Project",
-        "personal": "Personal",
-        "media_alert": "Media alert",
-        "my_contacts": "My contacts",
-        "my_projects": "My projects",
-        "my_jobs": "My jobs",
-        "my_media_alerts": "My media alerts",
-        "my_information": "My information",
-        "my_membership": "My membership"
-    },
-
-    "vn": {
-        "dashboard": "Bảng điều khiển",        
-        "search": "Tìm kiếm",
-        "post": "Đăng bài",
-        "media": "Phương tiện truyền thông",
-        "job": "Công việc",
-        "project": "Dự án",
-        "personal": "Cá nhân",
-        "media_alert": "Thông báo",
-        "my_contacts": "Danh bạ",
-        "my_projects": "Dự án",
-        "my_jobs": "Công việc",
-        "my_media_alerts": "Thông báo",
-        "my_information": "Thông tin cá nhân",
-        "my_membership": "Thông tin thành viên"
-    }
-}
-</i18n>

@@ -54,7 +54,7 @@ export default {
     },
 
     async created() {
-        // await this.getCurrentUser();
+        await this.getCurrentUser();
     }
 };
 </script>
