@@ -1,7 +1,13 @@
 <template>
-  <nuxt-link data-test="projectRow" :to="`my-projects/${data.id}`">
-    {{ data.name }}
-  </nuxt-link>
+  <div class="d-flex align-center">
+    <v-icon color="black" small>mdi-chevron-right</v-icon>
+
+    <nuxt-link
+      data-test="projectRow"
+      :to="`my-projects/${data.id}`"
+      class="project-row py-2 text-left"
+    >{{ data.name }}</nuxt-link>
+  </div>
 </template>
 
 <script>
@@ -11,9 +17,16 @@ export default {
   props: {
     data: Object
   }
-}
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.project-row {
+  text-decoration: none;
+  color: #000;
 
+  &:hover {
+    color: #c80000;
+  }
+}
 </style>
