@@ -1,1 +1,1 @@
-{"currentUser":{"contact_list":[{"id":2,"name":"List 2","users":[4]},{"id":1,"name":"List 1","users":[1,2,3]}]}}
+{"currentUser":{"contact_list":[{"id":2,"name":"Contact List 2","users":[4]},{"id":1,"name":"Contact List 1","users":[1,2,3]}],"project_list":[{"id":2,"name":"Future-proofed foreground database"},{"id":1,"name":"Fundamental encompassing throughput"}]}}
