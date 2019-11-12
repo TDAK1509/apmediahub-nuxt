@@ -23,7 +23,8 @@ export default {
     ...mapState(["currentUser"]),
 
     title() {
-      return this.$t("dashboard.my_projects");
+      if (!this.projectData) return "";
+      return this.projectData.project_name;
     },
 
     projectId() {
@@ -38,6 +39,12 @@ export default {
       );
 
       return projectData;
+    }
+  },
+
+  watch: {
+    title(newValue) {
+      this.$store.commit("SET_PAGE_TITLE", newValue);
     }
   }
 };

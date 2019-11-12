@@ -19,25 +19,16 @@ export default {
 
   mixins: [mixinApi, mixinDashboardTitle],
 
-  data() {
-    return {
-      projectList: []
-    };
-  },
-
   computed: {
     ...mapState(["currentUser"]),
 
     title() {
       return this.$t("dashboard.my_projects");
-    }
-  },
+    },
 
-  watch: {
-    currentUser: function(newValue) {
-      if (!!newValue.project_list) {
-        this.projectList = newValue.project_list;
-      }
+    projectList() {
+      if (!this.currentUser) return [];
+      return this.currentUser.project_list;
     }
   }
 };
