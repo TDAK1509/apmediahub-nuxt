@@ -219,8 +219,8 @@
 
   "project_payment": {
     "project_payment": "Hình thức thanh toán",
-    "fixed": "Giá cố định (phù hợp cho các dự án một lần)",
-    "hour": "Thanh toán theo giờ (phù hợp cho các dự án kéo dài)",
+    "fixed": "Giá cố định",
+    "hour": "Thanh toán theo giờ",
     "payment_amount": "Mức giá"
   },
 

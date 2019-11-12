@@ -1,6 +1,6 @@
 <template>
   <div class="text-left">
-    <project-body></project-body>
+    <project-body :project-data="projectData" v-if="projectData" />
   </div>
 </template>
 
@@ -30,8 +30,14 @@ export default {
       return this.$route.params.projectId;
     },
 
-    project() {
-      return this.currentUser.project_list[this.projectId] || null;
+    projectData() {
+      if (!this.currentUser) return null;
+
+      const projectData = this.currentUser.project_list.find(
+        item => item.id === this.projectId
+      );
+
+      return projectData;
     }
   }
 };

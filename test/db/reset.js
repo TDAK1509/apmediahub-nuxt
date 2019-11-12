@@ -62,33 +62,42 @@ function getProject() {
       .substr(0, 10),
     country: faker.address.country(),
     city: faker.address.city(),
-    name: faker.commerce.productName(),
-    description: faker.lorem.paragraph(),
+    project_name: faker.commerce.productName(),
+    project_description: faker.lorem.paragraph(),
     services: getServices(),
-    skills: faker.hacker.noun(),
-    service_level: randomValueFromArray(["basic", "intermediate", "expert"]),
-    type: randomValueFromArray(["one_time", "ongoing"]),
+    required_skills: faker.hacker.noun(),
+    service_level: randomValueFromArray([
+      "service_level.basic",
+      "service_level.intermediate",
+      "service_level.expert"
+    ]),
+    project_type: randomValueFromArray([
+      "project_type.one_time",
+      "project_type.ongoing",
+      faker.lorem.words()
+    ]),
     payment: {
-      type: randomValueFromArray(["fixed", "hour"]),
+      type: randomValueFromArray([
+        "project_payment.fixed",
+        "project_payment.hour"
+      ]),
       amount: faker.finance.amount()
     },
     duration: randomValueFromArray([
-      "project_duration",
-      "less_than_a_week",
-      "less_than_a_month",
-      "one_to_three_months",
-      "three_to_six_months",
-      "six_to_twelve_months",
-      "more_than_a_year"
+      "project_duration.less_than_a_week",
+      "project_duration.less_than_a_month",
+      "project_duration.one_to_three_months",
+      "project_duration.three_to_six_months",
+      "project_duration.six_to_twelve_months",
+      "project_duration.more_than_a_year"
     ]),
     time_requirement: randomValueFromArray([
-      "time_requirement",
-      "less_than_ten_hours_week",
-      "ten_to_twenty_hours_week",
-      "twenty_to_thirty_hours_week",
-      "thirty_to_forty_hours_week",
-      "more_than_forty_hours_week",
-      "flexible"
+      "project_time_requirement.less_than_ten_hours_week",
+      "project_time_requirement.ten_to_twenty_hours_week",
+      "project_time_requirement.twenty_to_thirty_hours_week",
+      "project_time_requirement.thirty_to_forty_hours_week",
+      "project_time_requirement.more_than_forty_hours_week",
+      "project_time_requirement.flexible"
     ]),
     attachment: null,
     who_can_see: null
@@ -103,7 +112,7 @@ function getServices() {
     array[i] = getService();
   }
 
-  return array;
+  return [...new Set(array)];
 }
 
 function getService() {
@@ -114,7 +123,7 @@ function getService() {
   const servicesByKey = serviceList[selectedKey];
   const serviceIndex = randomInteger(servicesByKey.length);
   const service = servicesByKey[serviceIndex];
-  return selectedKey + ".child." + service; // Key for locale file output
+  return `services.${selectedKey}.child.${service}`; // Key for locale file output
 }
 
 function randomValueFromArray(array) {

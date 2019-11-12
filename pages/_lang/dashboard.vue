@@ -1,21 +1,21 @@
 <template>
-    <v-app>
-        <TheNavigationDrawer />
+  <v-app>
+    <TheNavigationDrawer />
 
-        <TheAppBarDashboard />
+    <TheAppBarDashboard />
 
-        <v-content>
-            <v-container fluid>
-                <DashboardContentTitle>{{title}}</DashboardContentTitle>
+    <v-content>
+      <v-container fluid>
+        <DashboardContentTitle>{{title}}</DashboardContentTitle>
 
-                <v-row class="mx-1">
-                    <v-col justify="center" align="center">
-                        <nuxt-child />
-                    </v-col>
-                </v-row>
-            </v-container>
-        </v-content>
-    </v-app>
+        <v-row class="mx-1">
+          <v-col justify="center" align="center">
+            <nuxt-child />
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -28,33 +28,33 @@ import mixinApi from "@/mixins/api";
 import { mapState } from "vuex";
 
 export default {
-    name: "Dashboard",
+  name: "Dashboard",
 
-    components: {
-        TheAppBarDashboard,
-        TheNavigationDrawer,
-        DashboardContentTitle
-    },
+  components: {
+    TheAppBarDashboard,
+    TheNavigationDrawer,
+    DashboardContentTitle
+  },
 
-    mixins: [mixinApi],
+  mixins: [mixinApi],
 
-    computed: {
-        ...mapState(["dashboardPageTitle"]),
+  computed: {
+    ...mapState(["dashboardPageTitle"]),
 
-        title() {
-            return this.dashboardPageTitle;
-        }
-    },
-
-    methods: {
-        async getCurrentUser() {
-            const currentUser = await this.$api_getCurrentUser();
-            this.$store.commit("SET_CURRENT_USER", currentUser);
-        }
-    },
-
-    async created() {
-        await this.getCurrentUser();
+    title() {
+      return this.dashboardPageTitle;
     }
+  },
+
+  methods: {
+    async getCurrentUser() {
+      const currentUser = await this.$api_getCurrentUser();
+      this.$store.commit("SET_CURRENT_USER", currentUser);
+    }
+  },
+
+  async created() {
+    await this.getCurrentUser();
+  }
 };
 </script>

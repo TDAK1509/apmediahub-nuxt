@@ -4,9 +4,9 @@
 
     <nuxt-link
       data-test="projectRow"
-      :to="`my-projects/${data.id}`"
+      :to="data.id"
       class="project-row py-2 text-left"
-    >{{ data.name }}</nuxt-link>
+    >{{ data.project_name }}</nuxt-link>
   </div>
 </template>
 
