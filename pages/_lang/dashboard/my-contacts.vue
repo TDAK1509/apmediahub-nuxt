@@ -1,21 +1,25 @@
 <template>
   <div>
     <CreateModal @save="createNewList"></CreateModal>
-    <ContactList v-if="currentUser" :list="contactList" class="mt-5" @delete="deleteList"></ContactList>
+    <ContactList
+      v-if="currentUser"
+      :list="contactList"
+      class="mt-5"
+      @delete="deleteList"
+    ></ContactList>
   </div>
 </template>
 
 <script>
 import CreateModal from "@/components/dashboard/MyContactsTheCreateModal";
 import ContactList from "@/components/dashboard/MyContactsTheContactList";
-import mixinDashboardTitle from "~/mixins/dashboard-title";
 import mixinApi from "@/mixins/api";
 import { mapState } from "vuex";
 
 export default {
   name: "MyContacts",
 
-  mixins: [mixinDashboardTitle, mixinApi],
+  mixins: [mixinApi],
 
   components: {
     CreateModal,
@@ -30,10 +34,6 @@ export default {
 
   computed: {
     ...mapState(["currentUser"]),
-
-    title() {
-      return this.$t("dashboard.my_contacts");
-    },
 
     currentContactList() {
       if (!this.currentUser) return [];
@@ -68,6 +68,10 @@ export default {
 
       await this.$api_updateContactList(this.contactList);
     }
+  },
+
+  mounted() {
+    this.$store.commit("SET_PAGE_TITLE", this.$t("dashboard.my_contacts"));
   }
 };
 </script>

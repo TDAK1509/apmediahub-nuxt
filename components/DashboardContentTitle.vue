@@ -1,6 +1,8 @@
 <template>
   <v-card-title class="d-flex" data-test="pageTitle">
-    <div class="flex-grow-1 pb-3 text-capitalize title-container">{{ dashboardPageTitle }}</div>
+    <div class="flex-grow-1 pb-3 text-capitalize title-container">
+      {{ dashboardPageTitle }}
+    </div>
   </v-card-title>
 </template>
 
@@ -12,6 +14,12 @@ export default {
 
   computed: {
     ...mapState(["dashboardPageTitle"])
+  },
+
+  head() {
+    return {
+      title: this.dashboardPageTitle
+    };
   },
 
   methods: {
