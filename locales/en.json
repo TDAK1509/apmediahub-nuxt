@@ -103,11 +103,11 @@
   "job_type": {
     "job_type": "Job type",
     "all": "All",
-    "full-time": "Full-time",
-    "part-time": "Part-time",
+    "full_time": "Full-time",
+    "part_time": "Part-time",
     "freelance": "Freelance",
     "internship": "Internship",
-    "short-term": "Short term"
+    "short_term": "Short term"
   },
 
   "services": {

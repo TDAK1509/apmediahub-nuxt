@@ -3,16 +3,16 @@
     <v-icon color="black" small>mdi-chevron-right</v-icon>
 
     <nuxt-link
-      data-test="projectRow"
-      :to="`my-projects/${data.id}`"
-      class="project-row py-2 text-left"
-    >{{ data.project_name }}</nuxt-link>
+      data-test="jobRow"
+      :to="`my-jobs/${data.id}`"
+      class="job-row py-2 text-left"
+    >{{ data.job_title }}</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TheProjectRow",
+  name: "TheJobRow",
 
   props: {
     data: Object
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.project-row {
+.job-row {
   text-decoration: none;
   color: #000;
 

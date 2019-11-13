@@ -23,7 +23,8 @@ function getData() {
 function getCurrentUser() {
   return {
     contact_list: getCurrentUserContactList(),
-    project_list: getCurrentUserProjectList()
+    project_list: getCurrentUserProjectList(),
+    job_list: getCurrentUserJobList()
   };
 }
 
@@ -134,4 +135,51 @@ function randomValueFromArray(array) {
 // Random 0 to n-1
 function randomInteger(n) {
   return Math.floor(Math.random() * n);
+}
+
+function getCurrentUserJobList() {
+  const arrayLength = randomInteger(5) + 1;
+  const array = Array(arrayLength).fill(1);
+
+  for (let i = 0; i < arrayLength; i++) {
+    array[i] = getJob();
+  }
+
+  return array;
+}
+
+function getJob() {
+  return {
+    id: faker.random.uuid(),
+    job_title: faker.name.jobTitle(),
+    job_id: faker.random.uuid(),
+    post_date: new Date().toISOString().substr(0, 10),
+    closing_date: faker.date
+      .future()
+      .toISOString()
+      .substr(0, 10),
+    country: faker.address.country(),
+    city: faker.address.city(),
+    job_type: randomValueFromArray([
+      "all",
+      "full_time",
+      "part_time",
+      "freelance",
+      "internship",
+      "short_term"
+    ]),
+    department: faker.commerce.department(),
+    reports_to: faker.name.jobTitle(),
+    job_purpose: faker.hacker.phrase(),
+    company_overview: faker.lorem.paragraph(),
+    key_responsibilities: faker.lorem.paragraph(),
+    competencies: faker.lorem.paragraph(),
+    qualifications_and_experiences: faker.lorem.paragraph(),
+    challenges_and_opportunities: faker.lorem.paragraph(),
+    attachment: {
+      job_description: null,
+      application_form: null
+    },
+    who_can_see: null
+  };
 }

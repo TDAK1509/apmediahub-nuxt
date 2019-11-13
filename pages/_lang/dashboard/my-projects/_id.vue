@@ -6,7 +6,6 @@
 
 <script>
 import mixinApi from "@/mixins/api";
-import mixinDashboardTitle from "~/mixins/dashboard-title";
 import { mapState } from "vuex";
 import ProjectBody from "@/components/dashboard/MyProjectsDetailsTheProjectBody";
 
@@ -17,18 +16,13 @@ export default {
     ProjectBody
   },
 
-  mixins: [mixinApi, mixinDashboardTitle],
+  mixins: [mixinApi],
 
   computed: {
     ...mapState(["currentUser"]),
 
-    title() {
-      if (!this.projectData) return "";
-      return this.projectData.project_name;
-    },
-
     projectId() {
-      return this.$route.params.projectId;
+      return this.$route.params.id;
     },
 
     projectData() {
@@ -43,9 +37,20 @@ export default {
   },
 
   watch: {
-    title(newValue) {
-      this.$store.commit("SET_PAGE_TITLE", newValue);
+    projectData() {
+      this.setPagetitle();
     }
+  },
+
+  methods: {
+    setPagetitle() {
+      if (this.projectData)
+        this.$store.commit("SET_PAGE_TITLE", this.projectData.project_name);
+    }
+  },
+
+  mounted() {
+    this.setPagetitle();
   }
 };
 </script>

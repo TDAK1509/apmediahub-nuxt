@@ -6,7 +6,7 @@
 
     <v-content>
       <v-container fluid>
-        <DashboardContentTitle>{{title}}</DashboardContentTitle>
+        <DashboardContentTitle />
 
         <v-row class="mx-1">
           <v-col justify="center" align="center">
@@ -25,8 +25,6 @@ import DashboardContentTitle from "@/components/DashboardContentTitle";
 
 import mixinApi from "@/mixins/api";
 
-import { mapState } from "vuex";
-
 export default {
   name: "Dashboard",
 
@@ -37,14 +35,6 @@ export default {
   },
 
   mixins: [mixinApi],
-
-  computed: {
-    ...mapState(["dashboardPageTitle"]),
-
-    title() {
-      return this.dashboardPageTitle;
-    }
-  },
 
   methods: {
     async getCurrentUser() {

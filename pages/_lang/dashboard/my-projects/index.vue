@@ -7,7 +7,6 @@
 <script>
 import TheProjectRow from "@/components/dashboard/MyProjectsTheProjectRow";
 import mixinApi from "@/mixins/api";
-import mixinDashboardTitle from "~/mixins/dashboard-title";
 import { mapState } from "vuex";
 
 export default {
@@ -17,19 +16,19 @@ export default {
     TheProjectRow
   },
 
-  mixins: [mixinApi, mixinDashboardTitle],
+  mixins: [mixinApi],
 
   computed: {
     ...mapState(["currentUser"]),
-
-    title() {
-      return this.$t("dashboard.my_projects");
-    },
 
     projectList() {
       if (!this.currentUser) return [];
       return this.currentUser.project_list;
     }
+  },
+
+  mounted() {
+    this.$store.commit("SET_PAGE_TITLE", this.$t("dashboard.my_projects"));
   }
 };
 </script>

@@ -103,11 +103,11 @@
   "job_type": {
     "job_type": "Loại công việc",
     "all": "Tất cả",
-    "full-time": "Toàn thời gian",
-    "part-time": "Bán thời gian",
+    "full_time": "Toàn thời gian",
+    "part_time": "Bán thời gian",
     "freelance": "Tự do",
     "internship": "Thực tập",
-    "short-term": "Ngắn hạn"
+    "short_term": "Ngắn hạn"
   },
 
   "services": {
