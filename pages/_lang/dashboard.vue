@@ -38,7 +38,7 @@ export default {
 
   methods: {
     async getCurrentUser() {
-      const currentUser = await this.$api_getCurrentUser();
+      const currentUser = await this.$_api_getCurrentUser();
       this.$store.commit("SET_CURRENT_USER", currentUser);
     }
   },

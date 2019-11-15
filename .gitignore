@@ -1,6 +1,8 @@
 private.key
 public.key
 
+test/e2e/screenshots
+test/e2e/videos
 test/db/db.json
 
 # Created by .ignore support plugin (hsz.mobi)

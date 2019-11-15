@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-column">
-    <the-project-row v-for="p in projectList" :key="p.id" :data="p" class="project-row"></the-project-row>
+    <the-project-row v-for="p in projectList" :key="p._id" :data="p" class="project-row"></the-project-row>
   </div>
 </template>
 

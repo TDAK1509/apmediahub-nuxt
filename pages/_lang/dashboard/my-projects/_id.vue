@@ -29,7 +29,7 @@ export default {
       if (!this.currentUser) return null;
 
       const projectData = this.currentUser.project_list.find(
-        item => item.id === this.projectId
+        item => item._id === this.projectId
       );
 
       return projectData;

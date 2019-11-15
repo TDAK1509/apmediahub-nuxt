@@ -1,6 +1,5 @@
 <template>
   <div class="text-left">
-    <button @click="setPagetitle">haha</button>
     <the-job-body :job-data="jobData" v-if="jobData" />
   </div>
 </template>
@@ -27,7 +26,7 @@ export default {
       if (!this.currentUser) return null;
 
       const jobData = this.currentUser.job_list.find(
-        item => item.id === this.jobId
+        item => item._id === this.jobId
       );
 
       return jobData;

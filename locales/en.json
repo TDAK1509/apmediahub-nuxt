@@ -66,7 +66,11 @@
     "other": "Other",
     "other_text": "If other, please specify",
     "all": "All",
-    "language": "Language"
+    "language": "Language",
+    "save": "Save",
+    "cancel": "Cancel",
+    "open": "Open",
+    "copy": "Copy"
   },
 
   "post_job": {
@@ -506,5 +510,11 @@
       "text": "Other media",
       "child": { "other": "Other media" }
     }
+  },
+
+  "my_contacts": {
+    "create_new_list": "Create a new contact list",
+    "contact_list_name": "Contact list name",
+    "confirm_delete": "Do you want to delete the list?"
   }
 }

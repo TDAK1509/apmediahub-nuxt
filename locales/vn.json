@@ -66,7 +66,11 @@
     "other": "Khác",
     "other_text": "Nếu chọn khác, vui lòng ghi rõ",
     "all": "Tất cả",
-    "language": "Ngôn ngữ"
+    "language": "Ngôn ngữ",
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "open": "Mở",
+    "copy": "Sao chép"
   },
 
   "post_job": {
@@ -506,5 +510,11 @@
       "text": "Phương tiện truyền thông khác",
       "child": { "other": "Phương tiện truyền thông khác" }
     }
+  },
+
+  "my_contacts": {
+    "create_new_list": "Tạo danh bạ mới",
+    "contact_list_name": "Tên danh bạ",
+    "confirm_delete": "Bạn muốn xóa danh bạ này?"
   }
 }

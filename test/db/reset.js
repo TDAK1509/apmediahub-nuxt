@@ -1,11 +1,13 @@
 const faker = require("faker");
+const _ = require("lodash");
 const fs = require("fs");
 const serviceList = JSON.parse(
   fs.readFileSync("assets/json/service_list.json")
 );
 
 const filePath = "test/db/db.json";
-const data = getData();
+const userIdList = getUserIdList();
+const data = getData(userIdList);
 fs.writeFile(filePath, JSON.stringify(data), error => {
   if (error) {
     console.log(error);
@@ -13,50 +15,80 @@ fs.writeFile(filePath, JSON.stringify(data), error => {
   }
 });
 
-//--------------------------
-function getData() {
+function getData(userIdList) {
+  const users = getUsers(userIdList);
+
   return {
-    currentUser: getCurrentUser()
+    currentUser: randomElementFromArray(users),
+    users
   };
 }
 
-function getCurrentUser() {
-  return {
-    contact_list: getCurrentUserContactList(),
-    project_list: getCurrentUserProjectList(),
-    job_list: getCurrentUserJobList()
-  };
-}
+function getUserIdList() {
+  const n = randomInteger(10);
+  const list = [];
 
-function getCurrentUserContactList() {
-  return [
-    {
-      id: 2,
-      name: "Contact List 222",
-      users: [4]
-    },
-    {
-      id: 1,
-      name: "Contact List 1",
-      users: [1, 2, 3]
-    }
-  ];
-}
-
-function getCurrentUserProjectList() {
-  const arrayLength = randomInteger(5) + 1;
-  const array = Array(arrayLength).fill(1);
-
-  for (let i = 0; i < arrayLength; i++) {
-    array[i] = getProject();
+  for (let i = 0; i < n; i++) {
+    list.push(faker.random.uuid());
   }
 
-  return array;
+  return list;
+}
+
+//--------------------------
+
+function getUsers(userIdList) {
+  const users = [];
+
+  for (let i = 0; i < userIdList.length; i++) {
+    const userId = userIdList[i];
+    const user = getUser(userId);
+    users.push(user);
+    console.log(user);
+  }
+
+  return users;
+}
+
+function getUser(userId) {
+  const fullName = faker.name.firstName() + " " + faker.name.lastName();
+
+  return {
+    _id: userId,
+    email: faker.internet.email(),
+    avatar: faker.image.avatar(),
+    rating: randomInteger(6),
+    full_name: fullName,
+    country: faker.address.country(),
+    city: faker.address.city(),
+    job_title: faker.name.jobTitle(),
+    company: faker.company.companyName(),
+    website: faker.internet.url(),
+    mobile: {
+      country_code: "+84",
+      number: randomInteger(1000000000)
+    },
+    contact_list: generateList(5, getContactList),
+    project_list: generateList(5, getProject),
+    job_list: generateList(5, getJob)
+  };
+}
+
+function getContactList() {
+  return {
+    _id: faker.random.uuid(),
+    name: faker.lorem.words(),
+    users: randomElementsFromArray(userIdList),
+    created_at: faker.date
+      .past()
+      .toISOString()
+      .substr(0, 10)
+  };
 }
 
 function getProject() {
   return {
-    id: faker.random.uuid(),
+    _id: faker.random.uuid(),
     closing_date: faker.date
       .future()
       .toISOString()
@@ -67,24 +99,24 @@ function getProject() {
     project_description: faker.lorem.paragraph(),
     services: getServices(),
     required_skills: faker.hacker.noun(),
-    service_level: randomValueFromArray([
+    service_level: randomElementFromArray([
       "service_level.basic",
       "service_level.intermediate",
       "service_level.expert"
     ]),
-    project_type: randomValueFromArray([
+    project_type: randomElementFromArray([
       "project_type.one_time",
       "project_type.ongoing",
       faker.lorem.words()
     ]),
     payment: {
-      type: randomValueFromArray([
+      type: randomElementFromArray([
         "project_payment.fixed",
         "project_payment.hour"
       ]),
       amount: faker.finance.amount()
     },
-    duration: randomValueFromArray([
+    duration: randomElementFromArray([
       "project_duration.less_than_a_week",
       "project_duration.less_than_a_month",
       "project_duration.one_to_three_months",
@@ -92,7 +124,7 @@ function getProject() {
       "project_duration.six_to_twelve_months",
       "project_duration.more_than_a_year"
     ]),
-    time_requirement: randomValueFromArray([
+    time_requirement: randomElementFromArray([
       "project_time_requirement.less_than_ten_hours_week",
       "project_time_requirement.ten_to_twenty_hours_week",
       "project_time_requirement.twenty_to_thirty_hours_week",
@@ -127,30 +159,9 @@ function getService() {
   return `services.${selectedKey}.child.${service}`; // Key for locale file output
 }
 
-function randomValueFromArray(array) {
-  const randomKeyIndex = randomInteger(array.length);
-  return array[randomKeyIndex];
-}
-
-// Random 0 to n-1
-function randomInteger(n) {
-  return Math.floor(Math.random() * n);
-}
-
-function getCurrentUserJobList() {
-  const arrayLength = randomInteger(5) + 1;
-  const array = Array(arrayLength).fill(1);
-
-  for (let i = 0; i < arrayLength; i++) {
-    array[i] = getJob();
-  }
-
-  return array;
-}
-
 function getJob() {
   return {
-    id: faker.random.uuid(),
+    _id: faker.random.uuid(),
     job_title: faker.name.jobTitle(),
     job_id: faker.random.uuid(),
     post_date: new Date().toISOString().substr(0, 10),
@@ -160,13 +171,13 @@ function getJob() {
       .substr(0, 10),
     country: faker.address.country(),
     city: faker.address.city(),
-    job_type: randomValueFromArray([
-      "all",
-      "full_time",
-      "part_time",
-      "freelance",
-      "internship",
-      "short_term"
+    job_type: randomElementFromArray([
+      "job_type.all",
+      "job_type.full_time",
+      "job_type.part_time",
+      "job_type.freelance",
+      "job_type.internship",
+      "job_type.short_term"
     ]),
     department: faker.commerce.department(),
     reports_to: faker.name.jobTitle(),
@@ -182,4 +193,39 @@ function getJob() {
     },
     who_can_see: null
   };
+}
+
+// HELPERS
+// Random 0 to n-1
+function randomInteger(n) {
+  return Math.floor(Math.random() * n);
+}
+
+function randomElementFromArray(array) {
+  const randomKeyIndex = randomInteger(array.length);
+  return array[randomKeyIndex];
+}
+
+function randomElementsFromArray(array) {
+  let result = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const random = randomInteger(2);
+    if (random === 1) result.push(array[i]);
+  }
+
+  result = _.shuffle(result);
+
+  return result;
+}
+
+function generateList(maxListLength, method) {
+  const arrayLength = randomInteger(maxListLength) + 1;
+  const array = Array(arrayLength).fill(1);
+
+  for (let i = 0; i < arrayLength; i++) {
+    array[i] = method();
+  }
+
+  return array;
 }

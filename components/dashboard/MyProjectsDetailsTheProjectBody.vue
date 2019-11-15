@@ -39,7 +39,7 @@ export default {
   methods: {
     beautifyProjectData() {
       const data = clone(this.projectData);
-      delete data.id;
+      delete data._id;
       delete data.who_can_see;
 
       // Translate data having locale keys

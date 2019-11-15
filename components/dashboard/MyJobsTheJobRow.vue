@@ -4,7 +4,7 @@
 
     <nuxt-link
       data-test="jobRow"
-      :to="`my-jobs/${data.id}`"
+      :to="{ name: 'lang-dashboard-my-jobs-id', params: { id: data._id } }"
       class="job-row py-2 text-left"
     >{{ data.job_title }}</nuxt-link>
   </div>

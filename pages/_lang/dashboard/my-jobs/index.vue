@@ -1,6 +1,6 @@
 <template>
   <div>
-    <the-job-row v-for="p in jobList" :key="p.id" :data="p" class="job-row" />
+    <the-job-row v-for="p in jobList" :key="p._id" :data="p" class="job-row" />
   </div>
 </template>
 
