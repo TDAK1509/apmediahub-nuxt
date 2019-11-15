@@ -1,5 +1,8 @@
 const faker = require("faker");
 const _ = require("lodash");
+
+const userRoles = require("~/utils/user_roles");
+
 const fs = require("fs");
 const serviceList = JSON.parse(
   fs.readFileSync("assets/json/service_list.json")
@@ -8,6 +11,7 @@ const serviceList = JSON.parse(
 const filePath = "test/db/db.json";
 const userIdList = getUserIdList();
 const data = getData(userIdList);
+
 fs.writeFile(filePath, JSON.stringify(data), error => {
   if (error) {
     console.log(error);
@@ -25,7 +29,7 @@ function getData(userIdList) {
 }
 
 function getUserIdList() {
-  const n = randomInteger(10);
+  const n = randomInteger(30);
   const list = [];
 
   for (let i = 0; i < n; i++) {
@@ -56,6 +60,12 @@ function getUser(userId) {
   return {
     _id: userId,
     email: faker.internet.email(),
+    role: randomElementFromArray([
+      userRoles.CLIENT,
+      userRoles.AGENCY,
+      userRoles.FREELANCER,
+      userRoles.JOURNALIST
+    ]),
     avatar: faker.image.avatar(),
     rating: randomInteger(6),
     full_name: fullName,
