@@ -1,6 +1,8 @@
 private.key
 public.key
 
+test/db/db.json
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
