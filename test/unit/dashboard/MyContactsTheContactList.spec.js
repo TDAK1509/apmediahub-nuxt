@@ -17,6 +17,10 @@ describe("MyContactsTheContactList.vue", () => {
             users: [4]
           }
         ]
+      },
+
+      stubs: {
+        routerLink: "<div></div>"
       }
     });
 
