@@ -2,7 +2,7 @@
   <div class="custom-card pa-5" ref="container">
     <div class="avatar-container d-flex flex-column mr-5">
       <v-avatar :size="avatarSize">
-        <img :src="avatar" alt="Avatar" />
+        <img-lazy :lazy-src="avatar" alt="Avatar" />
       </v-avatar>
 
       <v-rating
@@ -126,9 +126,14 @@
 
 <script>
 import defaultAvatar from "@/assets/images/avatar_default.jpg";
+import ImgLazy from "@/components/ImgLazy";
 
 export default {
   name: "UserListItem",
+
+  components: {
+    ImgLazy
+  },
 
   props: {
     user: {
