@@ -1,7 +1,7 @@
 const faker = require("faker");
 const _ = require("lodash");
 
-const userRoles = require("~/utils/user_roles");
+const userRoles = require("../../utils/user_roles");
 
 const fs = require("fs");
 const serviceList = JSON.parse(

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   CLIENT: 1,
   AGENCY: 2,
   JOURNALIST: 3,
